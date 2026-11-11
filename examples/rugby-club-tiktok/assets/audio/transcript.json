@@ -1,0 +1,974 @@
+[
+  {
+    "text": "zéro",
+    "start": 0.12,
+    "end": 0.49,
+    "id": "w0"
+  },
+  {
+    "text": "joueur,",
+    "start": 0.49,
+    "end": 1.36,
+    "id": "w1"
+  },
+  {
+    "text": "zéro",
+    "start": 1.38,
+    "end": 1.6,
+    "id": "w2"
+  },
+  {
+    "text": "ballon,",
+    "start": 1.6,
+    "end": 2.15,
+    "id": "w3"
+  },
+  {
+    "text": "zéro",
+    "start": 2.28,
+    "end": 2.56,
+    "id": "w4"
+  },
+  {
+    "text": "terrain,",
+    "start": 2.56,
+    "end": 3.41,
+    "id": "w5"
+  },
+  {
+    "text": "et",
+    "start": 3.41,
+    "end": 3.53,
+    "id": "w6"
+  },
+  {
+    "text": "pourtant",
+    "start": 3.64,
+    "end": 4.04,
+    "id": "w7"
+  },
+  {
+    "text": "je",
+    "start": 4.04,
+    "end": 4.51,
+    "id": "w8"
+  },
+  {
+    "text": "crée",
+    "start": 4.51,
+    "end": 4.8,
+    "id": "w9"
+  },
+  {
+    "text": "mon",
+    "start": 4.8,
+    "end": 5.05,
+    "id": "w10"
+  },
+  {
+    "text": "club",
+    "start": 5.05,
+    "end": 5.38,
+    "id": "w11"
+  },
+  {
+    "text": "de",
+    "start": 5.38,
+    "end": 5.54,
+    "id": "w12"
+  },
+  {
+    "text": "rugby.",
+    "start": 5.54,
+    "end": 6,
+    "id": "w13"
+  },
+  {
+    "text": "Moi",
+    "start": 6.17,
+    "end": 6.25,
+    "id": "w14"
+  },
+  {
+    "text": "c'est",
+    "start": 6.25,
+    "end": 6.65,
+    "id": "w15"
+  },
+  {
+    "text": "Max,",
+    "start": 6.65,
+    "end": 7.06,
+    "id": "w16"
+  },
+  {
+    "text": "depuis",
+    "start": 7.06,
+    "end": 7.55,
+    "id": "w17"
+  },
+  {
+    "text": "tout",
+    "start": 7.55,
+    "end": 7.88,
+    "id": "w18"
+  },
+  {
+    "text": "petit",
+    "start": 7.88,
+    "end": 8.15,
+    "id": "w19"
+  },
+  {
+    "text": "je",
+    "start": 8.3,
+    "end": 8.44,
+    "id": "w20"
+  },
+  {
+    "text": "rêve",
+    "start": 8.46,
+    "end": 8.7,
+    "id": "w21"
+  },
+  {
+    "text": "d'avoir",
+    "start": 8.79,
+    "end": 9.08,
+    "id": "w22"
+  },
+  {
+    "text": "mon",
+    "start": 9.4,
+    "end": 9.54,
+    "id": "w23"
+  },
+  {
+    "text": "propre",
+    "start": 9.64,
+    "end": 10.04,
+    "id": "w24"
+  },
+  {
+    "text": "club.",
+    "start": 10.48,
+    "end": 10.5,
+    "id": "w25"
+  },
+  {
+    "text": "Aujourd'hui,",
+    "start": 10.71,
+    "end": 11.56,
+    "id": "w26"
+  },
+  {
+    "text": "je",
+    "start": 11.56,
+    "end": 11.6,
+    "id": "w27"
+  },
+  {
+    "text": "me",
+    "start": 11.6,
+    "end": 12.01,
+    "id": "w28"
+  },
+  {
+    "text": "lance,",
+    "start": 12.01,
+    "end": 12.5,
+    "id": "w29"
+  },
+  {
+    "text": "mais",
+    "start": 12.5,
+    "end": 12.65,
+    "id": "w30"
+  },
+  {
+    "text": "tout",
+    "start": 12.8,
+    "end": 13.04,
+    "id": "w31"
+  },
+  {
+    "text": "seul,",
+    "start": 13.04,
+    "end": 13.44,
+    "id": "w32"
+  },
+  {
+    "text": "impossible,",
+    "start": 13.44,
+    "end": 14.24,
+    "id": "w33"
+  },
+  {
+    "text": "j'ai",
+    "start": 14.27,
+    "end": 14.5,
+    "id": "w34"
+  },
+  {
+    "text": "besoin",
+    "start": 14.5,
+    "end": 14.54,
+    "id": "w35"
+  },
+  {
+    "text": "de",
+    "start": 14.98,
+    "end": 15.03,
+    "id": "w36"
+  },
+  {
+    "text": "toi.",
+    "start": 15.03,
+    "end": 15.5,
+    "id": "w37"
+  },
+  {
+    "text": "Les",
+    "start": 15.67,
+    "end": 15.8,
+    "id": "w38"
+  },
+  {
+    "text": "règles",
+    "start": 15.85,
+    "end": 16.39,
+    "id": "w39"
+  },
+  {
+    "text": "sont",
+    "start": 16.39,
+    "end": 16.59,
+    "id": "w40"
+  },
+  {
+    "text": "simples.",
+    "start": 17.01,
+    "end": 17.5,
+    "id": "w41"
+  },
+  {
+    "text": "Règle",
+    "start": 17.57,
+    "end": 17.85,
+    "id": "w42"
+  },
+  {
+    "text": "numéro",
+    "start": 17.86,
+    "end": 18.26,
+    "id": "w43"
+  },
+  {
+    "text": "1,",
+    "start": 18.27,
+    "end": 18.59,
+    "id": "w44"
+  },
+  {
+    "text": "tu",
+    "start": 18.59,
+    "end": 18.82,
+    "id": "w45"
+  },
+  {
+    "text": "t'abonnes,",
+    "start": 18.82,
+    "end": 19.5,
+    "id": "w46"
+  },
+  {
+    "text": "tu",
+    "start": 19.5,
+    "end": 19.65,
+    "id": "w47"
+  },
+  {
+    "text": "fais",
+    "start": 19.81,
+    "end": 19.99,
+    "id": "w48"
+  },
+  {
+    "text": "partie",
+    "start": 19.99,
+    "end": 20.48,
+    "id": "w49"
+  },
+  {
+    "text": "du",
+    "start": 20.48,
+    "end": 20.58,
+    "id": "w50"
+  },
+  {
+    "text": "club,",
+    "start": 20.89,
+    "end": 21.03,
+    "id": "w51"
+  },
+  {
+    "text": "et",
+    "start": 21.14,
+    "end": 21.19,
+    "id": "w52"
+  },
+  {
+    "text": "tu",
+    "start": 21.19,
+    "end": 21.27,
+    "id": "w53"
+  },
+  {
+    "text": "choisis",
+    "start": 21.35,
+    "end": 21.54,
+    "id": "w54"
+  },
+  {
+    "text": "ton",
+    "start": 21.54,
+    "end": 21.98,
+    "id": "w55"
+  },
+  {
+    "text": "rôle,",
+    "start": 21.98,
+    "end": 22.3,
+    "id": "w56"
+  },
+  {
+    "text": "joueur",
+    "start": 22.3,
+    "end": 23.12,
+    "id": "w57"
+  },
+  {
+    "text": "ou",
+    "start": 23.12,
+    "end": 23.37,
+    "id": "w58"
+  },
+  {
+    "text": "bénévole.",
+    "start": 23.8,
+    "end": 24.5,
+    "id": "w59"
+  },
+  {
+    "text": "Règle",
+    "start": 24.56,
+    "end": 24.81,
+    "id": "w60"
+  },
+  {
+    "text": "numéro",
+    "start": 24.85,
+    "end": 25.17,
+    "id": "w61"
+  },
+  {
+    "text": "2,",
+    "start": 25.21,
+    "end": 25.5,
+    "id": "w62"
+  },
+  {
+    "text": "les",
+    "start": 25.5,
+    "end": 25.59,
+    "id": "w63"
+  },
+  {
+    "text": "commentaires",
+    "start": 25.94,
+    "end": 26.45,
+    "id": "w64"
+  },
+  {
+    "text": "les",
+    "start": 26.45,
+    "end": 26.63,
+    "id": "w65"
+  },
+  {
+    "text": "plus",
+    "start": 26.63,
+    "end": 26.88,
+    "id": "w66"
+  },
+  {
+    "text": "likés",
+    "start": 26.9,
+    "end": 27.2,
+    "id": "w67"
+  },
+  {
+    "text": "deviennent",
+    "start": 27.2,
+    "end": 27.58,
+    "id": "w68"
+  },
+  {
+    "text": "titulaires.",
+    "start": 27.89,
+    "end": 28.5,
+    "id": "w69"
+  },
+  {
+    "text": "Le",
+    "start": 28.5,
+    "end": 28.71,
+    "id": "w70"
+  },
+  {
+    "text": "15",
+    "start": 28.71,
+    "end": 29.06,
+    "id": "w71"
+  },
+  {
+    "text": "de",
+    "start": 29.06,
+    "end": 29.17,
+    "id": "w72"
+  },
+  {
+    "text": "départ,",
+    "start": 29.2,
+    "end": 29.76,
+    "id": "w73"
+  },
+  {
+    "text": "c'est",
+    "start": 29.83,
+    "end": 30.11,
+    "id": "w74"
+  },
+  {
+    "text": "vous",
+    "start": 30.11,
+    "end": 30.39,
+    "id": "w75"
+  },
+  {
+    "text": "qui",
+    "start": 30.39,
+    "end": 30.6,
+    "id": "w76"
+  },
+  {
+    "text": "le",
+    "start": 30.6,
+    "end": 30.65,
+    "id": "w77"
+  },
+  {
+    "text": "choisissez.",
+    "start": 30.81,
+    "end": 31.5,
+    "id": "w78"
+  },
+  {
+    "text": "Règle",
+    "start": 31.57,
+    "end": 31.87,
+    "id": "w79"
+  },
+  {
+    "text": "numéro",
+    "start": 31.87,
+    "end": 32.34,
+    "id": "w80"
+  },
+  {
+    "text": "3,",
+    "start": 32.34,
+    "end": 32.6,
+    "id": "w81"
+  },
+  {
+    "text": "chaque",
+    "start": 32.89,
+    "end": 33.19,
+    "id": "w82"
+  },
+  {
+    "text": "like",
+    "start": 33.19,
+    "end": 33.5,
+    "id": "w83"
+  },
+  {
+    "text": "rapporte",
+    "start": 33.5,
+    "end": 34.12,
+    "id": "w84"
+  },
+  {
+    "text": "10",
+    "start": 34.12,
+    "end": 34.58,
+    "id": "w85"
+  },
+  {
+    "text": "euros",
+    "start": 34.89,
+    "end": 34.98,
+    "id": "w86"
+  },
+  {
+    "text": "au",
+    "start": 34.98,
+    "end": 35.03,
+    "id": "w87"
+  },
+  {
+    "text": "club,",
+    "start": 35.14,
+    "end": 35.54,
+    "id": "w88"
+  },
+  {
+    "text": "et",
+    "start": 35.54,
+    "end": 35.98,
+    "id": "w89"
+  },
+  {
+    "text": "chaque",
+    "start": 35.98,
+    "end": 36.12,
+    "id": "w90"
+  },
+  {
+    "text": "abonnement",
+    "start": 36.12,
+    "end": 36.76,
+    "id": "w91"
+  },
+  {
+    "text": "50",
+    "start": 36.76,
+    "end": 37.13,
+    "id": "w92"
+  },
+  {
+    "text": "euros.",
+    "start": 37.13,
+    "end": 37.5,
+    "id": "w93"
+  },
+  {
+    "text": "1000",
+    "start": 37.85,
+    "end": 38.23,
+    "id": "w94"
+  },
+  {
+    "text": "likes,",
+    "start": 38.25,
+    "end": 38.6,
+    "id": "w95"
+  },
+  {
+    "text": "10",
+    "start": 38.89,
+    "end": 39.04,
+    "id": "w96"
+  },
+  {
+    "text": "000",
+    "start": 39.04,
+    "end": 39.6,
+    "id": "w97"
+  },
+  {
+    "text": "euros,",
+    "start": 39.6,
+    "end": 40.03,
+    "id": "w98"
+  },
+  {
+    "text": "1000",
+    "start": 40.03,
+    "end": 40.58,
+    "id": "w99"
+  },
+  {
+    "text": "abonnés,",
+    "start": 40.9,
+    "end": 41.27,
+    "id": "w100"
+  },
+  {
+    "text": "50",
+    "start": 41.34,
+    "end": 41.54,
+    "id": "w101"
+  },
+  {
+    "text": "000",
+    "start": 41.98,
+    "end": 42.22,
+    "id": "w102"
+  },
+  {
+    "text": "euros",
+    "start": 42.28,
+    "end": 42.56,
+    "id": "w103"
+  },
+  {
+    "text": "de",
+    "start": 42.56,
+    "end": 42.64,
+    "id": "w104"
+  },
+  {
+    "text": "plus.",
+    "start": 42.7,
+    "end": 43,
+    "id": "w105"
+  },
+  {
+    "text": "Avec",
+    "start": 43.17,
+    "end": 43.26,
+    "id": "w106"
+  },
+  {
+    "text": "ça,",
+    "start": 43.29,
+    "end": 43.52,
+    "id": "w107"
+  },
+  {
+    "text": "les",
+    "start": 43.52,
+    "end": 43.71,
+    "id": "w108"
+  },
+  {
+    "text": "maillots,",
+    "start": 43.76,
+    "end": 44.36,
+    "id": "w109"
+  },
+  {
+    "text": "les",
+    "start": 44.39,
+    "end": 44.56,
+    "id": "w110"
+  },
+  {
+    "text": "ballons,",
+    "start": 44.56,
+    "end": 45.13,
+    "id": "w111"
+  },
+  {
+    "text": "les",
+    "start": 45.13,
+    "end": 45.34,
+    "id": "w112"
+  },
+  {
+    "text": "poteaux,",
+    "start": 45.34,
+    "end": 46,
+    "id": "w113"
+  },
+  {
+    "text": "tout",
+    "start": 46,
+    "end": 46.08,
+    "id": "w114"
+  },
+  {
+    "text": "le",
+    "start": 46.4,
+    "end": 46.51,
+    "id": "w115"
+  },
+  {
+    "text": "club",
+    "start": 46.51,
+    "end": 46.71,
+    "id": "w116"
+  },
+  {
+    "text": "se",
+    "start": 46.84,
+    "end": 47.02,
+    "id": "w117"
+  },
+  {
+    "text": "construit",
+    "start": 47.02,
+    "end": 47.79,
+    "id": "w118"
+  },
+  {
+    "text": "avec",
+    "start": 47.79,
+    "end": 48.13,
+    "id": "w119"
+  },
+  {
+    "text": "vous.",
+    "start": 48.13,
+    "end": 48.5,
+    "id": "w120"
+  },
+  {
+    "text": "Mais",
+    "start": 48.67,
+    "end": 48.78,
+    "id": "w121"
+  },
+  {
+    "text": "il",
+    "start": 48.85,
+    "end": 48.92,
+    "id": "w122"
+  },
+  {
+    "text": "manque",
+    "start": 48.92,
+    "end": 49.34,
+    "id": "w123"
+  },
+  {
+    "text": "encore",
+    "start": 49.34,
+    "end": 49.59,
+    "id": "w124"
+  },
+  {
+    "text": "le",
+    "start": 49.88,
+    "end": 49.9,
+    "id": "w125"
+  },
+  {
+    "text": "plus",
+    "start": 49.94,
+    "end": 50.18,
+    "id": "w126"
+  },
+  {
+    "text": "important,",
+    "start": 50.18,
+    "end": 50.96,
+    "id": "w127"
+  },
+  {
+    "text": "le",
+    "start": 50.96,
+    "end": 51.1,
+    "id": "w128"
+  },
+  {
+    "text": "nom",
+    "start": 51.1,
+    "end": 51.31,
+    "id": "w129"
+  },
+  {
+    "text": "du",
+    "start": 51.31,
+    "end": 51.45,
+    "id": "w130"
+  },
+  {
+    "text": "club.",
+    "start": 51.45,
+    "end": 52,
+    "id": "w131"
+  },
+  {
+    "text": "Il",
+    "start": 52,
+    "end": 52.2,
+    "id": "w132"
+  },
+  {
+    "text": "sera",
+    "start": 52.2,
+    "end": 52.43,
+    "id": "w133"
+  },
+  {
+    "text": "annoncé",
+    "start": 52.43,
+    "end": 52.94,
+    "id": "w134"
+  },
+  {
+    "text": "dans",
+    "start": 52.94,
+    "end": 53.09,
+    "id": "w135"
+  },
+  {
+    "text": "le",
+    "start": 53.09,
+    "end": 53.52,
+    "id": "w136"
+  },
+  {
+    "text": "prochain",
+    "start": 53.52,
+    "end": 53.95,
+    "id": "w137"
+  },
+  {
+    "text": "épisode,",
+    "start": 53.95,
+    "end": 54.63,
+    "id": "w138"
+  },
+  {
+    "text": "et",
+    "start": 54.63,
+    "end": 54.7,
+    "id": "w139"
+  },
+  {
+    "text": "tu",
+    "start": 54.79,
+    "end": 54.89,
+    "id": "w140"
+  },
+  {
+    "text": "peux",
+    "start": 54.89,
+    "end": 55.08,
+    "id": "w141"
+  },
+  {
+    "text": "déjà",
+    "start": 55.39,
+    "end": 55.43,
+    "id": "w142"
+  },
+  {
+    "text": "proposer",
+    "start": 55.43,
+    "end": 55.96,
+    "id": "w143"
+  },
+  {
+    "text": "le",
+    "start": 55.96,
+    "end": 56.04,
+    "id": "w144"
+  },
+  {
+    "text": "tien",
+    "start": 56.04,
+    "end": 56.48,
+    "id": "w145"
+  },
+  {
+    "text": "en",
+    "start": 56.48,
+    "end": 56.49,
+    "id": "w146"
+  },
+  {
+    "text": "commentaire.",
+    "start": 56.53,
+    "end": 57.5,
+    "id": "w147"
+  },
+  {
+    "text": "Alors",
+    "start": 57.7,
+    "end": 57.88,
+    "id": "w148"
+  },
+  {
+    "text": "abonne-toi,",
+    "start": 57.88,
+    "end": 58.78,
+    "id": "w149"
+  },
+  {
+    "text": "like",
+    "start": 58.89,
+    "end": 59.08,
+    "id": "w150"
+  },
+  {
+    "text": "et",
+    "start": 59.08,
+    "end": 59.23,
+    "id": "w151"
+  },
+  {
+    "text": "écris-moi,",
+    "start": 59.23,
+    "end": 60.06,
+    "id": "w152"
+  },
+  {
+    "text": "joueur",
+    "start": 60.06,
+    "end": 60.52,
+    "id": "w153"
+  },
+  {
+    "text": "ou",
+    "start": 60.52,
+    "end": 60.58,
+    "id": "w154"
+  },
+  {
+    "text": "bénévole,",
+    "start": 60.89,
+    "end": 61.5,
+    "id": "w155"
+  },
+  {
+    "text": "on",
+    "start": 61.5,
+    "end": 61.54,
+    "id": "w156"
+  },
+  {
+    "text": "se",
+    "start": 61.54,
+    "end": 61.98,
+    "id": "w157"
+  },
+  {
+    "text": "retrouve",
+    "start": 61.98,
+    "end": 62.16,
+    "id": "w158"
+  },
+  {
+    "text": "sur",
+    "start": 62.16,
+    "end": 62.32,
+    "id": "w159"
+  },
+  {
+    "text": "le",
+    "start": 62.32,
+    "end": 62.43,
+    "id": "w160"
+  },
+  {
+    "text": "terrain.",
+    "start": 62.43,
+    "end": 63,
+    "id": "w161"
+  }
+]

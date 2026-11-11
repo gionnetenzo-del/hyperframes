@@ -1,0 +1,209 @@
+<template id="rule3-template">
+  <style>
+    #root {
+
+      --ground: #0d3a2b;
+      --grass-a: #0f4431;
+      --grass-b: #124d38;
+      --chalk: #f5f1e4;
+      --gold: #ffcf1f;
+      --heart: #ff2d55;
+      --ink: #0a1f18;
+      --navy: #13284a;
+    }
+
+      #root { position: absolute; inset: 0; overflow: hidden; font-family: "Montserrat", sans-serif; color: var(--chalk); }
+      .cam { position: absolute; inset: 0; }
+      .abs { position: absolute; }
+      .row { position: absolute; left: 0; width: 100%; text-align: center; }
+      .disp { font-family: "League Gothic", sans-serif; text-transform: uppercase; line-height: 0.9; letter-spacing: 0.01em; }
+      .gold { color: var(--gold); }
+      .heart { color: var(--heart); }
+      .chip { display: inline-block; font-family: "Montserrat", sans-serif; font-weight: 900; font-size: 40px; letter-spacing: 0.08em;
+              padding: 14px 30px; border-radius: 999px; background: var(--gold); color: var(--ink); text-transform: uppercase; }
+      .card { background: #f7f4ea; color: var(--ink); border-radius: 36px; box-shadow: 0 18px 0 rgba(0,0,0,0.25); }
+      .w { display: inline-block; }
+
+
+      #rule3-flood { opacity: 0; }
+      .eq { display: flex; align-items: center; justify-content: center; gap: 30px; }
+      .eqt { font-size: 150px; }
+      .potlabel { font-weight: 900; font-size: 44px; letter-spacing: 0.12em; color: rgba(245,241,228,0.8); text-align: center; }
+      .potnum { font-size: 250px; text-align: center; color: var(--gold); margin-top: 10px; font-variant-numeric: tabular-nums; }
+      .bar { margin: 26px auto 0; width: 860px; height: 46px; border-radius: 999px; background: rgba(0,0,0,0.35); border: 5px solid var(--chalk); overflow: hidden; }
+      .fill { width: 100%; height: 100%; background: var(--gold); transform-origin: 0 50%; }
+      .mline { display: flex; align-items: center; gap: 24px; margin: 40px 0 0 40px; font-weight: 800; font-size: 54px; }
+      .mline b { color: var(--gold); margin-left: auto; margin-right: 40px; font-weight: 900; }
+
+  </style>
+  <div id="root" data-composition-id="rule3" data-start="0" data-duration="11.6" data-width="1080" data-height="1920">
+    <div id="rule3-flood" class="abs" style="inset:0;background:var(--heart)"></div>
+    <div id="rule3-cam" class="cam">
+      <div id="rule3-head" class="row" style="top:230px"><span class="chip">RÈGLE N°3</span></div>
+      <div id="rule3-eq1" class="row eq" style="top:400px"><svg viewBox="0 0 24 24" width="190" height="190"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.7 4.5c2.1 0 3.6 1.2 4.3 2.4.7-1.2 2.2-2.4 4.3-2.4 3.7 0 5.8 3.9 4.3 7.3C19.5 16.4 12 21 12 21z" fill="#ff2d55" stroke="#0a1f18" stroke-width="0.9"/></svg><span class="disp eqt">1 LIKE = <span class="gold">10 €</span></span></div>
+      <div id="rule3-eq2" class="row eq" style="top:660px"><svg viewBox="0 0 24 24" width="190" height="190"><circle cx="12" cy="12" r="11" fill="#ff2d55" stroke="#0a1f18" stroke-width="0.9"/><path d="M12 6.5v11M6.5 12h11" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/></svg><span class="disp eqt">1 ABONNÉ = <span class="gold">50 €</span></span></div>
+      <div id="rule3-pot" class="abs" style="left:90px;top:330px;width:900px">
+        <div class="potlabel">CAGNOTTE DU CLUB</div>
+        <div class="disp potnum"><span id="rule3-num">0</span> €</div>
+        <div class="bar"><div id="rule3-fill" class="fill"></div></div>
+        <div id="rule3-m1" class="mline"><svg viewBox="0 0 24 24" width="70" height="70"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.7 4.5c2.1 0 3.6 1.2 4.3 2.4.7-1.2 2.2-2.4 4.3-2.4 3.7 0 5.8 3.9 4.3 7.3C19.5 16.4 12 21 12 21z" fill="#ff2d55" stroke="#0a1f18" stroke-width="0.9"/></svg><span>1 000 likes</span><b>+10 000 €</b></div>
+        <div id="rule3-m2" class="mline"><svg viewBox="0 0 24 24" width="70" height="70"><circle cx="12" cy="12" r="11" fill="#ff2d55" stroke="#0a1f18" stroke-width="0.9"/><path d="M12 6.5v11M6.5 12h11" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/></svg><span>1 000 abonnés</span><b>+50 000 €</b></div>
+      </div>
+      <div id="rule3-maxwrap" class="abs" style="left:620px;top:1010px"><svg id="rm-svg" class="max" viewBox="0 0 300 520" width="330" height="572" overflow="visible">
+    <defs>
+      <clipPath id="rm-torsoclip"><path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z"/></clipPath>
+    </defs>
+    <g id="rm-body">
+      <ellipse cx="150" cy="504" rx="96" ry="12" fill="#000" opacity="0.28"/>
+      <!-- legs -->
+      <rect x="110" y="372" width="30" height="104" rx="13" fill="#e9b48c"/>
+      <rect x="160" y="372" width="30" height="104" rx="13" fill="#e9b48c"/>
+      <rect x="108" y="420" width="34" height="52" rx="8" fill="#0f4431"/>
+      <rect x="158" y="420" width="34" height="52" rx="8" fill="#0f4431"/>
+      <rect x="108" y="432" width="34" height="9" fill="#ffcf1f"/>
+      <rect x="158" y="432" width="34" height="9" fill="#ffcf1f"/>
+      <path d="M100 470 h44 q8 0 8 10 v10 h-58 q-4-20 6-20z" fill="#111"/>
+      <path d="M156 470 h44 q10 0 6 20 h-58 v-10 q0-10 8-10z" fill="#111"/>
+      <!-- shorts -->
+      <path d="M94 326 h112 l6 62 h-56 l-6-22 l-6 22 h-56z" fill="#f5f1e4" stroke="#0a1f18" stroke-width="4"/>
+      <!-- torso -->
+      <path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z" fill="#0f4431"/>
+      <g clip-path="url(#rm-torsoclip)">
+        <rect x="60" y="212" width="180" height="26" fill="#ffcf1f"/>
+        <rect x="60" y="262" width="180" height="26" fill="#ffcf1f"/>
+        <rect x="60" y="312" width="180" height="26" fill="#ffcf1f"/>
+      </g>
+      <path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z" fill="none" stroke="#0a1f18" stroke-width="4"/>
+      <path d="M128 182 L150 210 L172 182" fill="#f5f1e4" stroke="#0a1f18" stroke-width="4" stroke-linejoin="round"/>
+      <!-- arms (pivot at shoulders) -->
+      <g id="rm-armL">
+        <line x1="92" y1="200" x2="92" y2="318" stroke="#e9b48c" stroke-width="28" stroke-linecap="round"/>
+        <line x1="92" y1="198" x2="92" y2="236" stroke="#0f4431" stroke-width="34" stroke-linecap="round"/>
+        <line x1="92" y1="226" x2="92" y2="234" stroke="#ffcf1f" stroke-width="34"/>
+        <circle cx="92" cy="326" r="19" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+      </g>
+      <g id="rm-armR">
+        <line x1="208" y1="200" x2="208" y2="318" stroke="#e9b48c" stroke-width="28" stroke-linecap="round"/>
+        <line x1="208" y1="198" x2="208" y2="236" stroke="#0f4431" stroke-width="34" stroke-linecap="round"/>
+        <line x1="208" y1="226" x2="208" y2="234" stroke="#ffcf1f" stroke-width="34"/>
+        <circle cx="208" cy="326" r="19" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+      </g>
+      
+      <!-- head -->
+      <g id="rm-head">
+        <rect x="136" y="150" width="28" height="34" fill="#d9a07a"/>
+        <circle cx="87" cy="112" r="14" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+        <circle cx="213" cy="112" r="14" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+        <circle cx="150" cy="104" r="64" fill="#f0c19c" stroke="#0a1f18" stroke-width="4"/>
+        <path d="M88 96 Q86 36 150 34 Q218 34 212 98 Q196 66 168 70 Q150 52 128 70 Q104 66 88 96z" fill="#4a2a17" stroke="#0a1f18" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M88 84 Q150 58 212 84 L212 96 Q150 72 88 96z" fill="#ffcf1f" stroke="#0a1f18" stroke-width="3"/>
+        <ellipse id="rm-eyeL" cx="127" cy="110" rx="8" ry="11" fill="#0a1f18"/>
+        <ellipse id="rm-eyeR" cx="173" cy="110" rx="8" ry="11" fill="#0a1f18"/>
+        <circle cx="130" cy="106" r="3" fill="#fff"/>
+        <circle cx="176" cy="106" r="3" fill="#fff"/>
+        <path id="rm-browL" d="M114 92 Q127 86 139 92" stroke="#3a1f10" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path id="rm-browR" d="M161 92 Q173 86 186 92" stroke="#3a1f10" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <ellipse cx="112" cy="132" rx="11" ry="6" fill="#ff8f8f" opacity="0.45"/>
+        <ellipse cx="188" cy="132" rx="11" ry="6" fill="#ff8f8f" opacity="0.45"/>
+        <path d="M128 138 Q150 158 172 138" stroke="#0a1f18" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <g id="rm-mOpen" opacity="0">
+          <path d="M126 134 Q150 134 174 134 Q172 166 150 168 Q128 166 126 134z" fill="#5a1414" stroke="#0a1f18" stroke-width="4"/>
+          <ellipse cx="150" cy="158" rx="12" ry="6" fill="#e05a6a"/>
+        </g>
+        <g id="rm-mO" opacity="0">
+          <ellipse cx="150" cy="148" rx="16" ry="20" fill="#5a1414" stroke="#0a1f18" stroke-width="4"/>
+        </g>
+      </g>
+    </g>
+  </svg></div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+
+      // --- Max rig helpers (all on this scene's paused timeline) ---
+      const rig = (p) => ({
+        body: "#" + p + "-body", head: "#" + p + "-head", armL: "#" + p + "-armL", armR: "#" + p + "-armR",
+        eyes: ["#" + p + "-eyeL", "#" + p + "-eyeR"], mOpen: "#" + p + "-mOpen", mO: "#" + p + "-mO",
+        brows: ["#" + p + "-browL", "#" + p + "-browR"], ball: "#" + p + "-ball",
+      });
+      const blink = (r, t) => {
+        tl.to(r.eyes, { scaleY: 0.1, transformOrigin: "50% 50%", duration: 0.05, ease: "power1.in" }, t);
+        tl.to(r.eyes, { scaleY: 1, transformOrigin: "50% 50%", duration: 0.08, ease: "power1.out" }, t + 0.06);
+      };
+      const talk = (r, starts) => {
+        starts.forEach((s) => {
+          tl.set(r.mOpen, { opacity: 1 }, s);
+          tl.set(r.mOpen, { opacity: 0 }, s + 0.13);
+        });
+      };
+      const arm = (sel, side, rot, t, d = 0.35, ease = "back.out(1.6)") => {
+        const o = side === "L" ? "92 200" : "208 200";
+        tl.to(sel, { rotation: rot, svgOrigin: o, duration: d, ease }, t);
+      };
+      const hop = (r, t, lift = 60) => {
+        // anticipation squash, jump, land squash, settle
+        tl.to(r.body, { scaleY: 0.9, scaleX: 1.06, svgOrigin: "150 500", duration: 0.12, ease: "power2.in" }, t);
+        tl.to(r.body, { scaleY: 1.06, scaleX: 0.96, y: -lift, svgOrigin: "150 500", duration: 0.22, ease: "power2.out" }, t + 0.12);
+        tl.to(r.body, { scaleY: 0.92, scaleX: 1.05, y: 0, svgOrigin: "150 500", duration: 0.18, ease: "power2.in" }, t + 0.34);
+        tl.to(r.body, { scaleY: 1, scaleX: 1, svgOrigin: "150 500", duration: 0.3, ease: "elastic.out(1, 0.5)" }, t + 0.52);
+      };
+      const breathe = (r, t0, t1) => {
+        for (let t = t0; t < t1 - 1.2; t += 1.6) {
+          tl.to(r.body, { scaleY: 1.012, svgOrigin: "150 500", duration: 0.8, ease: "sine.inOut" }, t);
+          tl.to(r.body, { scaleY: 1, svgOrigin: "150 500", duration: 0.8, ease: "sine.inOut" }, t + 0.8);
+        }
+      };
+
+
+      const r = rig("rm");
+      gsap.set("#rule3-pot, #rule3-maxwrap, #rule3-eq1, #rule3-eq2, #rule3-m1, #rule3-m2", { opacity: 0 });
+      gsap.set("#rule3-fill", { scaleX: 0 });
+      // entry: a red flood (the like colour) recedes to the pitch
+      gsap.set("#rule3-flood", { opacity: 1 });
+      tl.to("#rule3-flood", { opacity: 0, duration: 0.45, ease: "power2.inOut" }, 0.2);
+      tl.fromTo("#rule3-head .chip", { scale: 0.4 }, { scale: 1, duration: 0.3, ease: "back.out(2)" }, 0.15);
+      // equations
+      tl.set("#rule3-eq1", { opacity: 1 }, 1.7);
+      tl.fromTo("#rule3-eq1 svg", { scale: 0 }, { scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 1.7);
+      tl.fromTo("#rule3-eq1 .eqt", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18 }, 1.75);
+      tl.fromTo("#rule3-eq1 .gold", { scale: 1.6 }, { scale: 1, duration: 0.3, ease: "expo.out" }, 2.65);
+      tl.set("#rule3-eq2", { opacity: 1 }, 4.5);
+      tl.fromTo("#rule3-eq2 svg", { scale: 0 }, { scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 4.5);
+      tl.fromTo("#rule3-eq2 .eqt", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18 }, 4.55);
+      tl.fromTo("#rule3-eq2 .gold", { scale: 1.6 }, { scale: 1, duration: 0.3, ease: "expo.out" }, 5.29);
+      // to the pot
+      tl.to(["#rule3-eq1", "#rule3-eq2"], { y: -200, opacity: 0, filter: "blur(10px)", duration: 0.28, stagger: 0.05, ease: "power3.in" }, 6.05);
+      tl.set("#rule3-pot", { opacity: 1 }, 6.3);
+      tl.fromTo("#rule3-pot", { y: 200, filter: "blur(10px)" }, { y: 0, filter: "blur(0px)", duration: 0.4, ease: "expo.out" }, 6.3);
+      tl.set("#rule3-m1", { opacity: 1 }, 6.4);
+      tl.fromTo("#rule3-m1", { x: -80, opacity: 0 }, { x: 0, opacity: 1, duration: 0.35, ease: "expo.out" }, 6.4);
+      const pot = { n: 0 };
+      const show = () => { document.querySelector("#rule3-num").textContent = Math.round(pot.n).toLocaleString("fr-FR"); };
+      tl.to(pot, { n: 10000, duration: 1.4, ease: "power2.out", onUpdate: show }, 6.95);
+      tl.to("#rule3-fill", { scaleX: 0.166, duration: 1.4, ease: "power2.out" }, 6.95);
+      tl.set("#rule3-m2", { opacity: 1 }, 8.55);
+      tl.fromTo("#rule3-m2", { x: -80, opacity: 0 }, { x: 0, opacity: 1, duration: 0.35, ease: "expo.out" }, 8.55);
+      tl.to(pot, { n: 60000, duration: 1.5, ease: "power3.out", onUpdate: show }, 9.45);
+      tl.to("#rule3-fill", { scaleX: 1, duration: 1.5, ease: "power3.out" }, 9.45);
+      tl.fromTo(".potnum", { scale: 1 }, { scale: 1.08, duration: 0.15, ease: "power2.out", yoyo: true, repeat: 1 }, 10.85);
+      // Max pops up, jaw drops at the total
+      tl.set("#rule3-maxwrap", { opacity: 1 }, 6.75);
+      tl.fromTo("#rule3-maxwrap", { y: 700 }, { y: 0, duration: 0.5, ease: "back.out(1.3)" }, 6.75);
+      tl.to(r.head, { rotation: -14, svgOrigin: "150 170", duration: 0.4, ease: "power2.inOut" }, 7.05);
+      tl.to(r.eyes, { x: -5, y: -7, duration: 0.3 }, 7.05);
+      talk(r, [6.4, 6.8, 7.44, 7.59, 8.15, 8.58, 9.45, 9.89, 10.53, 10.83, 11.11, 11.25]);
+      tl.set(r.mO, { opacity: 1 }, 11.3);
+      tl.to(r.eyes, { scaleY: 1.35, scaleX: 1.2, transformOrigin: "50% 50%", duration: 0.2, ease: "back.out(3)" }, 10.85);
+      arm(r.armL, "L", 150, 10.85, 0.3); arm(r.armR, "R", -150, 10.89, 0.3);
+      hop(r, 10.75, 40);
+      blink(r, 8.75);
+      // exit: whip up
+      tl.to("#rule3-cam", { y: -500, filter: "blur(18px)", duration: 0.28, ease: "power3.in" }, 11.319999999999999);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["rule3"] = tl;
+    })();
+  </script>
+</template>

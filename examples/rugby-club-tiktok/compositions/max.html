@@ -1,0 +1,239 @@
+<template id="max-template">
+  <style>
+    #root {
+
+      --ground: #0d3a2b;
+      --grass-a: #0f4431;
+      --grass-b: #124d38;
+      --chalk: #f5f1e4;
+      --gold: #ffcf1f;
+      --heart: #ff2d55;
+      --ink: #0a1f18;
+      --navy: #13284a;
+    }
+
+      #root { position: absolute; inset: 0; overflow: hidden; font-family: "Montserrat", sans-serif; color: var(--chalk); }
+      .cam { position: absolute; inset: 0; }
+      .abs { position: absolute; }
+      .row { position: absolute; left: 0; width: 100%; text-align: center; }
+      .disp { font-family: "League Gothic", sans-serif; text-transform: uppercase; line-height: 0.9; letter-spacing: 0.01em; }
+      .gold { color: var(--gold); }
+      .heart { color: var(--heart); }
+      .chip { display: inline-block; font-family: "Montserrat", sans-serif; font-weight: 900; font-size: 40px; letter-spacing: 0.08em;
+              padding: 14px 30px; border-radius: 999px; background: var(--gold); color: var(--ink); text-transform: uppercase; }
+      .card { background: #f7f4ea; color: var(--ink); border-radius: 36px; box-shadow: 0 18px 0 rgba(0,0,0,0.25); }
+      .w { display: inline-block; }
+
+
+      .namebig { font-size: 300px; }
+      .bub { position: absolute; background: #f7f4ea; border-radius: 50%; box-shadow: 0 10px 0 rgba(0,0,0,0.2); }
+      .cloud { border-radius: 160px; overflow: hidden; }
+      .dreamtxt { position: absolute; left: 0; width: 100%; bottom: 14px; text-align: center; font-size: 64px; color: var(--ink); }
+      .bigline { font-size: 160px; }
+      .stamp { display: inline-block; margin-top: 30px; font-size: 140px; color: var(--heart); border: 12px solid var(--heart);
+               padding: 10px 34px 0; border-radius: 22px; }
+      .toi { font-size: 230px; }
+
+  </style>
+  <div id="root" data-composition-id="max" data-start="0" data-duration="9.4" data-width="1080" data-height="1920">
+    <div id="max-cam" class="cam">
+      <div id="max-name" class="row" style="top:230px">
+        <div class="disp namebig"><span class="w ml" id="max-l0">M</span><span class="w ml" id="max-l1">A</span><span class="w ml" id="max-l2">X</span></div>
+        <div id="max-role" class="chip">FONDATEUR</div>
+      </div>
+      <div id="max-dream" class="abs" style="left:560px;top:250px;width:460px;height:440px">
+        <div id="max-bub3" class="bub" style="left:20px;top:400px;width:34px;height:34px"></div>
+        <div id="max-bub2" class="bub" style="left:60px;top:340px;width:56px;height:56px"></div>
+        <div id="max-bub1" class="bub cloud" style="left:40px;top:0;width:420px;height:320px">
+          <svg viewBox="0 0 420 320" width="420" height="320">
+            <rect x="50" y="170" width="320" height="70" rx="10" fill="#0f4431"/>
+            <rect x="40" y="110" width="80" height="70" fill="#13284a"/><rect x="300" y="110" width="80" height="70" fill="#13284a"/>
+            <rect x="120" y="128" width="180" height="52" fill="#13284a"/>
+            <g fill="#ffcf1f"><circle cx="60" cy="140" r="6"/><circle cx="82" cy="154" r="6"/><circle cx="104" cy="140" r="6"/><circle cx="126" cy="154" r="6"/><circle cx="148" cy="140" r="6"/><circle cx="170" cy="154" r="6"/><circle cx="192" cy="140" r="6"/><circle cx="214" cy="154" r="6"/><circle cx="236" cy="140" r="6"/><circle cx="258" cy="154" r="6"/><circle cx="280" cy="140" r="6"/><circle cx="302" cy="154" r="6"/><circle cx="324" cy="140" r="6"/><circle cx="346" cy="154" r="6"/><circle cx="368" cy="140" r="6"/></g>
+            <path d="M190 80 v95 M230 80 v95 M190 130 h40" stroke="#f5f1e4" stroke-width="8" stroke-linecap="round"/>
+            <path d="M210 40 v40" stroke="#f5f1e4" stroke-width="4"/><path d="M210 40 l34 10 l-34 10z" fill="#ff2d55"/>
+          </svg>
+          <div class="disp dreamtxt">MON CLUB</div>
+        </div>
+      </div>
+      <div id="max-launch" class="row disp" style="top:250px">
+        <div id="max-la0" class="bigline">AUJOURD'HUI</div>
+        <div id="max-la1" class="bigline gold">JE ME LANCE</div>
+      </div>
+      <div id="max-alone" class="row disp" style="top:250px">
+        <div id="max-al0" class="bigline">TOUT SEUL ?</div>
+        <div id="max-al1" class="stamp">IMPOSSIBLE</div>
+      </div>
+      <div id="max-need" class="row disp" style="top:200px">
+        <div id="max-n0" class="bigline">J'AI BESOIN</div>
+        <div id="max-n1" class="bigline">DE <span class="gold toi">TOI</span></div>
+      </div>
+      <div id="max-maxwrap" class="abs" style="left:200px;top:700px"><svg id="mm-svg" class="max" viewBox="0 0 300 520" width="470" height="815" overflow="visible">
+    <defs>
+      <clipPath id="mm-torsoclip"><path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z"/></clipPath>
+    </defs>
+    <g id="mm-body">
+      <ellipse cx="150" cy="504" rx="96" ry="12" fill="#000" opacity="0.28"/>
+      <!-- legs -->
+      <rect x="110" y="372" width="30" height="104" rx="13" fill="#e9b48c"/>
+      <rect x="160" y="372" width="30" height="104" rx="13" fill="#e9b48c"/>
+      <rect x="108" y="420" width="34" height="52" rx="8" fill="#0f4431"/>
+      <rect x="158" y="420" width="34" height="52" rx="8" fill="#0f4431"/>
+      <rect x="108" y="432" width="34" height="9" fill="#ffcf1f"/>
+      <rect x="158" y="432" width="34" height="9" fill="#ffcf1f"/>
+      <path d="M100 470 h44 q8 0 8 10 v10 h-58 q-4-20 6-20z" fill="#111"/>
+      <path d="M156 470 h44 q10 0 6 20 h-58 v-10 q0-10 8-10z" fill="#111"/>
+      <!-- shorts -->
+      <path d="M94 326 h112 l6 62 h-56 l-6-22 l-6 22 h-56z" fill="#f5f1e4" stroke="#0a1f18" stroke-width="4"/>
+      <!-- torso -->
+      <path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z" fill="#0f4431"/>
+      <g clip-path="url(#mm-torsoclip)">
+        <rect x="60" y="212" width="180" height="26" fill="#ffcf1f"/>
+        <rect x="60" y="262" width="180" height="26" fill="#ffcf1f"/>
+        <rect x="60" y="312" width="180" height="26" fill="#ffcf1f"/>
+      </g>
+      <path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z" fill="none" stroke="#0a1f18" stroke-width="4"/>
+      <path d="M128 182 L150 210 L172 182" fill="#f5f1e4" stroke="#0a1f18" stroke-width="4" stroke-linejoin="round"/>
+      <!-- arms (pivot at shoulders) -->
+      <g id="mm-armL">
+        <line x1="92" y1="200" x2="92" y2="318" stroke="#e9b48c" stroke-width="28" stroke-linecap="round"/>
+        <line x1="92" y1="198" x2="92" y2="236" stroke="#0f4431" stroke-width="34" stroke-linecap="round"/>
+        <line x1="92" y1="226" x2="92" y2="234" stroke="#ffcf1f" stroke-width="34"/>
+        <circle cx="92" cy="326" r="19" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+      </g>
+      <g id="mm-armR">
+        <line x1="208" y1="200" x2="208" y2="318" stroke="#e9b48c" stroke-width="28" stroke-linecap="round"/>
+        <line x1="208" y1="198" x2="208" y2="236" stroke="#0f4431" stroke-width="34" stroke-linecap="round"/>
+        <line x1="208" y1="226" x2="208" y2="234" stroke="#ffcf1f" stroke-width="34"/>
+        <circle cx="208" cy="326" r="19" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+      </g>
+      
+      <!-- head -->
+      <g id="mm-head">
+        <rect x="136" y="150" width="28" height="34" fill="#d9a07a"/>
+        <circle cx="87" cy="112" r="14" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+        <circle cx="213" cy="112" r="14" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+        <circle cx="150" cy="104" r="64" fill="#f0c19c" stroke="#0a1f18" stroke-width="4"/>
+        <path d="M88 96 Q86 36 150 34 Q218 34 212 98 Q196 66 168 70 Q150 52 128 70 Q104 66 88 96z" fill="#4a2a17" stroke="#0a1f18" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M88 84 Q150 58 212 84 L212 96 Q150 72 88 96z" fill="#ffcf1f" stroke="#0a1f18" stroke-width="3"/>
+        <ellipse id="mm-eyeL" cx="127" cy="110" rx="8" ry="11" fill="#0a1f18"/>
+        <ellipse id="mm-eyeR" cx="173" cy="110" rx="8" ry="11" fill="#0a1f18"/>
+        <circle cx="130" cy="106" r="3" fill="#fff"/>
+        <circle cx="176" cy="106" r="3" fill="#fff"/>
+        <path id="mm-browL" d="M114 92 Q127 86 139 92" stroke="#3a1f10" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path id="mm-browR" d="M161 92 Q173 86 186 92" stroke="#3a1f10" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <ellipse cx="112" cy="132" rx="11" ry="6" fill="#ff8f8f" opacity="0.45"/>
+        <ellipse cx="188" cy="132" rx="11" ry="6" fill="#ff8f8f" opacity="0.45"/>
+        <path d="M128 138 Q150 158 172 138" stroke="#0a1f18" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <g id="mm-mOpen" opacity="0">
+          <path d="M126 134 Q150 134 174 134 Q172 166 150 168 Q128 166 126 134z" fill="#5a1414" stroke="#0a1f18" stroke-width="4"/>
+          <ellipse cx="150" cy="158" rx="12" ry="6" fill="#e05a6a"/>
+        </g>
+        <g id="mm-mO" opacity="0">
+          <ellipse cx="150" cy="148" rx="16" ry="20" fill="#5a1414" stroke="#0a1f18" stroke-width="4"/>
+        </g>
+      </g>
+    </g>
+  </svg></div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+
+      // --- Max rig helpers (all on this scene's paused timeline) ---
+      const rig = (p) => ({
+        body: "#" + p + "-body", head: "#" + p + "-head", armL: "#" + p + "-armL", armR: "#" + p + "-armR",
+        eyes: ["#" + p + "-eyeL", "#" + p + "-eyeR"], mOpen: "#" + p + "-mOpen", mO: "#" + p + "-mO",
+        brows: ["#" + p + "-browL", "#" + p + "-browR"], ball: "#" + p + "-ball",
+      });
+      const blink = (r, t) => {
+        tl.to(r.eyes, { scaleY: 0.1, transformOrigin: "50% 50%", duration: 0.05, ease: "power1.in" }, t);
+        tl.to(r.eyes, { scaleY: 1, transformOrigin: "50% 50%", duration: 0.08, ease: "power1.out" }, t + 0.06);
+      };
+      const talk = (r, starts) => {
+        starts.forEach((s) => {
+          tl.set(r.mOpen, { opacity: 1 }, s);
+          tl.set(r.mOpen, { opacity: 0 }, s + 0.13);
+        });
+      };
+      const arm = (sel, side, rot, t, d = 0.35, ease = "back.out(1.6)") => {
+        const o = side === "L" ? "92 200" : "208 200";
+        tl.to(sel, { rotation: rot, svgOrigin: o, duration: d, ease }, t);
+      };
+      const hop = (r, t, lift = 60) => {
+        // anticipation squash, jump, land squash, settle
+        tl.to(r.body, { scaleY: 0.9, scaleX: 1.06, svgOrigin: "150 500", duration: 0.12, ease: "power2.in" }, t);
+        tl.to(r.body, { scaleY: 1.06, scaleX: 0.96, y: -lift, svgOrigin: "150 500", duration: 0.22, ease: "power2.out" }, t + 0.12);
+        tl.to(r.body, { scaleY: 0.92, scaleX: 1.05, y: 0, svgOrigin: "150 500", duration: 0.18, ease: "power2.in" }, t + 0.34);
+        tl.to(r.body, { scaleY: 1, scaleX: 1, svgOrigin: "150 500", duration: 0.3, ease: "elastic.out(1, 0.5)" }, t + 0.52);
+      };
+      const breathe = (r, t0, t1) => {
+        for (let t = t0; t < t1 - 1.2; t += 1.6) {
+          tl.to(r.body, { scaleY: 1.012, svgOrigin: "150 500", duration: 0.8, ease: "sine.inOut" }, t);
+          tl.to(r.body, { scaleY: 1, svgOrigin: "150 500", duration: 0.8, ease: "sine.inOut" }, t + 0.8);
+        }
+      };
+
+
+      const r = rig("mm");
+      gsap.set("#max-dream, #max-launch, #max-alone, #max-need", { opacity: 0 });
+      // entry: arrives from below, matching the whip up
+      tl.fromTo("#max-cam", { y: 500, filter: "blur(18px)" }, { y: 0, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 0);
+      // name per letter
+      tl.fromTo(".ml", { opacity: 0.3, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.12, stagger: 0.1 }, 0.4);
+      gsap.set(".ml", { opacity: 0 });
+      tl.fromTo("#max-role", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 0.7);
+      // wave hello
+      arm(r.armR, "R", -150, 0.1, 0.3);
+      tl.to(r.armR, { rotation: -125, svgOrigin: "208 200", duration: 0.16, ease: "sine.inOut", yoyo: true, repeat: 3 }, 0.42);
+      arm(r.armR, "R", -8, 1.2, 0.3, "power2.inOut");
+      // dream: name moves up & out, bubble rises
+      tl.to("#max-name", { opacity: 0, filter: "blur(8px)", duration: 0.2 }, 1.5);
+      tl.set("#max-dream", { opacity: 1 }, 1.6);
+      tl.fromTo("#max-bub3", { scale: 0 }, { scale: 1, duration: 0.25, ease: "back.out(2)" }, 1.6);
+      tl.fromTo("#max-bub2", { scale: 0 }, { scale: 1, duration: 0.25, ease: "back.out(2)" }, 1.75);
+      tl.fromTo("#max-bub1", { scale: 0, transformOrigin: "10% 100%" }, { scale: 1, duration: 0.45, ease: "back.out(1.5)" }, 1.9);
+      tl.to("#max-maxwrap", { x: -110, duration: 0.6, ease: "power2.inOut" }, 1.6);
+      tl.to(r.head, { rotation: 12, svgOrigin: "150 170", duration: 0.5, ease: "power2.inOut" }, 1.7);
+      tl.to(r.eyes, { x: 6, y: -6, duration: 0.3 }, 1.7);
+      arm(r.armL, "L", -20, 1.8, 0.4, "power2.inOut");
+      // bubble pops on "Aujourd'hui"
+      tl.to("#max-bub1, #max-bub2, #max-bub3", { scale: 1.15, opacity: 0, duration: 0.14, ease: "power2.in" }, 4.42);
+      tl.to("#max-maxwrap", { x: 0, duration: 0.45, ease: "power3.out" }, 4.5);
+      tl.to(r.head, { rotation: 0, svgOrigin: "150 170", duration: 0.3 }, 4.5);
+      tl.to(r.eyes, { x: 0, y: 0, duration: 0.2 }, 4.5);
+      arm(r.armL, "L", 8, 4.5, 0.3);
+      tl.set("#max-launch", { opacity: 1 }, 4.5);
+      tl.fromTo("#max-la0", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18 }, 4.51);
+      tl.fromTo("#max-la1", { opacity: 0, scale: 1.3, filter: "blur(10px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.25, ease: "expo.out" }, 5.36);
+      hop(r, 5.25, 50);
+      arm(r.armL, "L", 160, 5.4, 0.3); arm(r.armR, "R", -160, 5.44, 0.3);
+      // alone
+      tl.to("#max-launch", { opacity: 0, filter: "blur(8px)", duration: 0.18 }, 6.2);
+      tl.set("#max-alone", { opacity: 1 }, 6.3);
+      tl.fromTo("#max-al0", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18 }, 6.3);
+      tl.fromTo("#max-al1", { opacity: 0, scale: 2.2, rotation: -14 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.22, ease: "power4.in" }, 7.04);
+      arm(r.armL, "L", 8, 6.3, 0.4, "power2.inOut"); arm(r.armR, "R", -8, 6.35, 0.4, "power2.inOut");
+      tl.to(r.brows, { rotation: -10, svgOrigin: "150 92", y: -4, duration: 0.25 }, 6.4);
+      tl.to("#max-maxwrap", { scale: 0.92, transformOrigin: "50% 100%", duration: 0.5, ease: "power2.out" }, 6.4);
+      tl.to(r.head, { y: 8, duration: 0.4 }, 6.5);
+      // "j'ai besoin de toi": points up at TOI
+      tl.to("#max-alone", { opacity: 0, filter: "blur(8px)", duration: 0.18 }, 7.9);
+      tl.set("#max-need", { opacity: 1 }, 8.0);
+      tl.fromTo("#max-n0", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18 }, 8.07);
+      tl.fromTo("#max-n1", { opacity: 0, scale: 1.4, filter: "blur(10px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.25, ease: "expo.out" }, 8.78);
+      tl.to("#max-maxwrap", { scale: 1.08, transformOrigin: "50% 100%", duration: 0.35, ease: "back.out(1.6)" }, 8.1);
+      tl.to(r.head, { y: 0, duration: 0.25 }, 8.1);
+      tl.to(r.brows, { rotation: 6, y: 2, svgOrigin: "150 92", duration: 0.2 }, 8.1);
+      arm(r.armR, "R", -150, 8.7, 0.25);
+      blink(r, 2.7); blink(r, 5.8); blink(r, 7.6);
+      talk(r, [0.05, 0.45, 0.86, 1.35, 1.68, 2.1, 2.26, 2.59, 3.2, 3.44, 4.28, 4.51, 5.36, 5.4, 5.81, 6.3, 6.6, 6.84, 7.24, 8.07, 8.3, 8.78, 8.83]);
+      // exit: zoom through "TOI"
+      tl.to("#max-cam", { scale: 2.6, transformOrigin: "60% 22%", filter: "blur(16px)", opacity: 0, duration: 0.32, ease: "power3.in" }, 9.079999999999998);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["max"] = tl;
+    })();
+  </script>
+</template>

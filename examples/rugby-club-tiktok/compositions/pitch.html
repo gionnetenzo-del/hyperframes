@@ -1,0 +1,46 @@
+<template id="pitch-template">
+  <style>
+    #root {
+
+      --ground: #0d3a2b;
+      --grass-a: #0f4431;
+      --grass-b: #124d38;
+      --chalk: #f5f1e4;
+      --gold: #ffcf1f;
+      --heart: #ff2d55;
+      --ink: #0a1f18;
+      --navy: #13284a;
+    }
+    #root { position: absolute; inset: 0; overflow: hidden; }
+
+      .stripe { position: absolute; top: 0; width: 120px; height: 100%; }
+      .chalk { position: absolute; left: 0; width: 100%; }
+      .mark { position: absolute; left: 70px; font-family: "League Gothic"; font-size: 120px; color: rgba(245,241,228,0.35); }
+      .vignette { background: radial-gradient(ellipse 80% 60% at 50% 45%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.55) 100%); }
+      #root { background: var(--ground); }
+
+  </style>
+  <div id="root" data-composition-id="pitch" data-start="0" data-duration="66.5" data-width="1080" data-height="1920">
+    <div id="pitch-field" class="abs" style="left:-60px;top:-200px;width:1200px;height:3800px">
+      <div class="stripe" style="left:0px;background:var(--grass-a)"></div><div class="stripe" style="left:120px;background:var(--grass-b)"></div><div class="stripe" style="left:240px;background:var(--grass-a)"></div><div class="stripe" style="left:360px;background:var(--grass-b)"></div><div class="stripe" style="left:480px;background:var(--grass-a)"></div><div class="stripe" style="left:600px;background:var(--grass-b)"></div><div class="stripe" style="left:720px;background:var(--grass-a)"></div><div class="stripe" style="left:840px;background:var(--grass-b)"></div><div class="stripe" style="left:960px;background:var(--grass-a)"></div>
+      <div class="chalk" style="top:260px;border-top: 10px solid rgba(245,241,228,0.6)"></div><div class="chalk" style="top:900px;border-top: 10px dashed rgba(245,241,228,0.55)"></div><div class="mark" data-layout-ignore style="top:790px">22</div><div class="chalk" style="top:1500px;border-top: 10px solid rgba(245,241,228,0.6)"></div><div class="chalk" style="top:2100px;border-top: 10px dashed rgba(245,241,228,0.55)"></div><div class="mark" data-layout-ignore style="top:1990px">10</div><div class="chalk" style="top:2700px;border-top: 10px solid rgba(245,241,228,0.6)"></div><div class="chalk" style="top:3300px;border-top: 10px dashed rgba(245,241,228,0.55)"></div><div class="mark" data-layout-ignore style="top:3190px">22</div>
+    </div>
+    <div class="abs vignette" style="inset:0"></div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+
+      // camera drifts down the field, one move per scene seam
+      const seams = [6.2, 15.6, 24.45, 31.45, 43.05, 48.5, 57.5];
+      tl.fromTo("#pitch-field", { y: 0 }, { y: -40, duration: 0.01 }, 0);
+      seams.forEach((t, i) => {
+        tl.to("#pitch-field", { y: -40 - (i + 1) * 230, duration: 0.6, ease: "power2.inOut" }, t - 0.25);
+      });
+      tl.fromTo("#pitch-field", { rotation: -1.5 }, { rotation: 1.5, duration: 66.5, ease: "none" }, 0);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["pitch"] = tl;
+    })();
+  </script>
+</template>

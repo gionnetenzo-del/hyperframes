@@ -1,0 +1,593 @@
+<template id="build-template">
+  <style>
+    #root {
+
+      --ground: #0d3a2b;
+      --grass-a: #0f4431;
+      --grass-b: #124d38;
+      --chalk: #f5f1e4;
+      --gold: #ffcf1f;
+      --heart: #ff2d55;
+      --ink: #0a1f18;
+      --navy: #13284a;
+    }
+
+      #root { position: absolute; inset: 0; overflow: hidden; font-family: "Montserrat", sans-serif; color: var(--chalk); }
+      .cam { position: absolute; inset: 0; }
+      .abs { position: absolute; }
+      .row { position: absolute; left: 0; width: 100%; text-align: center; }
+      .disp { font-family: "League Gothic", sans-serif; text-transform: uppercase; line-height: 0.9; letter-spacing: 0.01em; }
+      .gold { color: var(--gold); }
+      .heart { color: var(--heart); }
+      .chip { display: inline-block; font-family: "Montserrat", sans-serif; font-weight: 900; font-size: 40px; letter-spacing: 0.08em;
+              padding: 14px 30px; border-radius: 999px; background: var(--gold); color: var(--ink); text-transform: uppercase; }
+      .card { background: #f7f4ea; color: var(--ink); border-radius: 36px; box-shadow: 0 18px 0 rgba(0,0,0,0.25); }
+      .w { display: inline-block; }
+
+
+      .sub { font-size: 112px; }
+      .item svg { transform: scale(1.35); margin: 30px 0 40px; }
+      .item { position: absolute; top: 0; width: 280px; display: flex; flex-direction: column; align-items: center; }
+      .ilabel { font-family: "League Gothic"; font-size: 84px; margin-top: 10px; }
+
+  </style>
+  <div id="root" data-composition-id="build" data-start="0" data-duration="5.45" data-width="1080" data-height="1920">
+    <div id="build-cam" class="cam">
+      <div id="build-t" class="row disp" style="top:220px"><div class="sub">AVEC ÇA…</div></div>
+      <div id="build-items" class="abs" style="left:0;top:470px;width:1080px;height:420px">
+        <div id="build-i0" class="item" style="left:70px"><svg viewBox="0 0 200 200" width="200" height="200"><path d="M60 30 L20 60 L40 100 L58 90 L58 180 L142 180 L142 90 L160 100 L180 60 L140 30 Q100 54 60 30z" fill="#0f4431" stroke="#0a1f18" stroke-width="6" stroke-linejoin="round"/><rect x="58" y="100" width="84" height="18" fill="#ffcf1f"/><rect x="58" y="138" width="84" height="18" fill="#ffcf1f"/><text x="100" y="90" font-family="League Gothic" font-size="44" text-anchor="middle" fill="#ffcf1f">9</text></svg><div class="ilabel">MAILLOTS</div></div>
+        <div id="build-i1" class="item" style="left:400px"><svg viewBox="0 0 120 80" width="170" height="113"><ellipse cx="60" cy="40" rx="54" ry="34" fill="#f7f4ea" stroke="#0a1f18" stroke-width="5"/><path d="M14 46 Q60 6 106 34" stroke="#0f4431" stroke-width="8" fill="none"/><path d="M48 30 l6 8 M58 26 l6 8 M68 24 l6 8" stroke="#0a1f18" stroke-width="3.5" stroke-linecap="round"/></svg><div class="ilabel" style="margin-top:44px">BALLONS</div></div>
+        <div id="build-i2" class="item" style="left:730px"><svg viewBox="0 0 200 200" width="200" height="200"><path d="M50 10 V196 M150 10 V196 M50 110 H150" stroke="#f5f1e4" stroke-width="16" stroke-linecap="round"/><rect x="38" y="150" width="24" height="46" fill="#ff2d55"/><rect x="138" y="150" width="24" height="46" fill="#ff2d55"/></svg><div class="ilabel">POTEAUX</div></div>
+      </div>
+      <div id="build-posts" class="abs" style="left:240px;top:520px"><div style="transform:scale(1,0.86);transform-origin:50% 100%"><svg viewBox="0 0 600 700" width="600" height="700"><path d="M120 0 V700 M480 0 V700 M120 420 H480" stroke="#f5f1e4" stroke-width="26" stroke-linecap="round"/><rect x="100" y="560" width="40" height="140" fill="#ff2d55"/><rect x="460" y="560" width="40" height="140" fill="#ff2d55"/></svg></div></div>
+      <div id="build-pl0" class="abs crowd" style="left:60px;top:900px"><svg id="bp0-svg" class="max" viewBox="0 0 300 520" width="150" height="260" overflow="visible">
+    <defs>
+      <clipPath id="bp0-torsoclip"><path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z"/></clipPath>
+    </defs>
+    <g id="bp0-body">
+      <ellipse cx="150" cy="504" rx="96" ry="12" fill="#000" opacity="0.28"/>
+      <!-- legs -->
+      <rect x="110" y="372" width="30" height="104" rx="13" fill="#e9b48c"/>
+      <rect x="160" y="372" width="30" height="104" rx="13" fill="#e9b48c"/>
+      <rect x="108" y="420" width="34" height="52" rx="8" fill="#0f4431"/>
+      <rect x="158" y="420" width="34" height="52" rx="8" fill="#0f4431"/>
+      <rect x="108" y="432" width="34" height="9" fill="#ffcf1f"/>
+      <rect x="158" y="432" width="34" height="9" fill="#ffcf1f"/>
+      <path d="M100 470 h44 q8 0 8 10 v10 h-58 q-4-20 6-20z" fill="#111"/>
+      <path d="M156 470 h44 q10 0 6 20 h-58 v-10 q0-10 8-10z" fill="#111"/>
+      <!-- shorts -->
+      <path d="M94 326 h112 l6 62 h-56 l-6-22 l-6 22 h-56z" fill="#f5f1e4" stroke="#0a1f18" stroke-width="4"/>
+      <!-- torso -->
+      <path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z" fill="#0f4431"/>
+      <g clip-path="url(#bp0-torsoclip)">
+        <rect x="60" y="212" width="180" height="26" fill="#ffcf1f"/>
+        <rect x="60" y="262" width="180" height="26" fill="#ffcf1f"/>
+        <rect x="60" y="312" width="180" height="26" fill="#ffcf1f"/>
+      </g>
+      <path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z" fill="none" stroke="#0a1f18" stroke-width="4"/>
+      <path d="M128 182 L150 210 L172 182" fill="#f5f1e4" stroke="#0a1f18" stroke-width="4" stroke-linejoin="round"/>
+      <!-- arms (pivot at shoulders) -->
+      <g id="bp0-armL">
+        <line x1="92" y1="200" x2="92" y2="318" stroke="#e9b48c" stroke-width="28" stroke-linecap="round"/>
+        <line x1="92" y1="198" x2="92" y2="236" stroke="#0f4431" stroke-width="34" stroke-linecap="round"/>
+        <line x1="92" y1="226" x2="92" y2="234" stroke="#ffcf1f" stroke-width="34"/>
+        <circle cx="92" cy="326" r="19" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+      </g>
+      <g id="bp0-armR">
+        <line x1="208" y1="200" x2="208" y2="318" stroke="#e9b48c" stroke-width="28" stroke-linecap="round"/>
+        <line x1="208" y1="198" x2="208" y2="236" stroke="#0f4431" stroke-width="34" stroke-linecap="round"/>
+        <line x1="208" y1="226" x2="208" y2="234" stroke="#ffcf1f" stroke-width="34"/>
+        <circle cx="208" cy="326" r="19" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+      </g>
+      
+      <!-- head -->
+      <g id="bp0-head">
+        <rect x="136" y="150" width="28" height="34" fill="#d9a07a"/>
+        <circle cx="87" cy="112" r="14" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+        <circle cx="213" cy="112" r="14" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+        <circle cx="150" cy="104" r="64" fill="#f0c19c" stroke="#0a1f18" stroke-width="4"/>
+        <path d="M88 96 Q86 36 150 34 Q218 34 212 98 Q196 66 168 70 Q150 52 128 70 Q104 66 88 96z" fill="#4a2a17" stroke="#0a1f18" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M88 84 Q150 58 212 84 L212 96 Q150 72 88 96z" fill="#ffcf1f" stroke="#0a1f18" stroke-width="3"/>
+        <ellipse id="bp0-eyeL" cx="127" cy="110" rx="8" ry="11" fill="#0a1f18"/>
+        <ellipse id="bp0-eyeR" cx="173" cy="110" rx="8" ry="11" fill="#0a1f18"/>
+        <circle cx="130" cy="106" r="3" fill="#fff"/>
+        <circle cx="176" cy="106" r="3" fill="#fff"/>
+        <path id="bp0-browL" d="M114 92 Q127 86 139 92" stroke="#3a1f10" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path id="bp0-browR" d="M161 92 Q173 86 186 92" stroke="#3a1f10" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <ellipse cx="112" cy="132" rx="11" ry="6" fill="#ff8f8f" opacity="0.45"/>
+        <ellipse cx="188" cy="132" rx="11" ry="6" fill="#ff8f8f" opacity="0.45"/>
+        <path d="M128 138 Q150 158 172 138" stroke="#0a1f18" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <g id="bp0-mOpen" opacity="0">
+          <path d="M126 134 Q150 134 174 134 Q172 166 150 168 Q128 166 126 134z" fill="#5a1414" stroke="#0a1f18" stroke-width="4"/>
+          <ellipse cx="150" cy="158" rx="12" ry="6" fill="#e05a6a"/>
+        </g>
+        <g id="bp0-mO" opacity="0">
+          <ellipse cx="150" cy="148" rx="16" ry="20" fill="#5a1414" stroke="#0a1f18" stroke-width="4"/>
+        </g>
+      </g>
+    </g>
+  </svg></div><div id="build-pl1" class="abs crowd" style="left:190px;top:930px"><svg id="bp1-svg" class="max" viewBox="0 0 300 520" width="150" height="260" overflow="visible">
+    <defs>
+      <clipPath id="bp1-torsoclip"><path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z"/></clipPath>
+    </defs>
+    <g id="bp1-body">
+      <ellipse cx="150" cy="504" rx="96" ry="12" fill="#000" opacity="0.28"/>
+      <!-- legs -->
+      <rect x="110" y="372" width="30" height="104" rx="13" fill="#e9b48c"/>
+      <rect x="160" y="372" width="30" height="104" rx="13" fill="#e9b48c"/>
+      <rect x="108" y="420" width="34" height="52" rx="8" fill="#0f4431"/>
+      <rect x="158" y="420" width="34" height="52" rx="8" fill="#0f4431"/>
+      <rect x="108" y="432" width="34" height="9" fill="#ffcf1f"/>
+      <rect x="158" y="432" width="34" height="9" fill="#ffcf1f"/>
+      <path d="M100 470 h44 q8 0 8 10 v10 h-58 q-4-20 6-20z" fill="#111"/>
+      <path d="M156 470 h44 q10 0 6 20 h-58 v-10 q0-10 8-10z" fill="#111"/>
+      <!-- shorts -->
+      <path d="M94 326 h112 l6 62 h-56 l-6-22 l-6 22 h-56z" fill="#f5f1e4" stroke="#0a1f18" stroke-width="4"/>
+      <!-- torso -->
+      <path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z" fill="#0f4431"/>
+      <g clip-path="url(#bp1-torsoclip)">
+        <rect x="60" y="212" width="180" height="26" fill="#ffcf1f"/>
+        <rect x="60" y="262" width="180" height="26" fill="#ffcf1f"/>
+        <rect x="60" y="312" width="180" height="26" fill="#ffcf1f"/>
+      </g>
+      <path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z" fill="none" stroke="#0a1f18" stroke-width="4"/>
+      <path d="M128 182 L150 210 L172 182" fill="#f5f1e4" stroke="#0a1f18" stroke-width="4" stroke-linejoin="round"/>
+      <!-- arms (pivot at shoulders) -->
+      <g id="bp1-armL">
+        <line x1="92" y1="200" x2="92" y2="318" stroke="#e9b48c" stroke-width="28" stroke-linecap="round"/>
+        <line x1="92" y1="198" x2="92" y2="236" stroke="#0f4431" stroke-width="34" stroke-linecap="round"/>
+        <line x1="92" y1="226" x2="92" y2="234" stroke="#ffcf1f" stroke-width="34"/>
+        <circle cx="92" cy="326" r="19" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+      </g>
+      <g id="bp1-armR">
+        <line x1="208" y1="200" x2="208" y2="318" stroke="#e9b48c" stroke-width="28" stroke-linecap="round"/>
+        <line x1="208" y1="198" x2="208" y2="236" stroke="#0f4431" stroke-width="34" stroke-linecap="round"/>
+        <line x1="208" y1="226" x2="208" y2="234" stroke="#ffcf1f" stroke-width="34"/>
+        <circle cx="208" cy="326" r="19" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+      </g>
+      
+      <!-- head -->
+      <g id="bp1-head">
+        <rect x="136" y="150" width="28" height="34" fill="#d9a07a"/>
+        <circle cx="87" cy="112" r="14" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+        <circle cx="213" cy="112" r="14" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+        <circle cx="150" cy="104" r="64" fill="#f0c19c" stroke="#0a1f18" stroke-width="4"/>
+        <path d="M88 96 Q86 36 150 34 Q218 34 212 98 Q196 66 168 70 Q150 52 128 70 Q104 66 88 96z" fill="#4a2a17" stroke="#0a1f18" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M88 84 Q150 58 212 84 L212 96 Q150 72 88 96z" fill="#ffcf1f" stroke="#0a1f18" stroke-width="3"/>
+        <ellipse id="bp1-eyeL" cx="127" cy="110" rx="8" ry="11" fill="#0a1f18"/>
+        <ellipse id="bp1-eyeR" cx="173" cy="110" rx="8" ry="11" fill="#0a1f18"/>
+        <circle cx="130" cy="106" r="3" fill="#fff"/>
+        <circle cx="176" cy="106" r="3" fill="#fff"/>
+        <path id="bp1-browL" d="M114 92 Q127 86 139 92" stroke="#3a1f10" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path id="bp1-browR" d="M161 92 Q173 86 186 92" stroke="#3a1f10" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <ellipse cx="112" cy="132" rx="11" ry="6" fill="#ff8f8f" opacity="0.45"/>
+        <ellipse cx="188" cy="132" rx="11" ry="6" fill="#ff8f8f" opacity="0.45"/>
+        <path d="M128 138 Q150 158 172 138" stroke="#0a1f18" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <g id="bp1-mOpen" opacity="0">
+          <path d="M126 134 Q150 134 174 134 Q172 166 150 168 Q128 166 126 134z" fill="#5a1414" stroke="#0a1f18" stroke-width="4"/>
+          <ellipse cx="150" cy="158" rx="12" ry="6" fill="#e05a6a"/>
+        </g>
+        <g id="bp1-mO" opacity="0">
+          <ellipse cx="150" cy="148" rx="16" ry="20" fill="#5a1414" stroke="#0a1f18" stroke-width="4"/>
+        </g>
+      </g>
+    </g>
+  </svg></div><div id="build-pl2" class="abs crowd" style="left:820px;top:900px"><svg id="bp2-svg" class="max" viewBox="0 0 300 520" width="150" height="260" overflow="visible">
+    <defs>
+      <clipPath id="bp2-torsoclip"><path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z"/></clipPath>
+    </defs>
+    <g id="bp2-body">
+      <ellipse cx="150" cy="504" rx="96" ry="12" fill="#000" opacity="0.28"/>
+      <!-- legs -->
+      <rect x="110" y="372" width="30" height="104" rx="13" fill="#e9b48c"/>
+      <rect x="160" y="372" width="30" height="104" rx="13" fill="#e9b48c"/>
+      <rect x="108" y="420" width="34" height="52" rx="8" fill="#0f4431"/>
+      <rect x="158" y="420" width="34" height="52" rx="8" fill="#0f4431"/>
+      <rect x="108" y="432" width="34" height="9" fill="#ffcf1f"/>
+      <rect x="158" y="432" width="34" height="9" fill="#ffcf1f"/>
+      <path d="M100 470 h44 q8 0 8 10 v10 h-58 q-4-20 6-20z" fill="#111"/>
+      <path d="M156 470 h44 q10 0 6 20 h-58 v-10 q0-10 8-10z" fill="#111"/>
+      <!-- shorts -->
+      <path d="M94 326 h112 l6 62 h-56 l-6-22 l-6 22 h-56z" fill="#f5f1e4" stroke="#0a1f18" stroke-width="4"/>
+      <!-- torso -->
+      <path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z" fill="#0f4431"/>
+      <g clip-path="url(#bp2-torsoclip)">
+        <rect x="60" y="212" width="180" height="26" fill="#ffcf1f"/>
+        <rect x="60" y="262" width="180" height="26" fill="#ffcf1f"/>
+        <rect x="60" y="312" width="180" height="26" fill="#ffcf1f"/>
+      </g>
+      <path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z" fill="none" stroke="#0a1f18" stroke-width="4"/>
+      <path d="M128 182 L150 210 L172 182" fill="#f5f1e4" stroke="#0a1f18" stroke-width="4" stroke-linejoin="round"/>
+      <!-- arms (pivot at shoulders) -->
+      <g id="bp2-armL">
+        <line x1="92" y1="200" x2="92" y2="318" stroke="#e9b48c" stroke-width="28" stroke-linecap="round"/>
+        <line x1="92" y1="198" x2="92" y2="236" stroke="#0f4431" stroke-width="34" stroke-linecap="round"/>
+        <line x1="92" y1="226" x2="92" y2="234" stroke="#ffcf1f" stroke-width="34"/>
+        <circle cx="92" cy="326" r="19" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+      </g>
+      <g id="bp2-armR">
+        <line x1="208" y1="200" x2="208" y2="318" stroke="#e9b48c" stroke-width="28" stroke-linecap="round"/>
+        <line x1="208" y1="198" x2="208" y2="236" stroke="#0f4431" stroke-width="34" stroke-linecap="round"/>
+        <line x1="208" y1="226" x2="208" y2="234" stroke="#ffcf1f" stroke-width="34"/>
+        <circle cx="208" cy="326" r="19" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+      </g>
+      
+      <!-- head -->
+      <g id="bp2-head">
+        <rect x="136" y="150" width="28" height="34" fill="#d9a07a"/>
+        <circle cx="87" cy="112" r="14" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+        <circle cx="213" cy="112" r="14" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+        <circle cx="150" cy="104" r="64" fill="#f0c19c" stroke="#0a1f18" stroke-width="4"/>
+        <path d="M88 96 Q86 36 150 34 Q218 34 212 98 Q196 66 168 70 Q150 52 128 70 Q104 66 88 96z" fill="#4a2a17" stroke="#0a1f18" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M88 84 Q150 58 212 84 L212 96 Q150 72 88 96z" fill="#ffcf1f" stroke="#0a1f18" stroke-width="3"/>
+        <ellipse id="bp2-eyeL" cx="127" cy="110" rx="8" ry="11" fill="#0a1f18"/>
+        <ellipse id="bp2-eyeR" cx="173" cy="110" rx="8" ry="11" fill="#0a1f18"/>
+        <circle cx="130" cy="106" r="3" fill="#fff"/>
+        <circle cx="176" cy="106" r="3" fill="#fff"/>
+        <path id="bp2-browL" d="M114 92 Q127 86 139 92" stroke="#3a1f10" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path id="bp2-browR" d="M161 92 Q173 86 186 92" stroke="#3a1f10" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <ellipse cx="112" cy="132" rx="11" ry="6" fill="#ff8f8f" opacity="0.45"/>
+        <ellipse cx="188" cy="132" rx="11" ry="6" fill="#ff8f8f" opacity="0.45"/>
+        <path d="M128 138 Q150 158 172 138" stroke="#0a1f18" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <g id="bp2-mOpen" opacity="0">
+          <path d="M126 134 Q150 134 174 134 Q172 166 150 168 Q128 166 126 134z" fill="#5a1414" stroke="#0a1f18" stroke-width="4"/>
+          <ellipse cx="150" cy="158" rx="12" ry="6" fill="#e05a6a"/>
+        </g>
+        <g id="bp2-mO" opacity="0">
+          <ellipse cx="150" cy="148" rx="16" ry="20" fill="#5a1414" stroke="#0a1f18" stroke-width="4"/>
+        </g>
+      </g>
+    </g>
+  </svg></div><div id="build-pl3" class="abs crowd" style="left:940px;top:930px"><svg id="bp3-svg" class="max" viewBox="0 0 300 520" width="150" height="260" overflow="visible">
+    <defs>
+      <clipPath id="bp3-torsoclip"><path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z"/></clipPath>
+    </defs>
+    <g id="bp3-body">
+      <ellipse cx="150" cy="504" rx="96" ry="12" fill="#000" opacity="0.28"/>
+      <!-- legs -->
+      <rect x="110" y="372" width="30" height="104" rx="13" fill="#e9b48c"/>
+      <rect x="160" y="372" width="30" height="104" rx="13" fill="#e9b48c"/>
+      <rect x="108" y="420" width="34" height="52" rx="8" fill="#0f4431"/>
+      <rect x="158" y="420" width="34" height="52" rx="8" fill="#0f4431"/>
+      <rect x="108" y="432" width="34" height="9" fill="#ffcf1f"/>
+      <rect x="158" y="432" width="34" height="9" fill="#ffcf1f"/>
+      <path d="M100 470 h44 q8 0 8 10 v10 h-58 q-4-20 6-20z" fill="#111"/>
+      <path d="M156 470 h44 q10 0 6 20 h-58 v-10 q0-10 8-10z" fill="#111"/>
+      <!-- shorts -->
+      <path d="M94 326 h112 l6 62 h-56 l-6-22 l-6 22 h-56z" fill="#f5f1e4" stroke="#0a1f18" stroke-width="4"/>
+      <!-- torso -->
+      <path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z" fill="#0f4431"/>
+      <g clip-path="url(#bp3-torsoclip)">
+        <rect x="60" y="212" width="180" height="26" fill="#ffcf1f"/>
+        <rect x="60" y="262" width="180" height="26" fill="#ffcf1f"/>
+        <rect x="60" y="312" width="180" height="26" fill="#ffcf1f"/>
+      </g>
+      <path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z" fill="none" stroke="#0a1f18" stroke-width="4"/>
+      <path d="M128 182 L150 210 L172 182" fill="#f5f1e4" stroke="#0a1f18" stroke-width="4" stroke-linejoin="round"/>
+      <!-- arms (pivot at shoulders) -->
+      <g id="bp3-armL">
+        <line x1="92" y1="200" x2="92" y2="318" stroke="#e9b48c" stroke-width="28" stroke-linecap="round"/>
+        <line x1="92" y1="198" x2="92" y2="236" stroke="#0f4431" stroke-width="34" stroke-linecap="round"/>
+        <line x1="92" y1="226" x2="92" y2="234" stroke="#ffcf1f" stroke-width="34"/>
+        <circle cx="92" cy="326" r="19" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+      </g>
+      <g id="bp3-armR">
+        <line x1="208" y1="200" x2="208" y2="318" stroke="#e9b48c" stroke-width="28" stroke-linecap="round"/>
+        <line x1="208" y1="198" x2="208" y2="236" stroke="#0f4431" stroke-width="34" stroke-linecap="round"/>
+        <line x1="208" y1="226" x2="208" y2="234" stroke="#ffcf1f" stroke-width="34"/>
+        <circle cx="208" cy="326" r="19" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+      </g>
+      
+      <!-- head -->
+      <g id="bp3-head">
+        <rect x="136" y="150" width="28" height="34" fill="#d9a07a"/>
+        <circle cx="87" cy="112" r="14" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+        <circle cx="213" cy="112" r="14" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+        <circle cx="150" cy="104" r="64" fill="#f0c19c" stroke="#0a1f18" stroke-width="4"/>
+        <path d="M88 96 Q86 36 150 34 Q218 34 212 98 Q196 66 168 70 Q150 52 128 70 Q104 66 88 96z" fill="#4a2a17" stroke="#0a1f18" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M88 84 Q150 58 212 84 L212 96 Q150 72 88 96z" fill="#ffcf1f" stroke="#0a1f18" stroke-width="3"/>
+        <ellipse id="bp3-eyeL" cx="127" cy="110" rx="8" ry="11" fill="#0a1f18"/>
+        <ellipse id="bp3-eyeR" cx="173" cy="110" rx="8" ry="11" fill="#0a1f18"/>
+        <circle cx="130" cy="106" r="3" fill="#fff"/>
+        <circle cx="176" cy="106" r="3" fill="#fff"/>
+        <path id="bp3-browL" d="M114 92 Q127 86 139 92" stroke="#3a1f10" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path id="bp3-browR" d="M161 92 Q173 86 186 92" stroke="#3a1f10" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <ellipse cx="112" cy="132" rx="11" ry="6" fill="#ff8f8f" opacity="0.45"/>
+        <ellipse cx="188" cy="132" rx="11" ry="6" fill="#ff8f8f" opacity="0.45"/>
+        <path d="M128 138 Q150 158 172 138" stroke="#0a1f18" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <g id="bp3-mOpen" opacity="0">
+          <path d="M126 134 Q150 134 174 134 Q172 166 150 168 Q128 166 126 134z" fill="#5a1414" stroke="#0a1f18" stroke-width="4"/>
+          <ellipse cx="150" cy="158" rx="12" ry="6" fill="#e05a6a"/>
+        </g>
+        <g id="bp3-mO" opacity="0">
+          <ellipse cx="150" cy="148" rx="16" ry="20" fill="#5a1414" stroke="#0a1f18" stroke-width="4"/>
+        </g>
+      </g>
+    </g>
+  </svg></div><div id="build-pl4" class="abs crowd" style="left:300px;top:900px"><svg id="bp4-svg" class="max" viewBox="0 0 300 520" width="150" height="260" overflow="visible">
+    <defs>
+      <clipPath id="bp4-torsoclip"><path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z"/></clipPath>
+    </defs>
+    <g id="bp4-body">
+      <ellipse cx="150" cy="504" rx="96" ry="12" fill="#000" opacity="0.28"/>
+      <!-- legs -->
+      <rect x="110" y="372" width="30" height="104" rx="13" fill="#e9b48c"/>
+      <rect x="160" y="372" width="30" height="104" rx="13" fill="#e9b48c"/>
+      <rect x="108" y="420" width="34" height="52" rx="8" fill="#0f4431"/>
+      <rect x="158" y="420" width="34" height="52" rx="8" fill="#0f4431"/>
+      <rect x="108" y="432" width="34" height="9" fill="#ffcf1f"/>
+      <rect x="158" y="432" width="34" height="9" fill="#ffcf1f"/>
+      <path d="M100 470 h44 q8 0 8 10 v10 h-58 q-4-20 6-20z" fill="#111"/>
+      <path d="M156 470 h44 q10 0 6 20 h-58 v-10 q0-10 8-10z" fill="#111"/>
+      <!-- shorts -->
+      <path d="M94 326 h112 l6 62 h-56 l-6-22 l-6 22 h-56z" fill="#f5f1e4" stroke="#0a1f18" stroke-width="4"/>
+      <!-- torso -->
+      <path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z" fill="#0f4431"/>
+      <g clip-path="url(#bp4-torsoclip)">
+        <rect x="60" y="212" width="180" height="26" fill="#ffcf1f"/>
+        <rect x="60" y="262" width="180" height="26" fill="#ffcf1f"/>
+        <rect x="60" y="312" width="180" height="26" fill="#ffcf1f"/>
+      </g>
+      <path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z" fill="none" stroke="#0a1f18" stroke-width="4"/>
+      <path d="M128 182 L150 210 L172 182" fill="#f5f1e4" stroke="#0a1f18" stroke-width="4" stroke-linejoin="round"/>
+      <!-- arms (pivot at shoulders) -->
+      <g id="bp4-armL">
+        <line x1="92" y1="200" x2="92" y2="318" stroke="#e9b48c" stroke-width="28" stroke-linecap="round"/>
+        <line x1="92" y1="198" x2="92" y2="236" stroke="#0f4431" stroke-width="34" stroke-linecap="round"/>
+        <line x1="92" y1="226" x2="92" y2="234" stroke="#ffcf1f" stroke-width="34"/>
+        <circle cx="92" cy="326" r="19" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+      </g>
+      <g id="bp4-armR">
+        <line x1="208" y1="200" x2="208" y2="318" stroke="#e9b48c" stroke-width="28" stroke-linecap="round"/>
+        <line x1="208" y1="198" x2="208" y2="236" stroke="#0f4431" stroke-width="34" stroke-linecap="round"/>
+        <line x1="208" y1="226" x2="208" y2="234" stroke="#ffcf1f" stroke-width="34"/>
+        <circle cx="208" cy="326" r="19" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+      </g>
+      
+      <!-- head -->
+      <g id="bp4-head">
+        <rect x="136" y="150" width="28" height="34" fill="#d9a07a"/>
+        <circle cx="87" cy="112" r="14" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+        <circle cx="213" cy="112" r="14" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+        <circle cx="150" cy="104" r="64" fill="#f0c19c" stroke="#0a1f18" stroke-width="4"/>
+        <path d="M88 96 Q86 36 150 34 Q218 34 212 98 Q196 66 168 70 Q150 52 128 70 Q104 66 88 96z" fill="#4a2a17" stroke="#0a1f18" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M88 84 Q150 58 212 84 L212 96 Q150 72 88 96z" fill="#ffcf1f" stroke="#0a1f18" stroke-width="3"/>
+        <ellipse id="bp4-eyeL" cx="127" cy="110" rx="8" ry="11" fill="#0a1f18"/>
+        <ellipse id="bp4-eyeR" cx="173" cy="110" rx="8" ry="11" fill="#0a1f18"/>
+        <circle cx="130" cy="106" r="3" fill="#fff"/>
+        <circle cx="176" cy="106" r="3" fill="#fff"/>
+        <path id="bp4-browL" d="M114 92 Q127 86 139 92" stroke="#3a1f10" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path id="bp4-browR" d="M161 92 Q173 86 186 92" stroke="#3a1f10" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <ellipse cx="112" cy="132" rx="11" ry="6" fill="#ff8f8f" opacity="0.45"/>
+        <ellipse cx="188" cy="132" rx="11" ry="6" fill="#ff8f8f" opacity="0.45"/>
+        <path d="M128 138 Q150 158 172 138" stroke="#0a1f18" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <g id="bp4-mOpen" opacity="0">
+          <path d="M126 134 Q150 134 174 134 Q172 166 150 168 Q128 166 126 134z" fill="#5a1414" stroke="#0a1f18" stroke-width="4"/>
+          <ellipse cx="150" cy="158" rx="12" ry="6" fill="#e05a6a"/>
+        </g>
+        <g id="bp4-mO" opacity="0">
+          <ellipse cx="150" cy="148" rx="16" ry="20" fill="#5a1414" stroke="#0a1f18" stroke-width="4"/>
+        </g>
+      </g>
+    </g>
+  </svg></div><div id="build-pl5" class="abs crowd" style="left:700px;top:930px"><svg id="bp5-svg" class="max" viewBox="0 0 300 520" width="150" height="260" overflow="visible">
+    <defs>
+      <clipPath id="bp5-torsoclip"><path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z"/></clipPath>
+    </defs>
+    <g id="bp5-body">
+      <ellipse cx="150" cy="504" rx="96" ry="12" fill="#000" opacity="0.28"/>
+      <!-- legs -->
+      <rect x="110" y="372" width="30" height="104" rx="13" fill="#e9b48c"/>
+      <rect x="160" y="372" width="30" height="104" rx="13" fill="#e9b48c"/>
+      <rect x="108" y="420" width="34" height="52" rx="8" fill="#0f4431"/>
+      <rect x="158" y="420" width="34" height="52" rx="8" fill="#0f4431"/>
+      <rect x="108" y="432" width="34" height="9" fill="#ffcf1f"/>
+      <rect x="158" y="432" width="34" height="9" fill="#ffcf1f"/>
+      <path d="M100 470 h44 q8 0 8 10 v10 h-58 q-4-20 6-20z" fill="#111"/>
+      <path d="M156 470 h44 q10 0 6 20 h-58 v-10 q0-10 8-10z" fill="#111"/>
+      <!-- shorts -->
+      <path d="M94 326 h112 l6 62 h-56 l-6-22 l-6 22 h-56z" fill="#f5f1e4" stroke="#0a1f18" stroke-width="4"/>
+      <!-- torso -->
+      <path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z" fill="#0f4431"/>
+      <g clip-path="url(#bp5-torsoclip)">
+        <rect x="60" y="212" width="180" height="26" fill="#ffcf1f"/>
+        <rect x="60" y="262" width="180" height="26" fill="#ffcf1f"/>
+        <rect x="60" y="312" width="180" height="26" fill="#ffcf1f"/>
+      </g>
+      <path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z" fill="none" stroke="#0a1f18" stroke-width="4"/>
+      <path d="M128 182 L150 210 L172 182" fill="#f5f1e4" stroke="#0a1f18" stroke-width="4" stroke-linejoin="round"/>
+      <!-- arms (pivot at shoulders) -->
+      <g id="bp5-armL">
+        <line x1="92" y1="200" x2="92" y2="318" stroke="#e9b48c" stroke-width="28" stroke-linecap="round"/>
+        <line x1="92" y1="198" x2="92" y2="236" stroke="#0f4431" stroke-width="34" stroke-linecap="round"/>
+        <line x1="92" y1="226" x2="92" y2="234" stroke="#ffcf1f" stroke-width="34"/>
+        <circle cx="92" cy="326" r="19" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+      </g>
+      <g id="bp5-armR">
+        <line x1="208" y1="200" x2="208" y2="318" stroke="#e9b48c" stroke-width="28" stroke-linecap="round"/>
+        <line x1="208" y1="198" x2="208" y2="236" stroke="#0f4431" stroke-width="34" stroke-linecap="round"/>
+        <line x1="208" y1="226" x2="208" y2="234" stroke="#ffcf1f" stroke-width="34"/>
+        <circle cx="208" cy="326" r="19" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+      </g>
+      
+      <!-- head -->
+      <g id="bp5-head">
+        <rect x="136" y="150" width="28" height="34" fill="#d9a07a"/>
+        <circle cx="87" cy="112" r="14" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+        <circle cx="213" cy="112" r="14" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+        <circle cx="150" cy="104" r="64" fill="#f0c19c" stroke="#0a1f18" stroke-width="4"/>
+        <path d="M88 96 Q86 36 150 34 Q218 34 212 98 Q196 66 168 70 Q150 52 128 70 Q104 66 88 96z" fill="#4a2a17" stroke="#0a1f18" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M88 84 Q150 58 212 84 L212 96 Q150 72 88 96z" fill="#ffcf1f" stroke="#0a1f18" stroke-width="3"/>
+        <ellipse id="bp5-eyeL" cx="127" cy="110" rx="8" ry="11" fill="#0a1f18"/>
+        <ellipse id="bp5-eyeR" cx="173" cy="110" rx="8" ry="11" fill="#0a1f18"/>
+        <circle cx="130" cy="106" r="3" fill="#fff"/>
+        <circle cx="176" cy="106" r="3" fill="#fff"/>
+        <path id="bp5-browL" d="M114 92 Q127 86 139 92" stroke="#3a1f10" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path id="bp5-browR" d="M161 92 Q173 86 186 92" stroke="#3a1f10" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <ellipse cx="112" cy="132" rx="11" ry="6" fill="#ff8f8f" opacity="0.45"/>
+        <ellipse cx="188" cy="132" rx="11" ry="6" fill="#ff8f8f" opacity="0.45"/>
+        <path d="M128 138 Q150 158 172 138" stroke="#0a1f18" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <g id="bp5-mOpen" opacity="0">
+          <path d="M126 134 Q150 134 174 134 Q172 166 150 168 Q128 166 126 134z" fill="#5a1414" stroke="#0a1f18" stroke-width="4"/>
+          <ellipse cx="150" cy="158" rx="12" ry="6" fill="#e05a6a"/>
+        </g>
+        <g id="bp5-mO" opacity="0">
+          <ellipse cx="150" cy="148" rx="16" ry="20" fill="#5a1414" stroke="#0a1f18" stroke-width="4"/>
+        </g>
+      </g>
+    </g>
+  </svg></div>
+      <div id="build-maxwrap" class="abs" style="left:390px;top:810px"><svg id="bm-svg" class="max" viewBox="0 0 300 520" width="300" height="520" overflow="visible">
+    <defs>
+      <clipPath id="bm-torsoclip"><path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z"/></clipPath>
+    </defs>
+    <g id="bm-body">
+      <ellipse cx="150" cy="504" rx="96" ry="12" fill="#000" opacity="0.28"/>
+      <!-- legs -->
+      <rect x="110" y="372" width="30" height="104" rx="13" fill="#e9b48c"/>
+      <rect x="160" y="372" width="30" height="104" rx="13" fill="#e9b48c"/>
+      <rect x="108" y="420" width="34" height="52" rx="8" fill="#0f4431"/>
+      <rect x="158" y="420" width="34" height="52" rx="8" fill="#0f4431"/>
+      <rect x="108" y="432" width="34" height="9" fill="#ffcf1f"/>
+      <rect x="158" y="432" width="34" height="9" fill="#ffcf1f"/>
+      <path d="M100 470 h44 q8 0 8 10 v10 h-58 q-4-20 6-20z" fill="#111"/>
+      <path d="M156 470 h44 q10 0 6 20 h-58 v-10 q0-10 8-10z" fill="#111"/>
+      <!-- shorts -->
+      <path d="M94 326 h112 l6 62 h-56 l-6-22 l-6 22 h-56z" fill="#f5f1e4" stroke="#0a1f18" stroke-width="4"/>
+      <!-- torso -->
+      <path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z" fill="#0f4431"/>
+      <g clip-path="url(#bm-torsoclip)">
+        <rect x="60" y="212" width="180" height="26" fill="#ffcf1f"/>
+        <rect x="60" y="262" width="180" height="26" fill="#ffcf1f"/>
+        <rect x="60" y="312" width="180" height="26" fill="#ffcf1f"/>
+      </g>
+      <path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z" fill="none" stroke="#0a1f18" stroke-width="4"/>
+      <path d="M128 182 L150 210 L172 182" fill="#f5f1e4" stroke="#0a1f18" stroke-width="4" stroke-linejoin="round"/>
+      <!-- arms (pivot at shoulders) -->
+      <g id="bm-armL">
+        <line x1="92" y1="200" x2="92" y2="318" stroke="#e9b48c" stroke-width="28" stroke-linecap="round"/>
+        <line x1="92" y1="198" x2="92" y2="236" stroke="#0f4431" stroke-width="34" stroke-linecap="round"/>
+        <line x1="92" y1="226" x2="92" y2="234" stroke="#ffcf1f" stroke-width="34"/>
+        <circle cx="92" cy="326" r="19" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+      </g>
+      <g id="bm-armR">
+        <line x1="208" y1="200" x2="208" y2="318" stroke="#e9b48c" stroke-width="28" stroke-linecap="round"/>
+        <line x1="208" y1="198" x2="208" y2="236" stroke="#0f4431" stroke-width="34" stroke-linecap="round"/>
+        <line x1="208" y1="226" x2="208" y2="234" stroke="#ffcf1f" stroke-width="34"/>
+        <circle cx="208" cy="326" r="19" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+      </g>
+      
+      <g id="bm-ball">
+        <ellipse cx="232" cy="318" rx="44" ry="27" fill="#f7f4ea" stroke="#0a1f18" stroke-width="5" transform="rotate(-28 232 318)"/>
+        <path d="M200 334 Q232 300 264 302" stroke="#0f4431" stroke-width="7" fill="none" stroke-linecap="round"/>
+        <path d="M220 312 l8 8 M230 307 l8 8 M240 304 l8 8" stroke="#0a1f18" stroke-width="3.5" stroke-linecap="round"/>
+      </g>
+      <!-- head -->
+      <g id="bm-head">
+        <rect x="136" y="150" width="28" height="34" fill="#d9a07a"/>
+        <circle cx="87" cy="112" r="14" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+        <circle cx="213" cy="112" r="14" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+        <circle cx="150" cy="104" r="64" fill="#f0c19c" stroke="#0a1f18" stroke-width="4"/>
+        <path d="M88 96 Q86 36 150 34 Q218 34 212 98 Q196 66 168 70 Q150 52 128 70 Q104 66 88 96z" fill="#4a2a17" stroke="#0a1f18" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M88 84 Q150 58 212 84 L212 96 Q150 72 88 96z" fill="#ffcf1f" stroke="#0a1f18" stroke-width="3"/>
+        <ellipse id="bm-eyeL" cx="127" cy="110" rx="8" ry="11" fill="#0a1f18"/>
+        <ellipse id="bm-eyeR" cx="173" cy="110" rx="8" ry="11" fill="#0a1f18"/>
+        <circle cx="130" cy="106" r="3" fill="#fff"/>
+        <circle cx="176" cy="106" r="3" fill="#fff"/>
+        <path id="bm-browL" d="M114 92 Q127 86 139 92" stroke="#3a1f10" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path id="bm-browR" d="M161 92 Q173 86 186 92" stroke="#3a1f10" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <ellipse cx="112" cy="132" rx="11" ry="6" fill="#ff8f8f" opacity="0.45"/>
+        <ellipse cx="188" cy="132" rx="11" ry="6" fill="#ff8f8f" opacity="0.45"/>
+        <path d="M128 138 Q150 158 172 138" stroke="#0a1f18" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <g id="bm-mOpen" opacity="0">
+          <path d="M126 134 Q150 134 174 134 Q172 166 150 168 Q128 166 126 134z" fill="#5a1414" stroke="#0a1f18" stroke-width="4"/>
+          <ellipse cx="150" cy="158" rx="12" ry="6" fill="#e05a6a"/>
+        </g>
+        <g id="bm-mO" opacity="0">
+          <ellipse cx="150" cy="148" rx="16" ry="20" fill="#5a1414" stroke="#0a1f18" stroke-width="4"/>
+        </g>
+      </g>
+    </g>
+  </svg></div>
+      <div id="build-all" class="row disp" style="top:220px"><div class="sub">TOUT LE CLUB</div><div class="sub gold">SE CONSTRUIT AVEC VOUS</div></div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+
+      // --- Max rig helpers (all on this scene's paused timeline) ---
+      const rig = (p) => ({
+        body: "#" + p + "-body", head: "#" + p + "-head", armL: "#" + p + "-armL", armR: "#" + p + "-armR",
+        eyes: ["#" + p + "-eyeL", "#" + p + "-eyeR"], mOpen: "#" + p + "-mOpen", mO: "#" + p + "-mO",
+        brows: ["#" + p + "-browL", "#" + p + "-browR"], ball: "#" + p + "-ball",
+      });
+      const blink = (r, t) => {
+        tl.to(r.eyes, { scaleY: 0.1, transformOrigin: "50% 50%", duration: 0.05, ease: "power1.in" }, t);
+        tl.to(r.eyes, { scaleY: 1, transformOrigin: "50% 50%", duration: 0.08, ease: "power1.out" }, t + 0.06);
+      };
+      const talk = (r, starts) => {
+        starts.forEach((s) => {
+          tl.set(r.mOpen, { opacity: 1 }, s);
+          tl.set(r.mOpen, { opacity: 0 }, s + 0.13);
+        });
+      };
+      const arm = (sel, side, rot, t, d = 0.35, ease = "back.out(1.6)") => {
+        const o = side === "L" ? "92 200" : "208 200";
+        tl.to(sel, { rotation: rot, svgOrigin: o, duration: d, ease }, t);
+      };
+      const hop = (r, t, lift = 60) => {
+        // anticipation squash, jump, land squash, settle
+        tl.to(r.body, { scaleY: 0.9, scaleX: 1.06, svgOrigin: "150 500", duration: 0.12, ease: "power2.in" }, t);
+        tl.to(r.body, { scaleY: 1.06, scaleX: 0.96, y: -lift, svgOrigin: "150 500", duration: 0.22, ease: "power2.out" }, t + 0.12);
+        tl.to(r.body, { scaleY: 0.92, scaleX: 1.05, y: 0, svgOrigin: "150 500", duration: 0.18, ease: "power2.in" }, t + 0.34);
+        tl.to(r.body, { scaleY: 1, scaleX: 1, svgOrigin: "150 500", duration: 0.3, ease: "elastic.out(1, 0.5)" }, t + 0.52);
+      };
+      const breathe = (r, t0, t1) => {
+        for (let t = t0; t < t1 - 1.2; t += 1.6) {
+          tl.to(r.body, { scaleY: 1.012, svgOrigin: "150 500", duration: 0.8, ease: "sine.inOut" }, t);
+          tl.to(r.body, { scaleY: 1, svgOrigin: "150 500", duration: 0.8, ease: "sine.inOut" }, t + 0.8);
+        }
+      };
+
+
+      const r = rig("bm");
+      gsap.set("#build-posts, #build-all, #build-maxwrap", { opacity: 0 });
+      gsap.set(".crowd", { y: 1300 });
+      tl.fromTo("#build-cam", { y: 500, filter: "blur(18px)" }, { y: 0, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 0);
+      tl.fromTo("#build-t .sub", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18 }, 0.12);
+      // items drop onto the pitch on each noun
+      [[0, 43.76], [1, 44.56], [2, 45.34]].forEach(([i, t]) => {
+        tl.fromTo("#build-i" + i, { y: -700, rotation: i === 1 ? -30 : 8 }, { y: 0, rotation: 0, duration: 0.42, ease: "bounce.out" }, t - 43.05 - 0.12);
+      });
+      // items gather into the real club: posts rise, Max with the ball, the team arrives
+      tl.to(["#build-t", "#build-items"], { opacity: 0, scale: 0.7, filter: "blur(10px)", duration: 0.25, ease: "power2.in" }, 2.8);
+      tl.set("#build-posts", { opacity: 1 }, 2.9);
+      tl.fromTo("#build-posts", { y: 900 }, { y: 0, duration: 0.5, ease: "expo.out" }, 2.9);
+      tl.set("#build-maxwrap", { opacity: 1 }, 2.95);
+      tl.fromTo("#build-maxwrap", { y: 900 }, { y: 0, duration: 0.45, ease: "back.out(1.3)" }, 2.95);
+      tl.set("#build-all", { opacity: 1 }, 2.95);
+      tl.fromTo("#build-all .sub", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, stagger: 0.5 }, 2.95);
+      
+      tl.fromTo("#build-pl0", { y: 1300 }, { y: 0, duration: 0.5, ease: "back.out(1.2)" }, 2.95 + 0.0);
+      { const q = rig("bp0"); arm(q.armL, "L", 150, 3.55 + 0.0, 0.3); arm(q.armR, "R", -140, 3.61 + 0.0, 0.3); hop(q, 4.15 + 0.0, 40); }
+      tl.fromTo("#build-pl1", { y: 1300 }, { y: 0, duration: 0.5, ease: "back.out(1.2)" }, 2.95 + 0.14);
+      { const q = rig("bp1"); arm(q.armL, "L", 130, 3.55 + 0.14, 0.3); arm(q.armR, "R", -160, 3.61 + 0.14, 0.3); hop(q, 4.15 + 0.11200000000000002, 55); }
+      tl.fromTo("#build-pl2", { y: 1300 }, { y: 0, duration: 0.5, ease: "back.out(1.2)" }, 2.95 + 0.07);
+      { const q = rig("bp2"); arm(q.armL, "L", 160, 3.55 + 0.07, 0.3); arm(q.armR, "R", -120, 3.61 + 0.07, 0.3); hop(q, 4.15 + 0.05600000000000001, 35); }
+      tl.fromTo("#build-pl3", { y: 1300 }, { y: 0, duration: 0.5, ease: "back.out(1.2)" }, 2.95 + 0.21);
+      { const q = rig("bp3"); arm(q.armL, "L", 140, 3.55 + 0.21, 0.3); arm(q.armR, "R", -150, 3.61 + 0.21, 0.3); hop(q, 4.15 + 0.168, 50); }
+      tl.fromTo("#build-pl4", { y: 1300 }, { y: 0, duration: 0.5, ease: "back.out(1.2)" }, 2.95 + 0.3);
+      { const q = rig("bp4"); arm(q.armL, "L", 120, 3.55 + 0.3, 0.3); arm(q.armR, "R", -135, 3.61 + 0.3, 0.3); hop(q, 4.15 + 0.24, 45); }
+      tl.fromTo("#build-pl5", { y: 1300 }, { y: 0, duration: 0.5, ease: "back.out(1.2)" }, 2.95 + 0.36);
+      { const q = rig("bp5"); arm(q.armL, "L", 155, 3.55 + 0.36, 0.3); arm(q.armR, "R", -125, 3.61 + 0.36, 0.3); hop(q, 4.15 + 0.288, 30); }
+      arm(r.armL, "L", 150, 3.55, 0.3);
+      hop(r, 3.95, 60);
+      // exit: the lights go down (colour flood handled by name scene)
+      tl.to("#build-cam", { opacity: 0, duration: 0.3, ease: "power2.in" }, 5.150000000000003);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["build"] = tl;
+    })();
+  </script>
+</template>

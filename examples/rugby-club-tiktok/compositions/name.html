@@ -1,0 +1,223 @@
+<template id="name-template">
+  <style>
+    #root {
+
+      --ground: #0d3a2b;
+      --grass-a: #0f4431;
+      --grass-b: #124d38;
+      --chalk: #f5f1e4;
+      --gold: #ffcf1f;
+      --heart: #ff2d55;
+      --ink: #0a1f18;
+      --navy: #13284a;
+    }
+
+      #root { position: absolute; inset: 0; overflow: hidden; font-family: "Montserrat", sans-serif; color: var(--chalk); }
+      .cam { position: absolute; inset: 0; }
+      .abs { position: absolute; }
+      .row { position: absolute; left: 0; width: 100%; text-align: center; }
+      .disp { font-family: "League Gothic", sans-serif; text-transform: uppercase; line-height: 0.9; letter-spacing: 0.01em; }
+      .gold { color: var(--gold); }
+      .heart { color: var(--heart); }
+      .chip { display: inline-block; font-family: "Montserrat", sans-serif; font-weight: 900; font-size: 40px; letter-spacing: 0.08em;
+              padding: 14px 30px; border-radius: 999px; background: var(--gold); color: var(--ink); text-transform: uppercase; }
+      .card { background: #f7f4ea; color: var(--ink); border-radius: 36px; box-shadow: 0 18px 0 rgba(0,0,0,0.25); }
+      .w { display: inline-block; }
+
+
+      #name-dark { opacity: 0; }
+      #name-spot { opacity: 0; background: radial-gradient(circle 560px at 50% 47%, rgba(255,207,31,0.28), rgba(0,0,0,0) 70%); }
+      .sub { font-size: 130px; }
+      .banner { position: absolute; left: -60px; top: 150px; width: 720px; height: 150px; background: var(--gold); color: var(--ink);
+                border: 10px solid var(--ink); border-radius: 18px; overflow: hidden; box-shadow: 0 14px 0 rgba(0,0,0,0.4); }
+      .roll { position: absolute; left: 0; top: 0; width: 100%; }
+      .ri { height: 130px; line-height: 146px; text-align: center; font-size: 118px; }
+      .eppill { display: inline-block; background: var(--heart); color: #fff; font-size: 96px; padding: 16px 40px 4px; border-radius: 20px; }
+      .inp { position: relative; height: 120px; border-radius: 999px; background: #f7f4ea; color: var(--ink); font-weight: 700; font-size: 44px;
+             line-height: 120px; padding-left: 50px; }
+      .ph { color: #8b8f8c; }
+      .typed { position: absolute; left: 50px; top: 0; font-weight: 900; }
+      .caret { display: inline-block; width: 5px; height: 56px; background: var(--ink); vertical-align: middle; margin-left: 6px; }
+      .propose { margin-top: 24px; font-size: 76px; text-align: center; white-space: nowrap; }
+
+  </style>
+  <div id="root" data-composition-id="name" data-start="0" data-duration="9.0" data-width="1080" data-height="1920">
+    <div id="name-dark" class="abs" style="inset:0;background:#050d0a"></div>
+    <div id="name-spot" class="abs" style="inset:0"></div>
+    <div id="name-cam" class="cam">
+      <div id="name-t" class="row disp" style="top:220px"><div class="sub">IL MANQUE</div><div class="sub gold">LE NOM DU CLUB</div></div>
+      <div id="name-crest" class="abs" style="left:240px;top:520px;width:600px;height:700px">
+        <svg viewBox="0 0 600 700" width="600" height="700">
+          <path d="M300 20 L560 90 Q570 420 300 680 Q30 420 40 90 Z" fill="#0f4431" stroke="#ffcf1f" stroke-width="18"/>
+          <path d="M300 70 L515 128 Q520 400 300 620 Q80 400 85 128 Z" fill="none" stroke="#f5f1e4" stroke-width="6" stroke-dasharray="18 14"/>
+          <ellipse cx="300" cy="430" rx="120" ry="76" fill="#f7f4ea" stroke="#0a1f18" stroke-width="8" transform="rotate(-30 300 430)"/>
+          <path d="M210 470 Q300 380 390 390" stroke="#ffcf1f" stroke-width="12" fill="none"/>
+          <text data-layout-ignore x="300" y="610" font-family="League Gothic" font-size="54" text-anchor="middle" fill="#ffcf1f">EST. 2026</text>
+        </svg>
+        <div id="name-banner" class="banner disp"><div id="name-roll" class="roll"><div class="ri">XV DES POTES</div><div class="ri">RC DU QUARTIER</div><div class="ri">LES SANGLIERS</div><div class="ri">AS OVALIE</div><div class="ri">FC ???</div><div class="ri">? ? ?</div></div></div>
+      </div>
+      <div id="name-ep" class="row" style="top:1030px"><span id="name-ep-pill" class="eppill disp">ANNONCÉ DANS L'ÉPISODE 2</span></div>
+      <div id="name-input" class="abs" style="left:90px;top:950px;width:900px">
+        <div class="inp" data-layout-allow-overlap><span class="ph">Ajouter un commentaire…</span><span id="name-typed" class="typed"></span><span id="name-caret" class="caret"></span></div>
+        <div class="disp propose">PROPOSE <span class="gold">TON NOM</span> EN COMMENTAIRE</div>
+      </div>
+      <div id="name-maxwrap" class="abs" style="left:-40px;top:1060px"><svg id="nm-svg" class="max" viewBox="0 0 300 520" width="260" height="451" overflow="visible">
+    <defs>
+      <clipPath id="nm-torsoclip"><path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z"/></clipPath>
+    </defs>
+    <g id="nm-body">
+      <ellipse cx="150" cy="504" rx="96" ry="12" fill="#000" opacity="0.28"/>
+      <!-- legs -->
+      <rect x="110" y="372" width="30" height="104" rx="13" fill="#e9b48c"/>
+      <rect x="160" y="372" width="30" height="104" rx="13" fill="#e9b48c"/>
+      <rect x="108" y="420" width="34" height="52" rx="8" fill="#0f4431"/>
+      <rect x="158" y="420" width="34" height="52" rx="8" fill="#0f4431"/>
+      <rect x="108" y="432" width="34" height="9" fill="#ffcf1f"/>
+      <rect x="158" y="432" width="34" height="9" fill="#ffcf1f"/>
+      <path d="M100 470 h44 q8 0 8 10 v10 h-58 q-4-20 6-20z" fill="#111"/>
+      <path d="M156 470 h44 q10 0 6 20 h-58 v-10 q0-10 8-10z" fill="#111"/>
+      <!-- shorts -->
+      <path d="M94 326 h112 l6 62 h-56 l-6-22 l-6 22 h-56z" fill="#f5f1e4" stroke="#0a1f18" stroke-width="4"/>
+      <!-- torso -->
+      <path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z" fill="#0f4431"/>
+      <g clip-path="url(#nm-torsoclip)">
+        <rect x="60" y="212" width="180" height="26" fill="#ffcf1f"/>
+        <rect x="60" y="262" width="180" height="26" fill="#ffcf1f"/>
+        <rect x="60" y="312" width="180" height="26" fill="#ffcf1f"/>
+      </g>
+      <path d="M86 188 Q150 172 214 188 L206 334 Q150 344 94 334 Z" fill="none" stroke="#0a1f18" stroke-width="4"/>
+      <path d="M128 182 L150 210 L172 182" fill="#f5f1e4" stroke="#0a1f18" stroke-width="4" stroke-linejoin="round"/>
+      <!-- arms (pivot at shoulders) -->
+      <g id="nm-armL">
+        <line x1="92" y1="200" x2="92" y2="318" stroke="#e9b48c" stroke-width="28" stroke-linecap="round"/>
+        <line x1="92" y1="198" x2="92" y2="236" stroke="#0f4431" stroke-width="34" stroke-linecap="round"/>
+        <line x1="92" y1="226" x2="92" y2="234" stroke="#ffcf1f" stroke-width="34"/>
+        <circle cx="92" cy="326" r="19" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+      </g>
+      <g id="nm-armR">
+        <line x1="208" y1="200" x2="208" y2="318" stroke="#e9b48c" stroke-width="28" stroke-linecap="round"/>
+        <line x1="208" y1="198" x2="208" y2="236" stroke="#0f4431" stroke-width="34" stroke-linecap="round"/>
+        <line x1="208" y1="226" x2="208" y2="234" stroke="#ffcf1f" stroke-width="34"/>
+        <circle cx="208" cy="326" r="19" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+      </g>
+      
+      <!-- head -->
+      <g id="nm-head">
+        <rect x="136" y="150" width="28" height="34" fill="#d9a07a"/>
+        <circle cx="87" cy="112" r="14" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+        <circle cx="213" cy="112" r="14" fill="#e9b48c" stroke="#0a1f18" stroke-width="4"/>
+        <circle cx="150" cy="104" r="64" fill="#f0c19c" stroke="#0a1f18" stroke-width="4"/>
+        <path d="M88 96 Q86 36 150 34 Q218 34 212 98 Q196 66 168 70 Q150 52 128 70 Q104 66 88 96z" fill="#4a2a17" stroke="#0a1f18" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M88 84 Q150 58 212 84 L212 96 Q150 72 88 96z" fill="#ffcf1f" stroke="#0a1f18" stroke-width="3"/>
+        <ellipse id="nm-eyeL" cx="127" cy="110" rx="8" ry="11" fill="#0a1f18"/>
+        <ellipse id="nm-eyeR" cx="173" cy="110" rx="8" ry="11" fill="#0a1f18"/>
+        <circle cx="130" cy="106" r="3" fill="#fff"/>
+        <circle cx="176" cy="106" r="3" fill="#fff"/>
+        <path id="nm-browL" d="M114 92 Q127 86 139 92" stroke="#3a1f10" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path id="nm-browR" d="M161 92 Q173 86 186 92" stroke="#3a1f10" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <ellipse cx="112" cy="132" rx="11" ry="6" fill="#ff8f8f" opacity="0.45"/>
+        <ellipse cx="188" cy="132" rx="11" ry="6" fill="#ff8f8f" opacity="0.45"/>
+        <path d="M128 138 Q150 158 172 138" stroke="#0a1f18" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <g id="nm-mOpen" opacity="0">
+          <path d="M126 134 Q150 134 174 134 Q172 166 150 168 Q128 166 126 134z" fill="#5a1414" stroke="#0a1f18" stroke-width="4"/>
+          <ellipse cx="150" cy="158" rx="12" ry="6" fill="#e05a6a"/>
+        </g>
+        <g id="nm-mO" opacity="0">
+          <ellipse cx="150" cy="148" rx="16" ry="20" fill="#5a1414" stroke="#0a1f18" stroke-width="4"/>
+        </g>
+      </g>
+    </g>
+  </svg></div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+
+      // --- Max rig helpers (all on this scene's paused timeline) ---
+      const rig = (p) => ({
+        body: "#" + p + "-body", head: "#" + p + "-head", armL: "#" + p + "-armL", armR: "#" + p + "-armR",
+        eyes: ["#" + p + "-eyeL", "#" + p + "-eyeR"], mOpen: "#" + p + "-mOpen", mO: "#" + p + "-mO",
+        brows: ["#" + p + "-browL", "#" + p + "-browR"], ball: "#" + p + "-ball",
+      });
+      const blink = (r, t) => {
+        tl.to(r.eyes, { scaleY: 0.1, transformOrigin: "50% 50%", duration: 0.05, ease: "power1.in" }, t);
+        tl.to(r.eyes, { scaleY: 1, transformOrigin: "50% 50%", duration: 0.08, ease: "power1.out" }, t + 0.06);
+      };
+      const talk = (r, starts) => {
+        starts.forEach((s) => {
+          tl.set(r.mOpen, { opacity: 1 }, s);
+          tl.set(r.mOpen, { opacity: 0 }, s + 0.13);
+        });
+      };
+      const arm = (sel, side, rot, t, d = 0.35, ease = "back.out(1.6)") => {
+        const o = side === "L" ? "92 200" : "208 200";
+        tl.to(sel, { rotation: rot, svgOrigin: o, duration: d, ease }, t);
+      };
+      const hop = (r, t, lift = 60) => {
+        // anticipation squash, jump, land squash, settle
+        tl.to(r.body, { scaleY: 0.9, scaleX: 1.06, svgOrigin: "150 500", duration: 0.12, ease: "power2.in" }, t);
+        tl.to(r.body, { scaleY: 1.06, scaleX: 0.96, y: -lift, svgOrigin: "150 500", duration: 0.22, ease: "power2.out" }, t + 0.12);
+        tl.to(r.body, { scaleY: 0.92, scaleX: 1.05, y: 0, svgOrigin: "150 500", duration: 0.18, ease: "power2.in" }, t + 0.34);
+        tl.to(r.body, { scaleY: 1, scaleX: 1, svgOrigin: "150 500", duration: 0.3, ease: "elastic.out(1, 0.5)" }, t + 0.52);
+      };
+      const breathe = (r, t0, t1) => {
+        for (let t = t0; t < t1 - 1.2; t += 1.6) {
+          tl.to(r.body, { scaleY: 1.012, svgOrigin: "150 500", duration: 0.8, ease: "sine.inOut" }, t);
+          tl.to(r.body, { scaleY: 1, svgOrigin: "150 500", duration: 0.8, ease: "sine.inOut" }, t + 0.8);
+        }
+      };
+
+
+      const r = rig("nm");
+      gsap.set("#name-crest, #name-ep, #name-input, #name-maxwrap", { opacity: 0 });
+      // entry: the lights go down
+      tl.to("#name-dark", { opacity: 0.82, duration: 0.5, ease: "power2.inOut" }, 0);
+      tl.fromTo("#name-t .sub", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, stagger: 0.0 }, 0.17);
+      gsap.set("#name-t .gold", { opacity: 0 });
+      tl.fromTo("#name-t .gold", { opacity: 0, scale: 1.3, filter: "blur(10px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.25, ease: "expo.out" }, 2.46);
+      // crest rises into the spotlight
+      tl.set("#name-crest", { opacity: 1 }, 0.8);
+      tl.fromTo("#name-crest", { y: 300, scale: 0.6, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.7, ease: "expo.out" }, 0.8);
+      tl.to("#name-spot", { opacity: 1, duration: 0.6 }, 0.8);
+      // slot machine on the banner: rolls then lands on "? ? ?"
+      const step = 130;
+      gsap.set("#name-roll", { y: 0 });
+      for (let k = 1; k <= 5; k++) {
+        tl.to("#name-roll", { y: -k * step, duration: 0.1 + k * 0.03, ease: k === 5 ? "back.out(2)" : "power1.inOut" }, 2.65 + (k - 1) * 0.16 + (k * (k - 1)) * 0.015);
+      }
+      // Max peeks in, hand on chin
+      tl.set("#name-maxwrap", { opacity: 1 }, 0.1);
+      tl.fromTo("#name-maxwrap", { x: -300 }, { x: 0, duration: 0.5, ease: "power3.out" }, 0.1);
+      arm(r.armR, "R", -150, 0.5, 0.4, "power2.inOut");
+      tl.to(r.head, { rotation: 10, svgOrigin: "150 170", duration: 0.4 }, 0.5);
+      tl.to(r.eyes, { x: 6, y: -5, duration: 0.3 }, 0.5);
+      talk(r, [0.17, 0.35, 0.42, 0.84, 1.38, 1.44, 1.68, 2.46, 2.6, 2.81, 2.95]);
+      blink(r, 1.9);
+      // EPISODE 2 stamp on "annoncé"
+      tl.set("#name-ep", { opacity: 1 }, 3.9);
+      tl.fromTo("#name-ep-pill", { scale: 2.4, rotation: -12, opacity: 0 }, { scale: 1, rotation: -4, opacity: 1, duration: 0.24, ease: "power4.in" }, 3.9);
+      tl.fromTo("#name-crest", { x: 0 }, { x: 0, keyframes: [{ x: -10, duration: 0.04 }, { x: 9, duration: 0.04 }, { x: -5, duration: 0.04 }, { x: 0, duration: 0.04 }] }, 4.14);
+      // "propose le tien": comment box types a suggestion
+      tl.to("#name-ep", { opacity: 0, y: -40, filter: "blur(8px)", duration: 0.2 }, 5.9);
+      tl.to("#name-maxwrap", { x: -320, duration: 0.35, ease: "power3.in" }, 5.8);
+      tl.to("#name-crest", { scale: 0.72, y: -90, duration: 0.45, ease: "power3.inOut" }, 5.95);
+      tl.set("#name-input", { opacity: 1 }, 6.1);
+      tl.fromTo("#name-input", { y: 120, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "expo.out" }, 6.1);
+      const typed = "Moi je propose : " + "…";
+      gsap.set("#name-typed", { textContent: "" });
+      for (let i = 1; i <= typed.length; i++) {
+        tl.set("#name-typed", { textContent: typed.slice(0, i) }, 6.9 + i * 0.055);
+      }
+      tl.set(".ph", { opacity: 0 }, 6.95);
+      gsap.set(".ph", { opacity: 1 });
+      gsap.set("#name-caret", { opacity: 0 });
+      // exit: zoom through the crest
+      tl.to("#name-cam", { scale: 3, transformOrigin: "50% 45%", opacity: 0, filter: "blur(16px)", duration: 0.32, ease: "power3.in" }, 8.68);
+      tl.to("#name-dark", { opacity: 0, duration: 0.3 }, 8.7);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["name"] = tl;
+    })();
+  </script>
+</template>
