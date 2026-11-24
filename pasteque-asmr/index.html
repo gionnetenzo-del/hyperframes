@@ -1,0 +1,825 @@
+<!doctype html>
+<html
+  lang="fr"
+  data-composition-variables='[
+    {"id":"label-cuts","type":"string","label":"Top counter label","default":"COUPES"},
+    {"id":"label-cubes","type":"string","label":"Bottom counter label","default":"CUBES"},
+    {"id":"color-number","type":"color","label":"Counter numbers","default":"#ece9e4"},
+    {"id":"color-label","type":"color","label":"Counter labels","default":"#f6b43c"}
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="lib/gsap.min.js"></script>
+    <script src="assets/schedule.js"></script>
+    <script type="importmap">
+      { "imports": { "three": "./lib/three.module.js" } }
+    </script>
+    <style>
+      :root {
+        --color-number: #ece9e4;
+        --color-label: #f6b43c;
+        --font-display: "Montserrat";
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #1a1614;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        font-family: var(--font-display), sans-serif;
+        background: #1a1614;
+      }
+      #stage {
+        position: absolute;
+        inset: 0;
+        width: 1080px;
+        height: 1920px;
+        display: block;
+      }
+      .counter {
+        position: absolute;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        pointer-events: none;
+      }
+      .num {
+        display: block;
+        color: var(--color-number);
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -0.01em;
+        text-shadow:
+          0 5px 0 rgba(0, 0, 0, 0.18),
+          0 8px 18px rgba(0, 0, 0, 0.35);
+        font-variant-numeric: tabular-nums;
+      }
+      .lab {
+        display: block;
+        color: var(--color-label);
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        line-height: 1;
+        -webkit-text-stroke: 2px rgba(60, 34, 6, 0.55);
+        paint-order: stroke fill;
+        text-shadow:
+          0 3px 0 rgba(40, 22, 4, 0.45),
+          0 4px 12px rgba(0, 0, 0, 0.5);
+      }
+      #cuts {
+        top: 170px;
+      }
+      #cuts .num {
+        font-size: 150px;
+      }
+      #cuts .lab {
+        font-size: 44px;
+        margin-top: 14px;
+      }
+      #cubes {
+        top: 1320px;
+      }
+      #cubes .num {
+        font-size: 88px;
+        color: #ffffff;
+      }
+      #cubes .lab {
+        font-size: 40px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="41"
+      data-width="1080"
+      data-height="1920"
+    >
+      <canvas id="stage" width="1080" height="1920" data-layout-allow-overflow></canvas>
+      <div id="cuts" class="counter" data-layout-allow-safe-zone>
+        <span id="cuts-num" class="num">0</span>
+        <span id="cuts-lab" class="lab" data-var-text="label-cuts">COUPES</span>
+      </div>
+      <div id="cubes" class="counter" data-layout-allow-safe-zone>
+        <span id="cubes-num" class="num">0</span>
+        <span id="cubes-lab" class="lab" data-var-text="label-cubes">CUBES</span>
+      </div>
+      <audio
+        id="sfx"
+        class="clip"
+        src="assets/sfx.wav"
+        data-start="0"
+        data-duration="41"
+        data-track-index="2"
+        data-volume="1"
+      ></audio>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      (function () {
+        var tl = gsap.timeline({ paused: true });
+        var clock = { t: 0 };
+        tl.to(clock, { t: window.MELON.duration, duration: window.MELON.duration, ease: "none" }, 0);
+        tl.eventCallback("onUpdate", function () {
+          if (window.__melonRender) window.__melonRender(tl.time());
+        });
+        window.addEventListener("hf-seek", function (e) {
+          var d = e && e.detail;
+          if (d && typeof d.time === "number") tl.totalTime(Math.min(d.time, tl.totalDuration()), true);
+          if (window.__melonRender) window.__melonRender(tl.time());
+        });
+        window.__timelines["main"] = tl;
+      })();
+    </script>
+
+    <script type="module">
+      import * as THREE from "three";
+
+      const M = window.MELON;
+      const A = M.A;
+      const W = 1080;
+      const H = 1920;
+      const hash = (n) => {
+        const x = Math.sin(n * 127.1 + 311.7) * 43758.5453;
+        return x - Math.floor(x);
+      };
+      const clamp01 = (v) => Math.min(1, Math.max(0, v));
+      const lerp = (a, b, u) => a + (b - a) * u;
+
+      // ---------- renderer / camera ----------
+      const canvas = document.getElementById("stage");
+      const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true });
+      renderer.setPixelRatio(1);
+      renderer.setSize(W, H, false);
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.05;
+      renderer.localClippingEnabled = true;
+
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color("#1a1614");
+      const camera = new THREE.PerspectiveCamera(26, W / H, 0.1, 200);
+      const target = new THREE.Vector3(0, 0.05, 0);
+      const elev = THREE.MathUtils.degToRad(24);
+      const dist = 21;
+      camera.position.set(0, target.y + dist * Math.sin(elev), dist * Math.cos(elev));
+      camera.lookAt(target);
+
+      // ---------- lights ----------
+      scene.add(new THREE.HemisphereLight("#fff6ea", "#5a4632", 1.25));
+      const key = new THREE.DirectionalLight("#fff3e0", 2.6);
+      key.position.set(-5, 9, 6);
+      key.castShadow = true;
+      key.shadow.mapSize.set(2048, 2048);
+      key.shadow.camera.left = -6;
+      key.shadow.camera.right = 6;
+      key.shadow.camera.top = 6;
+      key.shadow.camera.bottom = -6;
+      key.shadow.camera.near = 1;
+      key.shadow.camera.far = 30;
+      key.shadow.bias = -0.0004;
+      key.shadow.normalBias = 0.02;
+      key.shadow.radius = 4;
+      scene.add(key);
+      const rim = new THREE.DirectionalLight("#dfe8ff", 0.6);
+      rim.position.set(6, 4, -5);
+      scene.add(rim);
+
+      // ---------- procedural canvas textures (seeded) ----------
+      function canvasTex(w, h, draw, repeatX = 1, repeatY = 1) {
+        const c = document.createElement("canvas");
+        c.width = w;
+        c.height = h;
+        draw(c.getContext("2d"), w, h);
+        const t = new THREE.CanvasTexture(c);
+        t.colorSpace = THREE.SRGBColorSpace;
+        t.wrapS = t.wrapT = THREE.RepeatWrapping;
+        t.repeat.set(repeatX, repeatY);
+        t.anisotropy = 8;
+        return t;
+      }
+      const woodTex = canvasTex(
+        1024,
+        1024,
+        (g, w, h) => {
+          const R = M.mulberry32(11);
+          const rows = 8;
+          const rh = h / rows;
+          g.fillStyle = "rgb(205,136,74)";
+          g.fillRect(0, 0, w, h);
+          for (let r = 0; r < rows; r++) {
+            const off = R() * w;
+            for (let seg = -2; seg < 3; seg++) {
+              const x0 = off + seg * (w * 0.6 + R() * 120);
+              const base = 196 + R() * 26;
+              g.fillStyle = `rgb(${base},${base * 0.66},${base * 0.36})`;
+              g.fillRect(x0, r * rh, w * 0.8, rh);
+              for (let l = 0; l < 26; l++) {
+                const y = r * rh + R() * rh;
+                const amp = 1 + R() * 4;
+                const ph = R() * 6;
+                g.strokeStyle = `rgba(${120 + R() * 40},${70 + R() * 20},${30},${0.08 + R() * 0.18})`;
+                g.lineWidth = 0.6 + R() * 2.2;
+                g.beginPath();
+                for (let x = 0; x <= w * 0.8; x += 16) {
+                  const yy = y + Math.sin(x * 0.01 + ph) * amp;
+                  if (x === 0) g.moveTo(x0 + x, yy);
+                  else g.lineTo(x0 + x, yy);
+                }
+                g.stroke();
+              }
+              g.fillStyle = "rgba(90,50,20,0.35)";
+              g.fillRect(x0, r * rh, 2, rh);
+            }
+            g.fillStyle = "rgba(80,45,18,0.35)";
+            g.fillRect(0, r * rh, w, 2);
+          }
+        },
+        2.5,
+        1.2,
+      );
+      const tileTex = (base, line, seed) =>
+        canvasTex(
+          512,
+          512,
+          (g, w, h) => {
+            const R = M.mulberry32(seed);
+            g.fillStyle = base;
+            g.fillRect(0, 0, w, h);
+            for (let i = 0; i < 2500; i++) {
+              g.fillStyle = `rgba(255,255,255,${R() * 0.03})`;
+              g.fillRect(R() * w, R() * h, 3 + R() * 6, 3 + R() * 6);
+            }
+            g.strokeStyle = line;
+            g.lineWidth = 2;
+            g.beginPath();
+            g.moveTo(0, h);
+            g.lineTo(w / 2, 0);
+            g.lineTo(w, h);
+            g.moveTo(0, h);
+            g.lineTo(w, h);
+            g.stroke();
+          },
+          6,
+          1.5,
+        );
+      const wallTex = canvasTex(
+        512,
+        512,
+        (g, w, h) => {
+          const R = M.mulberry32(5);
+          g.fillStyle = "#8f8b86";
+          g.fillRect(0, 0, w, h);
+          for (let i = 0; i < 9000; i++) {
+            const v = R() > 0.5 ? 255 : 0;
+            g.fillStyle = `rgba(${v},${v},${v},${R() * 0.05})`;
+            g.fillRect(R() * w, R() * h, 2, 2);
+          }
+        },
+        4,
+        3,
+      );
+
+      // ---------- the set ----------
+      const counterTop = new THREE.Mesh(
+        new THREE.BoxGeometry(16, 0.22, 5.4),
+        [
+          new THREE.MeshStandardMaterial({ color: "#b8722c", roughness: 0.6 }),
+          new THREE.MeshStandardMaterial({ color: "#b8722c", roughness: 0.6 }),
+          new THREE.MeshStandardMaterial({ map: woodTex, roughness: 0.55 }),
+          new THREE.MeshStandardMaterial({ color: "#b8722c", roughness: 0.6 }),
+          new THREE.MeshStandardMaterial({ color: "#c27d32", roughness: 0.5 }),
+          new THREE.MeshStandardMaterial({ color: "#b8722c", roughness: 0.6 }),
+        ],
+      );
+      counterTop.position.set(0, -0.11, 0);
+      counterTop.receiveShadow = true;
+      scene.add(counterTop);
+
+      const cabinet = new THREE.Mesh(
+        new THREE.PlaneGeometry(16, 12),
+        new THREE.MeshStandardMaterial({ map: tileTex("#2b2522", "rgba(0,0,0,0.25)", 3), roughness: 0.9 }),
+      );
+      cabinet.position.set(0, -0.22 - 6, 2.62);
+      scene.add(cabinet);
+
+      const splash = new THREE.Mesh(
+        new THREE.PlaneGeometry(16, 2.2),
+        new THREE.MeshStandardMaterial({ map: tileTex("#3d3a37", "rgba(0,0,0,0.3)", 9), roughness: 0.85 }),
+      );
+      splash.position.set(0, 1.1, -2.7);
+      splash.receiveShadow = true;
+      scene.add(splash);
+
+      const wall = new THREE.Mesh(
+        new THREE.PlaneGeometry(16, 12),
+        new THREE.MeshStandardMaterial({ map: wallTex, roughness: 0.95 }),
+      );
+      wall.position.set(0, 2.2 + 6, -2.7);
+      scene.add(wall);
+
+      // ---------- watermelon shading (shared GLSL) ----------
+      const MELON_GLSL = /* glsl */ `
+        uniform vec3 uA;
+        vec3 srgb(vec3 c) { return pow(c, vec3(2.2)); }
+        float hash31(vec3 p) { p = fract(p * 0.1031); p += dot(p, p.yzx + 33.33); return fract((p.x + p.y) * p.z); }
+        float vnoise(vec3 p) {
+          vec3 i = floor(p); vec3 f = fract(p); f = f * f * (3.0 - 2.0 * f);
+          return mix(
+            mix(mix(hash31(i), hash31(i + vec3(1,0,0)), f.x), mix(hash31(i + vec3(0,1,0)), hash31(i + vec3(1,1,0)), f.x), f.y),
+            mix(mix(hash31(i + vec3(0,0,1)), hash31(i + vec3(1,0,1)), f.x), mix(hash31(i + vec3(0,1,1)), hash31(i + vec3(1,1,1)), f.x), f.y),
+            f.z);
+        }
+        float fbm(vec3 p) { float a = 0.5, s = 0.0; for (int i = 0; i < 4; i++) { s += a * vnoise(p); p *= 2.03; a *= 0.5; } return s; }
+        vec3 rindColor(vec3 p) {
+          float ang = atan(p.z, p.y);
+          float w = sin(ang * 8.0 + 0.8 * sin(p.x * 3.2 + ang * 2.0) + 2.6 * (fbm(p * 2.6) - 0.5) + 0.9 * (fbm(p * 11.0) - 0.5));
+          float dark = smoothstep(-0.25, 0.25, w);
+          vec3 light = srgb(vec3(0.42, 0.58, 0.24)) * (0.85 + 0.3 * fbm(p * 14.0));
+          vec3 deep = srgb(vec3(0.09, 0.20, 0.07)) * (0.8 + 0.4 * fbm(p * 9.0));
+          return mix(light, deep, dark);
+        }
+        vec3 melonColor(vec3 p) {
+          float r = length(p / uA);
+          vec3 red = srgb(vec3(0.92, 0.17, 0.23)) * (0.86 + 0.24 * fbm(p * 5.0));
+          red = mix(red, srgb(vec3(1.0, 0.45, 0.47)), 0.45 * smoothstep(0.55, 0.95, vnoise(p * 46.0)));
+          vec3 c = red;
+          c = mix(c, srgb(vec3(0.96, 0.58, 0.56)), smoothstep(0.83, 0.88, r));
+          c = mix(c, srgb(vec3(0.90, 0.93, 0.76)), smoothstep(0.875, 0.905, r));
+          c = mix(c, srgb(vec3(0.56, 0.72, 0.36)), smoothstep(0.94, 0.96, r));
+          c = mix(c, rindColor(p), smoothstep(0.96, 0.98, r));
+          if (r > 0.3 && r < 0.84) {
+            float cs = 0.2;
+            vec3 base = floor(p / cs - 0.5);
+            for (int dx = 0; dx <= 1; dx++) for (int dy = 0; dy <= 1; dy++) for (int dz = 0; dz <= 1; dz++) {
+              vec3 cid = base + vec3(float(dx), float(dy), float(dz));
+              if (hash31(cid + 7.0) < 0.42) continue;
+              vec3 sc = (cid + 0.5 + (vec3(hash31(cid + 1.0), hash31(cid + 2.0), hash31(cid + 3.0)) - 0.5) * 0.7) * cs;
+              float rs = length(sc / uA);
+              if (rs < 0.42 || rs > 0.76) continue;
+              vec3 n = normalize(sc / (uA * uA));
+              vec3 o = p - sc;
+              float al = dot(o, n);
+              vec3 pe = o - al * n;
+              float d2 = dot(pe, pe) / (0.028 * 0.028) + (al * al) / (0.058 * 0.058);
+              c = mix(c, srgb(vec3(0.07, 0.045, 0.03)), 1.0 - smoothstep(0.75, 1.0, d2));
+            }
+          }
+          return c;
+        }
+      `;
+
+      // ---------- intact melon ----------
+      const MAXC = 16;
+      const melonUniforms = {
+        uA: { value: new THREE.Vector3(A.x, A.y, A.z) },
+        uCutY: { value: new Float32Array(MAXC).fill(99) },
+        uCutYa: { value: new Float32Array(MAXC) },
+        uCutZ: { value: new Float32Array(MAXC).fill(99) },
+        uCutZa: { value: new Float32Array(MAXC) },
+        uClipX: { value: -99 },
+        uCenter: { value: new THREE.Vector3(0, A.y, 0) },
+      };
+      const clipPlane = new THREE.Plane(new THREE.Vector3(1, 0, 0), 99);
+      const melonGeo = new THREE.SphereGeometry(1, 160, 120);
+      melonGeo.scale(A.x, A.y, A.z);
+      melonGeo.computeVertexNormals();
+      const melonMat = new THREE.MeshStandardMaterial({
+        roughness: 0.38,
+        metalness: 0,
+        side: THREE.DoubleSide,
+        clippingPlanes: [clipPlane],
+        clipShadows: true,
+      });
+      melonMat.onBeforeCompile = (sh) => {
+        Object.assign(sh.uniforms, melonUniforms);
+        sh.vertexShader = sh.vertexShader
+          .replace("#include <common>", "#include <common>\nvarying vec3 vMP;\nvarying vec3 vWP;")
+          .replace(
+            "#include <begin_vertex>",
+            "#include <begin_vertex>\nvMP = position;\nvWP = (modelMatrix * vec4(position, 1.0)).xyz;",
+          );
+        sh.fragmentShader = sh.fragmentShader
+          .replace(
+            "#include <common>",
+            `#include <common>
+            varying vec3 vMP; varying vec3 vWP;
+            uniform float uCutY[${MAXC}]; uniform float uCutYa[${MAXC}];
+            uniform float uCutZ[${MAXC}]; uniform float uCutZa[${MAXC}];
+            uniform float uClipX; uniform vec3 uCenter;
+            float gLine = 0.0;
+            ${MELON_GLSL}`,
+          )
+          .replace(
+            "#include <color_fragment>",
+            `#include <color_fragment>
+            if (gl_FrontFacing) {
+              vec3 c = melonColor(vMP);
+              float wy = fwidth(vMP.y), wz = fwidth(vMP.z);
+              for (int i = 0; i < ${MAXC}; i++) {
+                gLine = max(gLine, uCutYa[i] * (1.0 - smoothstep(0.006, 0.006 + 1.5 * wy, abs(vMP.y - uCutY[i]))));
+                gLine = max(gLine, uCutZa[i] * (1.0 - smoothstep(0.006, 0.006 + 1.5 * wz, abs(vMP.z - uCutZ[i]))));
+              }
+              diffuseColor.rgb = mix(c, srgb(vec3(0.80, 0.90, 0.48)), clamp(gLine, 0.0, 1.0));
+            } else {
+              vec3 ro = cameraPosition;
+              float tt = (uClipX - ro.x) / (vWP.x - ro.x);
+              vec3 q = ro + tt * (vWP - ro) - uCenter;
+              diffuseColor.rgb = melonColor(q);
+            }`,
+          )
+          .replace(
+            "#include <normal_fragment_maps>",
+            `#include <normal_fragment_maps>
+            if (!gl_FrontFacing) normal = normalize((viewMatrix * vec4(-1.0, 0.0, 0.0, 0.0)).xyz);`,
+          )
+          .replace(
+            "#include <emissivemap_fragment>",
+            `#include <emissivemap_fragment>
+            totalEmissiveRadiance += srgb(vec3(0.75, 0.85, 0.45)) * 0.18 * clamp(gLine, 0.0, 1.5);`,
+          );
+      };
+      const melon = new THREE.Mesh(melonGeo, melonMat);
+      melon.position.set(0, A.y, 0);
+      melon.castShadow = true;
+      melon.receiveShadow = true;
+      scene.add(melon);
+
+      // ---------- cubes per round ----------
+      const cubeGeo = new THREE.BoxGeometry(1, 1, 1);
+      function cubeMaterial() {
+        const m = new THREE.MeshStandardMaterial({ roughness: 0.42, metalness: 0 });
+        m.onBeforeCompile = (sh) => {
+          sh.uniforms.uA = melonUniforms.uA;
+          sh.vertexShader = sh.vertexShader
+            .replace(
+              "#include <common>",
+              "#include <common>\nattribute vec3 aCell;\nattribute vec3 aSize;\nvarying vec3 vMP;",
+            )
+            .replace("#include <begin_vertex>", "#include <begin_vertex>\nvMP = (aCell + position * aSize) / 1.1;");
+          sh.fragmentShader = sh.fragmentShader
+            .replace("#include <common>", `#include <common>\nvarying vec3 vMP;\n${MELON_GLSL}`)
+            .replace("#include <color_fragment>", "#include <color_fragment>\ndiffuseColor.rgb = melonColor(vMP);");
+        };
+        return m;
+      }
+
+      const bnd = (n, a, i) => -a + (2 * a * i) / n;
+      const rounds = M.rounds.map((R, ri) => {
+        const cells = [];
+        for (let i = 0; i < R.nx; i++)
+          for (let j = 0; j < R.ny; j++)
+            for (let k = 0; k < R.nz; k++) {
+              const lo = [bnd(R.nx, A.x, i), bnd(R.ny, A.y, j), bnd(R.nz, A.z, k)];
+              const hi = [bnd(R.nx, A.x, i + 1), bnd(R.ny, A.y, j + 1), bnd(R.nz, A.z, k + 1)];
+              const ax = [A.x, A.y, A.z];
+              let s = 0;
+              for (let d = 0; d < 3; d++) {
+                const q = Math.min(Math.max(0, lo[d]), hi[d]) / ax[d];
+                s += q * q;
+              }
+              if (s > 0.93) continue;
+              cells.push({
+                i,
+                j,
+                k,
+                c: [(lo[0] + hi[0]) / 2, (lo[1] + hi[1]) / 2, (lo[2] + hi[2]) / 2],
+                s: [hi[0] - lo[0], hi[1] - lo[1], hi[2] - lo[2]],
+              });
+            }
+        // slab release times: chop idx x releases slab x-1; the last chop also releases the last slab
+        const release = new Array(R.nx).fill(Infinity);
+        R.chops.forEach((c) => {
+          release[c.idx - 1] = c.t;
+          if (c.idx === R.nx - 1) release[R.nx - 1] = c.t;
+        });
+        // pile targets
+        const cols = new Map();
+        cells.forEach((c) => {
+          const key = c.i + "," + c.k;
+          if (!cols.has(key)) cols.set(key, []);
+          cols.get(key).push(c);
+        });
+        cols.forEach((list) => {
+          list.sort((a, b) => a.j - b.j);
+          list.forEach((c, r) => {
+            c.rank = r;
+            c.colN = list.length;
+          });
+        });
+        cells.forEach((c, n) => {
+          const h1 = hash(n * 3.1 + ri * 17.0),
+            h2 = hash(n * 7.7 + 1.3),
+            h3 = hash(n * 1.9 + 5.1),
+            h4 = hash(n * 4.3 + 9.9);
+          const [sx, sy, sz] = c.s;
+          const up = c.rank / Math.max(1, c.colN - 1);
+          c.release = release[c.i] + 0.015 * (c.colN - c.rank) + h1 * 0.06;
+          c.fallDur = 0.3 + 0.12 * h2;
+          c.from = new THREE.Vector3(c.c[0], c.c[1] + A.y, c.c[2]);
+          const spreadZ = 1.3 + 0.35 * up;
+          c.to = new THREE.Vector3(
+            c.c[0] - 0.12 * sx - (h3 - 0.5) * 0.35 * sx,
+            Math.max(sx, sy, sz) * 0.45 + c.rank * sy * 0.62,
+            c.c[2] * spreadZ + Math.sign(c.c[2] || h2 - 0.5) * up * 0.25 * sz + (h4 - 0.5) * 0.4 * sz,
+          );
+          const q4 = (h) => Math.floor(h * 4) * (Math.PI / 2);
+          const tumble = hash(n * 2.7 + 3.3) < 0.75;
+          c.qTo = new THREE.Quaternion().setFromEuler(
+            new THREE.Euler(
+              (tumble ? q4(hash(n * 5.3 + 2.2)) : 0) + (h2 - 0.5) * 0.6,
+              (h3 - 0.5) * 1.2,
+              (tumble ? q4(hash(n * 6.1 + 4.4)) : 0) + 0.15 + (h4 - 0.5) * 0.6,
+            ),
+          );
+        });
+        const geo = cubeGeo.clone();
+        const inst = new THREE.InstancedMesh(geo, cubeMaterial(), Math.max(1, cells.length));
+        const aCell = new Float32Array(Math.max(1, cells.length) * 3);
+        const aSize = new Float32Array(Math.max(1, cells.length) * 3);
+        cells.forEach((c, n) => {
+          aCell.set(c.c, n * 3);
+          aSize.set(c.s, n * 3);
+        });
+        geo.setAttribute("aCell", new THREE.InstancedBufferAttribute(aCell, 3));
+        geo.setAttribute("aSize", new THREE.InstancedBufferAttribute(aSize, 3));
+        inst.castShadow = true;
+        inst.receiveShadow = true;
+        inst.frustumCulled = false;
+        inst.visible = false;
+        scene.add(inst);
+        return { R, cells, release, inst };
+      });
+
+      // ---------- knife ----------
+      function buildKnife() {
+        const g = new THREE.Group();
+        const s = new THREE.Shape();
+        s.moveTo(0, 0);
+        s.lineTo(1.95, 0);
+        s.quadraticCurveTo(2.5, 0.03, 2.68, 0.5);
+        s.lineTo(0, 0.54);
+        s.lineTo(0, 0);
+        const blade = new THREE.ExtrudeGeometry(s, {
+          depth: 0.02,
+          bevelEnabled: true,
+          bevelThickness: 0.006,
+          bevelSize: 0.006,
+          bevelSegments: 1,
+          curveSegments: 16,
+        });
+        blade.translate(0, 0, -0.01);
+        const handle = new THREE.BoxGeometry(1.05, 0.3, 0.13);
+        handle.translate(-0.56, 0.3, 0);
+        const bolster = new THREE.BoxGeometry(0.08, 0.36, 0.1);
+        bolster.translate(-0.02, 0.3, 0);
+        return { blade, handle, bolster, g };
+      }
+      const kg = buildKnife();
+      function knifeInstance(opacity) {
+        const tr = opacity < 1;
+        const g = new THREE.Group();
+        const mk = (geo, color, rough, metal) =>
+          new THREE.Mesh(
+            geo,
+            new THREE.MeshStandardMaterial({
+              color,
+              roughness: rough,
+              metalness: metal,
+              transparent: tr,
+              opacity,
+              depthWrite: !tr,
+            }),
+          );
+        const b = mk(kg.blade, "#cfd2d6", 0.28, 0.35);
+        const h = mk(kg.handle, "#7a2a1a", 0.55, 0);
+        const bo = mk(kg.bolster, "#9a9ea4", 0.35, 0.4);
+        [b, h, bo].forEach((m) => {
+          m.castShadow = !tr;
+          g.add(m);
+        });
+        g.matrixAutoUpdate = false;
+        g.visible = false;
+        scene.add(g);
+        return g;
+      }
+      const knife = knifeInstance(1);
+      const ghosts = [0.42, 0.28, 0.17, 0.09].map((o) => knifeInstance(o));
+
+      const V = (x, y, z) => new THREE.Vector3(x, y, z);
+      const basis = (X, Y, Z) => new THREE.Matrix4().makeBasis(X.normalize(), Y.normalize(), Z.normalize());
+      // Knife orientation per cut type. Local: length +X (tip), spine +Y (edge at y=0), blade normal +Z.
+      const ROT = {
+        y: basis(V(-0.85, 0, 0.53), V(0.53, 0, 0.85), V(0, 1, 0)),
+        z: basis(V(-0.92, -0.38, 0), V(-0.38, 0.92, 0), V(0, 0, -1)),
+        x: basis(V(0, 0, -1), V(0, 1, 0), V(1, 0, 0)),
+      };
+      const BLADE_MID = V(1.3, 0.27, 0); // the point of the blade that passes through the melon
+      const tmpM = new THREE.Matrix4();
+      function placeKnife(rot, mid) {
+        const off = BLADE_MID.clone().applyMatrix4(rot);
+        tmpM.copy(rot).setPosition(mid.clone().sub(off));
+        return tmpM.clone();
+      }
+      const SWIPE = 0.3;
+      // pure function of time: returns { m, alpha } or null
+      function knifeAt(t) {
+        const ri = roundIndex(t);
+        const R = M.rounds[ri];
+        // scoring swipes
+        for (const c of R.scoring) {
+          const u = (t - (c.t - SWIPE / 2)) / SWIPE;
+          if (u < 0 || u > 1) continue;
+          if (c.axis === "y") {
+            const h = A.y + bnd(R.ny, A.y, c.idx);
+            const p = V(lerp(3.4, -2.8, u), h, lerp(4.6, -3.2, u));
+            return { m: placeKnife(ROT.y, p), alpha: clamp01((1 - u) * 5) * clamp01(u * 8) };
+          } else {
+            const z = bnd(R.nz, A.z, c.idx);
+            const p = V(lerp(4.4, -3.0, u), lerp(A.y + 1.85, A.y - 1.05, u), z);
+            return { m: placeKnife(ROT.z, p), alpha: clamp01((1 - u) * 4) * clamp01(u * 8) };
+          }
+        }
+        // chopping sequence
+        if (R.chops.length) {
+          const first = R.chops[0].t;
+          const last = R.chops[R.chops.length - 1].t;
+          const enter = R.poise !== null && R.poise !== undefined ? R.poise : first - 0.8;
+          if (t >= enter && t <= last + 0.7) {
+            const hiY = 2 * A.y + 1.0;
+            const loY = BLADE_MID.y;
+            const bx = (idx) => bnd(R.nx, A.x, idx);
+            let x, y;
+            if (t < first - 0.14) {
+              const u = clamp01((t - enter) / Math.max(0.01, first - 0.14 - enter));
+              const e = 1 - Math.pow(1 - u, 3);
+              x = lerp(4.5, bx(1), e);
+              y = lerp(hiY + 2.2, hiY, e);
+            } else if (t > last + 0.2) {
+              const u = clamp01((t - last - 0.2) / 0.5);
+              x = lerp(bx(R.chops[R.chops.length - 1].idx), 4.5, u * u);
+              y = lerp(hiY, hiY + 2.5, u * u);
+            } else {
+              let i = 0;
+              while (i + 1 < R.chops.length && t >= R.chops[i + 1].t - 0.14) i++;
+              const c = R.chops[i];
+              const nextT = i + 1 < R.chops.length ? R.chops[i + 1].t : c.t + 0.6;
+              x = bx(c.idx);
+              if (t < c.t) {
+                const u = clamp01((t - (c.t - 0.14)) / 0.14);
+                y = lerp(hiY, loY, u * u);
+              } else if (t < c.t + 0.04) {
+                y = loY;
+              } else {
+                const upDur = Math.min(0.2, nextT - 0.14 - (c.t + 0.04));
+                const u = clamp01((t - c.t - 0.04) / Math.max(0.02, upDur));
+                y = lerp(loY, hiY, 1 - (1 - u) * (1 - u));
+                if (i + 1 < R.chops.length) {
+                  const v = clamp01((t - c.t - 0.04) / Math.max(0.02, nextT - 0.14 - c.t - 0.04));
+                  x = lerp(bx(c.idx), bx(R.chops[i + 1].idx), v * v * (3 - 2 * v));
+                }
+              }
+            }
+            return { m: placeKnife(ROT.x, V(x, y, -0.15)), alpha: 1 };
+          }
+        }
+        return null;
+      }
+
+      function roundIndex(t) {
+        let ri = 0;
+        for (let i = 0; i < M.rounds.length; i++) if (t >= M.rounds[i].start) ri = i;
+        return ri;
+      }
+
+      // ---------- counters ----------
+      const cutsNum = document.getElementById("cuts-num");
+      const cubesNum = document.getElementById("cubes-num");
+      const fmt = (n) => n.toLocaleString("en-US");
+      const pop = (dt) => (dt >= 0 && dt < 0.4 ? 1 + 0.16 * Math.exp(-dt * 12) : 1);
+
+      // ---------- frame ----------
+      const dummy = new THREE.Object3D();
+      const qId = new THREE.Quaternion();
+      const zeroM = new THREE.Matrix4().makeScale(0, 0, 0);
+      function render(t) {
+        const ri = roundIndex(t);
+        const RR = rounds[ri];
+        const R = RR.R;
+
+        // cut lines on the intact melon
+        let ny = 0,
+          nz = 0,
+          cuts = 0,
+          lastEvent = -1;
+        melonUniforms.uCutYa.value.fill(0);
+        melonUniforms.uCutZa.value.fill(0);
+        for (const c of R.scoring) {
+          if (t < c.t) continue;
+          cuts++;
+          lastEvent = Math.max(lastEvent, c.t);
+          const dt = t - c.t;
+          const a = clamp01(dt / 0.04) * (1 + 0.6 * Math.exp(-dt * 6));
+          if (c.axis === "y" && ny < MAXC) {
+            melonUniforms.uCutY.value[ny] = bnd(R.ny, A.y, c.idx);
+            melonUniforms.uCutYa.value[ny++] = a;
+          } else if (c.axis === "z" && nz < MAXC) {
+            melonUniforms.uCutZ.value[nz] = bnd(R.nz, A.z, c.idx);
+            melonUniforms.uCutZa.value[nz++] = a;
+          }
+        }
+        let clipX = -99;
+        let chopsDone = 0;
+        for (const c of R.chops) {
+          if (t < c.t) continue;
+          cuts++;
+          chopsDone++;
+          lastEvent = Math.max(lastEvent, c.t);
+          clipX = bnd(R.nx, A.x, c.idx);
+        }
+        const allGone = R.chops.length > 0 && chopsDone === R.chops.length;
+        melon.visible = !allGone;
+        clipPlane.constant = -clipX;
+        melonUniforms.uClipX.value = clipX;
+
+        // cubes
+        let cubes = 0,
+          lastCube = -1;
+        rounds.forEach((r, i) => (r.inst.visible = i === ri && r.cells.length > 0));
+        const inst = RR.inst;
+        RR.cells.forEach((c, n) => {
+          if (t < RR.release[c.i]) {
+            inst.setMatrixAt(n, zeroM);
+            return;
+          }
+          cubes++;
+          lastCube = Math.max(lastCube, RR.release[c.i]);
+          const u = clamp01((t - c.release) / c.fallDur);
+          const ey = u * u;
+          const exz = 1 - (1 - u) * (1 - u);
+          dummy.position.set(lerp(c.from.x, c.to.x, exz), lerp(c.from.y, c.to.y, ey), lerp(c.from.z, c.to.z, exz));
+          dummy.quaternion.copy(qId).slerp(c.qTo, exz);
+          dummy.scale.set(c.s[0] * 0.965, c.s[1] * 0.965, c.s[2] * 0.965);
+          dummy.updateMatrix();
+          inst.setMatrixAt(n, dummy.matrix);
+        });
+        inst.instanceMatrix.needsUpdate = true;
+
+        // knife + motion trail
+        const k0 = knifeAt(t);
+        knife.visible = !!k0;
+        if (k0) knife.matrix.copy(k0.m);
+        ghosts.forEach((g, i) => {
+          const kk = knifeAt(t - (i + 1) * 0.011);
+          g.visible = !!kk && !!k0;
+          if (kk) g.matrix.copy(kk.m);
+        });
+        knife.matrixWorldNeedsUpdate = true;
+        ghosts.forEach((g) => (g.matrixWorldNeedsUpdate = true));
+
+        // counters
+        cutsNum.textContent = fmt(cuts);
+        cubesNum.textContent = fmt(cubes);
+        cutsNum.style.transform = `scale(${pop(t - lastEvent)})`;
+        cubesNum.style.transform = `scale(${pop(t - lastCube)})`;
+
+        renderer.render(scene, camera);
+      }
+
+      window.__melonRender = render;
+      window.__melonDebug = { rounds: rounds.map((r) => r.cells.length) };
+      const tl = window.__timelines["main"];
+      render(tl ? tl.time() : 0);
+      window.__hf = window.__hf || {};
+      window.__hf.buildReady = window.__hf.buildReady || {};
+      window.__hf.buildReady["main"] = (async () => {
+        for (const f of [6, 30, 37]) {
+          await new Promise((r) => setTimeout(r, 0));
+          render(f);
+        }
+        render(tl ? tl.time() : 0);
+        renderer.getContext().finish();
+      })();
+    </script>
+  </body>
+</html>
