@@ -1,0 +1,70 @@
+<template>
+  <style>
+
+      @font-face { font-family: "Cinzel"; src: url("assets/fonts/cinzel.woff2") format("woff2"); font-weight: 400 900; }
+
+      :root { --parch: #f3e7cc; --ink: #17130e; --gold: #e0b45a; --red: #d2533f; --green: #6fbf5a; --night: rgba(16,13,10,0.78); }
+
+    #root { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    .chap { position: absolute; left: 80px; bottom: 200px; display: flex; flex-direction: column; gap: 10px; padding: 22px 60px 26px 40px; background: linear-gradient(90deg, rgba(10,8,6,0.62), rgba(10,8,6,0.35) 70%, rgba(10,8,6,0)); border-radius: 6px; }
+    .chap-k { font-family: "Inter", sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); text-shadow: 0 2px 12px rgba(0,0,0,0.6); }
+    .chap-t { font-family: "Cinzel", serif; font-weight: 800; font-size: 68px; line-height: 1.05; color: #fff8e8; text-shadow: 0 4px 24px rgba(0,0,0,0.75), 0 1px 2px rgba(0,0,0,0.9); }
+    .chap-rule { height: 3px; width: 380px; background: linear-gradient(90deg, var(--gold), rgba(224,180,90,0)); transform-origin: left center; }
+    .badge { position: absolute; left: 110px; top: 96px; display: flex; align-items: stretch; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.45); }
+    .badge-k { font-family: "Inter", sans-serif; font-weight: 900; font-size: 28px; letter-spacing: 0.14em; color: #fff; padding: 14px 20px; display: flex; align-items: center; }
+    .badge-t { font-family: "Inter", sans-serif; font-weight: 700; font-size: 30px; color: #fff8e8; background: rgba(18,14,10,0.86); padding: 13px 24px 14px; display: flex; align-items: center; }
+    .badge.prob .badge-k { background: var(--red); }
+    .badge.sol .badge-k { background: #3f8f34; }
+
+    .cta { position: absolute; left: 0; right: 0; bottom: 230px; display: flex; justify-content: center; gap: 28px; }
+    .cta-b { display: flex; align-items: center; gap: 14px; padding: 16px 28px; border-radius: 999px; background: rgba(18,14,10,0.84); border: 2px solid rgba(255,255,255,0.18); font-family: "Inter", sans-serif; font-weight: 800; font-size: 30px; color: #fff; box-shadow: 0 12px 30px rgba(0,0,0,0.4); }
+    .cta-b.sub { background: #cc1f1f; border-color: #ff6a5a; }
+    .ideas { position: absolute; left: 0; right: 0; top: 140px; display: flex; justify-content: center; gap: 22px; }
+    .idea { padding: 14px 26px; border-radius: 10px; background: rgba(243,231,204,0.94); color: #1b150e; font-family: "Cinzel", serif; font-weight: 800; font-size: 32px; box-shadow: 0 10px 26px rgba(0,0,0,0.35); }
+    .ideas-k { position: absolute; left: 0; right: 0; top: 84px; text-align: center; font-family: "Inter", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.24em; color: var(--gold); text-shadow: 0 2px 12px rgba(0,0,0,0.7); }
+
+  </style>
+  <div id="root" data-composition-id="s10" data-width="1920" data-height="1080">
+    <div id="s10-cta" class="clip cta" data-start="1.00" data-duration="26.53" data-track-index="3">
+      <div id="s10-like" class="cta-b "><svg width="40" height="40" viewBox="0 0 24 24"><path fill="#fff" d="M2 21h4V9H2v12zm20-11a2 2 0 0 0-2-2h-6.3l1-4.6v-.3c0-.4-.2-.8-.4-1.1L13.2 1 6.6 7.6C6.2 8 6 8.5 6 9v10a2 2 0 0 0 2 2h9c.8 0 1.5-.5 1.8-1.2l3-7.1c.1-.2.2-.5.2-.7v-2z"/></svg>J’aime</div>
+      <div id="s10-sub" class="cta-b sub"><svg width="38" height="38" viewBox="0 0 24 24"><path fill="#fff" d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>S’abonner</div>
+      <div id="s10-bell" class="cta-b "><svg width="38" height="38" viewBox="0 0 24 24"><path fill="#fff" d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2zm6-6v-5c0-3.1-1.6-5.6-4.5-6.3V4a1.5 1.5 0 0 0-3 0v.7C7.6 5.4 6 7.9 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>Cloche</div>
+      <div id="s10-com" class="cta-b "><svg width="38" height="38" viewBox="0 0 24 24"><path fill="#fff" d="M21 6h-2v9H6v2c0 .6.4 1 1 1h11l4 4V7c0-.6-.4-1-1-1zm-4 6V3c0-.6-.4-1-1-1H3c-.6 0-1 .4-1 1v14l4-4h10c.6 0 1-.4 1-1z"/></svg>Commentaires</div>
+    </div>
+    <div id="s10-ideas" class="clip" data-start="17.00" data-duration="10.53" data-track-index="4" style="position:absolute;inset:0">
+      <div id="s10-ideas-k" class="ideas-k">ET ENSUITE, ON CONSTRUIT QUOI ?</div>
+      <div class="ideas">
+      <div id="s10-i-pyr" class="idea">Pyramide</div>
+      <div id="s10-i-cat" class="idea">Cathédrale</div>
+      <div id="s10-i-aq" class="idea">Aqueduc romain</div>
+      <div id="s10-i-cit" class="idea">Cité médiévale</div>
+      </div>
+    </div>
+    <div id="s10-dip" class="clip" data-start="0" data-duration="0.7" data-track-index="0" style="position:absolute;inset:0;background:#0b0907" data-layout-ignore></div>
+    <div id="s10-exit" class="clip" data-start="27.28" data-duration="0.45" data-track-index="0" style="position:absolute;inset:0;background:#0b0907" data-layout-ignore></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s10-like", { opacity: 0, y: 30, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(2)" }, 8.16);
+      tl.fromTo("#s10-like", { scale: 1 }, { scale: 1.08, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, 8.76);
+      tl.fromTo("#s10-sub", { opacity: 0, y: 30, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(2)" }, 9.50);
+      tl.fromTo("#s10-sub", { scale: 1 }, { scale: 1.08, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, 10.10);
+      tl.fromTo("#s10-bell", { opacity: 0, y: 30, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(2)" }, 11.81);
+      tl.fromTo("#s10-bell", { scale: 1 }, { scale: 1.08, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, 12.41);
+      tl.fromTo("#s10-com", { opacity: 0, y: 30, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(2)" }, 16.51);
+      tl.fromTo("#s10-com", { scale: 1 }, { scale: 1.08, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, 17.11);
+      tl.to("#s10-cta", { opacity: 0, duration: 0.4, ease: "power2.in" }, 27.08);
+      tl.fromTo("#s10-ideas-k", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 17.02);
+      tl.fromTo("#s10-i-pyr", { opacity: 0, y: -24, rotation: -3 }, { opacity: 1, y: 0, rotation: 0, duration: 0.45, ease: "back.out(1.8)" }, 20.35);
+      tl.fromTo("#s10-i-cat", { opacity: 0, y: -24, rotation: -3 }, { opacity: 1, y: 0, rotation: 0, duration: 0.45, ease: "back.out(1.8)" }, 21.27);
+      tl.fromTo("#s10-i-aq", { opacity: 0, y: -24, rotation: -3 }, { opacity: 1, y: 0, rotation: 0, duration: 0.45, ease: "back.out(1.8)" }, 22.53);
+      tl.fromTo("#s10-i-cit", { opacity: 0, y: -24, rotation: -3 }, { opacity: 1, y: 0, rotation: 0, duration: 0.45, ease: "back.out(1.8)" }, 23.56);
+      tl.to("#s10-ideas-k, #s10-i-pyr, #s10-i-cat, #s10-i-aq, #s10-i-cit", { opacity: 0, duration: 0.4, ease: "power2.in" }, 27.08);
+      tl.fromTo("#s10-dip", { opacity: 1 }, { opacity: 0, duration: 0.6, ease: "power2.out" }, 0.02);
+      tl.fromTo("#s10-exit", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.in" }, 27.28);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["s10"] = tl;
+    })();
+  </script>
+</template>

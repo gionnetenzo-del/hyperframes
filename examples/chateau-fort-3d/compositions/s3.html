@@ -1,0 +1,56 @@
+<template>
+  <style>
+
+      @font-face { font-family: "Cinzel"; src: url("assets/fonts/cinzel.woff2") format("woff2"); font-weight: 400 900; }
+
+      :root { --parch: #f3e7cc; --ink: #17130e; --gold: #e0b45a; --red: #d2533f; --green: #6fbf5a; --night: rgba(16,13,10,0.78); }
+
+    #root { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    .chap { position: absolute; left: 80px; bottom: 200px; display: flex; flex-direction: column; gap: 10px; padding: 22px 60px 26px 40px; background: linear-gradient(90deg, rgba(10,8,6,0.62), rgba(10,8,6,0.35) 70%, rgba(10,8,6,0)); border-radius: 6px; }
+    .chap-k { font-family: "Inter", sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); text-shadow: 0 2px 12px rgba(0,0,0,0.6); }
+    .chap-t { font-family: "Cinzel", serif; font-weight: 800; font-size: 68px; line-height: 1.05; color: #fff8e8; text-shadow: 0 4px 24px rgba(0,0,0,0.75), 0 1px 2px rgba(0,0,0,0.9); }
+    .chap-rule { height: 3px; width: 380px; background: linear-gradient(90deg, var(--gold), rgba(224,180,90,0)); transform-origin: left center; }
+    .badge { position: absolute; left: 110px; top: 96px; display: flex; align-items: stretch; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.45); }
+    .badge-k { font-family: "Inter", sans-serif; font-weight: 900; font-size: 28px; letter-spacing: 0.14em; color: #fff; padding: 14px 20px; display: flex; align-items: center; }
+    .badge-t { font-family: "Inter", sans-serif; font-weight: 700; font-size: 30px; color: #fff8e8; background: rgba(18,14,10,0.86); padding: 13px 24px 14px; display: flex; align-items: center; }
+    .badge.prob .badge-k { background: var(--red); }
+    .badge.sol .badge-k { background: #3f8f34; }
+
+  </style>
+  <div id="root" data-composition-id="s3" data-width="1920" data-height="1080">
+    <div id="s3-chap" class="clip chap" data-start="0.45" data-duration="4.55" data-track-index="1">
+      <div id="s3-chap-k" class="chap-k">Étape 2</div>
+      <div id="s3-chap-t" class="chap-t">Les fondations</div>
+      <div id="s3-chap-r" class="chap-rule"></div>
+    </div>
+    <div id="s3-prob" class="clip badge prob" data-start="26.30" data-duration="13.00" data-track-index="2">
+      <div id="s3-prob-k" class="badge-k">PROBLÈME 2</div>
+      <div id="s3-prob-t" class="badge-t">Le sol est instable</div>
+    </div>
+    <div id="s3-sol" class="clip badge sol" data-start="39.69" data-duration="26.23" data-track-index="2">
+      <div id="s3-sol-k" class="badge-k">SOLUTION</div>
+      <div id="s3-sol-t" class="badge-t">Creuser jusqu’au sol ferme, élargir la base</div>
+    </div>
+    <div id="s3-dip" class="clip" data-start="0" data-duration="0.7" data-track-index="0" style="position:absolute;inset:0;background:#0b0907" data-layout-ignore></div>
+    <div id="s3-exit" class="clip" data-start="66.27" data-duration="0.45" data-track-index="0" style="position:absolute;inset:0;background:#0b0907" data-layout-ignore></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s3-chap-k", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.50);
+      tl.fromTo("#s3-chap-t", { opacity: 0, y: 30, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.8, ease: "power3.out" }, 0.65);
+      tl.fromTo("#s3-chap-r", { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power2.inOut" }, 0.90);
+      tl.to("#s3-chap-k, #s3-chap-t, #s3-chap-r", { opacity: 0, y: -12, duration: 0.45, ease: "power2.in" }, 4.50);
+      tl.fromTo("#s3-prob-k", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 26.32);
+      tl.fromTo("#s3-prob-t", { opacity: 0, x: -24, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, x: 0, clipPath: "inset(0 0% 0 0)", duration: 0.6, ease: "power3.out" }, 26.48);
+      tl.to("#s3-prob-k, #s3-prob-t", { opacity: 0, duration: 0.35, ease: "power2.in" }, 38.90);
+      tl.fromTo("#s3-sol-k", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 39.71);
+      tl.fromTo("#s3-sol-t", { opacity: 0, x: -24, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, x: 0, clipPath: "inset(0 0% 0 0)", duration: 0.6, ease: "power3.out" }, 39.87);
+      tl.to("#s3-sol-k, #s3-sol-t", { opacity: 0, duration: 0.35, ease: "power2.in" }, 65.52);
+      tl.fromTo("#s3-dip", { opacity: 1 }, { opacity: 0, duration: 0.6, ease: "power2.out" }, 0.02);
+      tl.fromTo("#s3-exit", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.in" }, 66.27);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["s3"] = tl;
+    })();
+  </script>
+</template>

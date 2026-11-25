@@ -1,0 +1,116 @@
+<template>
+  <style>
+
+      @font-face { font-family: "Cinzel"; src: url("assets/fonts/cinzel.woff2") format("woff2"); font-weight: 400 900; }
+
+    #root { position: absolute; inset: 0; overflow: hidden; background: #000; }
+    #world-stage { position: absolute; inset: 0; }
+    #world-stage canvas { display: block; width: 100%; height: 100%; }
+    #world-labels { position: absolute; inset: 0; pointer-events: none; }
+    #world-vignette { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 50% 46%, rgba(0,0,0,0) 58%, rgba(8,6,4,0.42) 100%); }
+    .wl { position: absolute; left: 0; top: 0; width: 0; height: 0; }
+    .wl-in { position: absolute; left: 0; bottom: 0; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; opacity: 0; }
+    .wl-txt { font-family: "Inter", sans-serif; font-weight: 700; font-size: 28px; color: #fbf3df; background: rgba(18,14,10,0.74); border: 1px solid rgba(224,180,90,0.75); padding: 7px 16px 8px; border-radius: 6px; white-space: nowrap; letter-spacing: 0.01em; }
+    .wl-line { width: 2px; height: 46px; background: linear-gradient(#e0b45a, rgba(224,180,90,0.5)); }
+    .wl-dot { width: 12px; height: 12px; border-radius: 50%; background: #e0b45a; box-shadow: 0 0 0 4px rgba(224,180,90,0.28); margin-bottom: -6px; }
+    .wl.name .wl-txt { font-family: "Cinzel", serif; font-weight: 800; font-size: 34px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .wl.bad .wl-txt { border-color: #d2533f; background: rgba(70,16,10,0.82); }
+    .wl.bad .wl-dot { background: #d2533f; box-shadow: 0 0 0 4px rgba(210,83,63,0.3); }
+    .wl.bad .wl-line { background: #d2533f; }
+    .wl.good .wl-txt { border-color: #6fbf5a; background: rgba(14,44,12,0.82); }
+    .wl.good .wl-dot { background: #6fbf5a; box-shadow: 0 0 0 4px rgba(111,191,90,0.3); }
+    .wl.good .wl-line { background: #6fbf5a; }
+  </style>
+  <div id="root" data-composition-id="world" data-start="0" data-duration="629.46" data-width="1920" data-height="1080">
+    <div id="world-stage" class="clip" data-start="0" data-duration="629.46" data-track-index="0" data-layout-ignore></div>
+    <div id="world-vignette" class="clip" data-start="0" data-duration="629.46" data-track-index="1" data-layout-ignore></div>
+    <div id="world-labels" data-layout-allow-overflow data-layout-allow-overlap>
+        <div id="wl-0" class="clip wl " data-start="30.56" data-duration="8.11" data-track-index="2" data-at="15,13.2,44.5" data-space="world"><div class="wl-in"><span class="wl-txt">Douves</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-1" class="clip wl " data-start="31.95" data-duration="6.71" data-track-index="2" data-at="0,15.6,46" data-space="world"><div class="wl-in"><span class="wl-txt">Pont-levis</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-2" class="clip wl " data-start="33.09" data-duration="5.57" data-track-index="2" data-at="-15,27.4,31.2" data-space="world"><div class="wl-in"><span class="wl-txt">Créneaux</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-3" class="clip wl " data-start="34.66" data-duration="4.01" data-track-index="2" data-at="13.5,17.6,31.7" data-space="world"><div class="wl-in"><span class="wl-txt">Meurtrière</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-4" class="clip wl name" data-start="58.45" data-duration="9.19" data-track-index="2" data-at="-31,10,0" data-space="D1"><div class="wl-in"><span class="wl-txt">Colline</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-5" class="clip wl name" data-start="58.45" data-duration="9.19" data-track-index="2" data-at="31,30,0" data-space="D1"><div class="wl-in"><span class="wl-txt">Montagne</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-6" class="clip wl name" data-start="58.45" data-duration="9.19" data-track-index="2" data-at="-93,10,0" data-space="D1"><div class="wl-in"><span class="wl-txt">Plaine</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-7" class="clip wl name" data-start="58.45" data-duration="9.19" data-track-index="2" data-at="93,10,0" data-space="D1"><div class="wl-in"><span class="wl-txt">Rivière et marais</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-8" class="clip wl bad" data-start="67.94" data-duration="3.50" data-track-index="2" data-at="-93,6,0" data-space="D1"><div class="wl-in"><span class="wl-txt">✗  Ennemi à découvert</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-9" class="clip wl bad" data-start="71.64" data-duration="3.02" data-track-index="2" data-at="93,5,0" data-space="D1"><div class="wl-in"><span class="wl-txt">✗  Fondations fragiles</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-10" class="clip wl bad" data-start="74.85" data-duration="3.50" data-track-index="2" data-at="31,30,0" data-space="D1"><div class="wl-in"><span class="wl-txt">✗  Loin de l’eau</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-11" class="clip wl bad" data-start="78.55" data-duration="5.72" data-track-index="2" data-at="31,30,0" data-space="D1"><div class="wl-in"><span class="wl-txt">✗  Trop escarpée</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-12" class="clip wl good" data-start="86.08" data-duration="12.90" data-track-index="2" data-at="-34,17,-2" data-space="D1"><div class="wl-in"><span class="wl-txt">✓  Vue dégagée · eau · défense</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-13" class="clip wl " data-start="110.10" data-duration="7.70" data-track-index="2" data-at="-8,27,-30" data-space="world"><div class="wl-in"><span class="wl-txt">Enceinte carrée</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-14" class="clip wl " data-start="110.80" data-duration="7.00" data-track-index="2" data-at="30,35,30" data-space="world"><div class="wl-in"><span class="wl-txt">Tours rondes</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-15" class="clip wl " data-start="111.50" data-duration="6.30" data-track-index="2" data-at="13,47,-13" data-space="world"><div class="wl-in"><span class="wl-txt">Donjon</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-16" class="clip wl " data-start="112.10" data-duration="5.70" data-track-index="2" data-at="0,31,37" data-space="world"><div class="wl-in"><span class="wl-txt">Porte fortifiée</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-17" class="clip wl " data-start="118.06" data-duration="4.80" data-track-index="2" data-at="-30,15.4,6" data-space="world"><div class="wl-in"><span class="wl-txt">Cordes et piquets</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-18" class="clip wl " data-start="124.06" data-duration="8.59" data-track-index="2" data-at="-30,15.6,12" data-space="world"><div class="wl-in"><span class="wl-txt">Tranchées de fondation</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-19" class="clip wl " data-start="133.95" data-duration="12.25" data-track-index="2" data-at="-13,-4.5,7.2" data-space="D2"><div class="wl-in"><span class="wl-txt">Terre meuble</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-20" class="clip wl bad" data-start="134.95" data-duration="11.25" data-track-index="2" data-at="6,-0.4,7.2" data-space="D2"><div class="wl-in"><span class="wl-txt">Fondation trop superficielle</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-21" class="clip wl " data-start="152.92" data-duration="4.32" data-track-index="2" data-at="0,-11.5,7.6" data-space="D2"><div class="wl-in"><span class="wl-txt">Le poids se répartit</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-22" class="clip wl " data-start="161.83" data-duration="7.10" data-track-index="2" data-at="-13,-10,7.2" data-space="D2"><div class="wl-in"><span class="wl-txt">Couche compacte</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-23" class="clip wl good" data-start="166.06" data-duration="2.87" data-track-index="2" data-at="5.6,-5.4,7.4" data-space="D2"><div class="wl-in"><span class="wl-txt">Fondation élargie</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-24" class="clip wl " data-start="184.40" data-duration="5.01" data-track-index="2" data-at="-216,34,-60" data-space="world"><div class="wl-in"><span class="wl-txt">Carrière</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-25" class="clip wl " data-start="190.00" data-duration="2.49" data-track-index="2" data-at="-44,16.9,8" data-space="world"><div class="wl-in"><span class="wl-txt">Tailleurs de pierre</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-26" class="clip wl " data-start="193.09" data-duration="4.69" data-track-index="2" data-at="-43.5,16.6,-29.5" data-space="world"><div class="wl-in"><span class="wl-txt">Charpentiers</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-27" class="clip wl " data-start="225.65" data-duration="3.75" data-track-index="2" data-at="-116,7,4" data-space="world"><div class="wl-in"><span class="wl-txt">Chemin empierré</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-28" class="clip wl " data-start="230.00" data-duration="3.40" data-track-index="2" data-at="-44,17.5,8" data-space="world"><div class="wl-in"><span class="wl-txt">Stocks au pied des murs</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-29" class="clip wl " data-start="237.59" data-duration="6.91" data-track-index="2" data-at="30,21,12" data-space="world"><div class="wl-in"><span class="wl-txt">Mortier de chaux et de sable</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-30" class="clip wl " data-start="247.72" data-duration="10.22" data-track-index="2" data-at="33.4,23,9" data-space="world"><div class="wl-in"><span class="wl-txt">Échafaudage</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-31" class="clip wl " data-start="252.49" data-duration="5.45" data-track-index="2" data-at="36.6,19.8,-6" data-space="world"><div class="wl-in"><span class="wl-txt">Roue de levage</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-32" class="clip wl " data-start="261.53" data-duration="14.12" data-track-index="2" data-at="-31,31.5,0" data-space="world"><div class="wl-in"><span class="wl-txt">Tour carrée</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-33" class="clip wl " data-start="268.90" data-duration="6.75" data-track-index="2" data-at="-30,32,-30" data-space="world"><div class="wl-in"><span class="wl-txt">Tour ronde</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-34" class="clip wl " data-start="289.61" data-duration="7.09" data-track-index="2" data-at="4.6,7.9,1.5" data-space="D3"><div class="wl-in"><span class="wl-txt">Parement</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-35" class="clip wl " data-start="292.32" data-duration="4.38" data-track-index="2" data-at="4.6,4.0,0.0" data-space="D3"><div class="wl-in"><span class="wl-txt">Blocage : moellons + mortier</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-36" class="clip wl bad" data-start="300.21" data-duration="9.98" data-track-index="2" data-at="0,8.4,0.6" data-space="D3"><div class="wl-in"><span class="wl-txt">Joints alignés</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-37" class="clip wl good" data-start="312.42" data-duration="13.01" data-track-index="2" data-at="-4.9,8.6,0" data-space="D3"><div class="wl-in"><span class="wl-txt">Plus de 3 m</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-38" class="clip wl good" data-start="315.63" data-duration="9.80" data-track-index="2" data-at="4.6,5.0,1.7" data-space="D3"><div class="wl-in"><span class="wl-txt">Joints décalés</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-39" class="clip wl good" data-start="326.33" data-duration="1.00" data-track-index="2" data-at="2.4,7.8,-3.2" data-space="D3"><div class="wl-in"><span class="wl-txt">Contrefort</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-40" class="clip wl " data-start="348.61" data-duration="8.11" data-track-index="2" data-at="46,11,40" data-space="world"><div class="wl-in"><span class="wl-txt">Douve en eau</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-41" class="clip wl " data-start="382.05" data-duration="3.50" data-track-index="2" data-at="16,25.3,29.4" data-space="world"><div class="wl-in"><span class="wl-txt">Chemin de ronde</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-42" class="clip wl " data-start="384.94" data-duration="0.61" data-track-index="2" data-at="12,27.4,31.2" data-space="world"><div class="wl-in"><span class="wl-txt">Créneaux</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-43" class="clip wl " data-start="386.45" data-duration="4.30" data-track-index="2" data-at="13.5,17.6,31.7" data-space="world"><div class="wl-in"><span class="wl-txt">Archère (meurtrière)</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-44" class="clip wl " data-start="386.85" data-duration="3.90" data-track-index="2" data-at="-24,12.8,44.5" data-space="world"><div class="wl-in"><span class="wl-txt">Douves</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-45" class="clip wl " data-start="395.05" data-duration="5.22" data-track-index="2" data-at="-7.2,34,35" data-space="world"><div class="wl-in"><span class="wl-txt">Deux tours</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-46" class="clip wl " data-start="415.15" data-duration="8.52" data-track-index="2" data-at="0,22.0,37.8" data-space="world"><div class="wl-in"><span class="wl-txt">Passage voûté</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-47" class="clip wl " data-start="425.82" data-duration="3.83" data-track-index="2" data-at="0,24.5,39" data-space="world"><div class="wl-in"><span class="wl-txt">Pont-levis</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-48" class="clip wl " data-start="430.41" data-duration="3.99" data-track-index="2" data-at="0,19.5,35.7" data-space="world"><div class="wl-in"><span class="wl-txt">Herse</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-49" class="clip wl " data-start="435.30" data-duration="1.88" data-track-index="2" data-at="0,18.2,33.2" data-space="world"><div class="wl-in"><span class="wl-txt">Vantaux + poutre</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-50" class="clip wl " data-start="439.13" data-duration="4.41" data-track-index="2" data-at="0,20.5,32" data-space="world"><div class="wl-in"><span class="wl-txt">Assommoirs</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-51" class="clip wl " data-start="451.72" data-duration="4.71" data-track-index="2" data-at="-3,18.2,8" data-space="world"><div class="wl-in"><span class="wl-txt">Puits</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-52" class="clip wl " data-start="452.52" data-duration="3.91" data-track-index="2" data-at="-19,23,-9" data-space="world"><div class="wl-in"><span class="wl-txt">Cuisines</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-53" class="clip wl " data-start="453.12" data-duration="3.31" data-track-index="2" data-at="24,20,6" data-space="world"><div class="wl-in"><span class="wl-txt">Écuries</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-54" class="clip wl " data-start="453.82" data-duration="2.61" data-track-index="2" data-at="-23.5,23.5,14" data-space="world"><div class="wl-in"><span class="wl-txt">Greniers</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-55" class="clip wl " data-start="454.52" data-duration="1.91" data-track-index="2" data-at="-12,28,-24" data-space="world"><div class="wl-in"><span class="wl-txt">Logis</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-56" class="clip wl " data-start="462.87" data-duration="4.79" data-track-index="2" data-at="60,8,100" data-space="world"><div class="wl-in"><span class="wl-txt">Camp ennemi</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-57" class="clip wl good" data-start="478.96" data-duration="7.79" data-track-index="2" data-at="-11,-14,7.4" data-space="D2"><div class="wl-in"><span class="wl-txt">Nappe d’eau</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-58" class="clip wl " data-start="479.96" data-duration="6.79" data-track-index="2" data-at="2.2,-5,7.4" data-space="D2"><div class="wl-in"><span class="wl-txt">Puits maçonné</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-59" class="clip wl " data-start="488.15" data-duration="6.20" data-track-index="2" data-at="-6.4,2.0,0.5" data-space="D4"><div class="wl-in"><span class="wl-txt">Céréales au sec</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-60" class="clip wl " data-start="489.36" data-duration="4.99" data-track-index="2" data-at="0.5,5.0,-3" data-space="D4"><div class="wl-in"><span class="wl-txt">Viande salée</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-61" class="clip wl " data-start="490.35" data-duration="3.99" data-track-index="2" data-at="-4,2.4,-4.6" data-space="D4"><div class="wl-in"><span class="wl-txt">Tonneaux</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-62" class="clip wl " data-start="518.23" data-duration="1.53" data-track-index="2" data-at="-12,24,-33" data-space="world"><div class="wl-in"><span class="wl-txt">Contrefort</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-64" class="clip wl " data-start="524.46" data-duration="3.27" data-track-index="2" data-at="34.5,30.6,34.5" data-space="world"><div class="wl-in"><span class="wl-txt">Gargouille</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-65" class="clip wl " data-start="534.01" data-duration="3.61" data-track-index="2" data-at="14,17.6,-31.8" data-space="world"><div class="wl-in"><span class="wl-txt">Poterne murée</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-66" class="clip wl " data-start="586.35" data-duration="1.66" data-track-index="2" data-at="0,13.8,44" data-space="world"><div class="wl-in"><span class="wl-txt">Douves</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-67" class="clip wl " data-start="588.72" data-duration="0.70" data-track-index="2" data-at="0,22.5,38" data-space="world"><div class="wl-in"><span class="wl-txt">Porte fortifiée</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-68" class="clip wl " data-start="590.02" data-duration="1.64" data-track-index="2" data-at="30,34,30" data-space="world"><div class="wl-in"><span class="wl-txt">Tours</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-69" class="clip wl " data-start="592.26" data-duration="1.04" data-track-index="2" data-at="4,27,29.6" data-space="world"><div class="wl-in"><span class="wl-txt">Remparts</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-70" class="clip wl " data-start="593.90" data-duration="2.49" data-track-index="2" data-at="13,44,-13" data-space="world"><div class="wl-in"><span class="wl-txt">Donjon</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+        <div id="wl-71" class="clip wl " data-start="597.09" data-duration="5.66" data-track-index="2" data-at="-14,25,-22" data-space="world"><div class="wl-in"><span class="wl-txt">Logis et réserves</span><span class="wl-line"></span><span class="wl-dot"></span></div></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const TOTAL = 629.46;
+      const world = window.CastleWorld.createWorld(document.getElementById("world-stage"), document.getElementById("world-labels"));
+      const state = { t: 0 };
+      const tl = gsap.timeline({ paused: true });
+      tl.to(state, { t: TOTAL, duration: TOTAL, ease: "none", onUpdate: () => world.render(state.t) }, 0);
+      window.addEventListener("hf-seek", (e) => {
+        if (e && e.detail && typeof e.detail.time === "number") world.render(Math.max(0, Math.min(TOTAL, e.detail.time)));
+      });
+      world.render(0);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["world"] = tl;
+    })();
+  </script>
+</template>

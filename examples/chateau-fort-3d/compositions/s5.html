@@ -1,0 +1,92 @@
+<template>
+  <style>
+
+      @font-face { font-family: "Cinzel"; src: url("assets/fonts/cinzel.woff2") format("woff2"); font-weight: 400 900; }
+
+      :root { --parch: #f3e7cc; --ink: #17130e; --gold: #e0b45a; --red: #d2533f; --green: #6fbf5a; --night: rgba(16,13,10,0.78); }
+
+    #root { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    .chap { position: absolute; left: 80px; bottom: 200px; display: flex; flex-direction: column; gap: 10px; padding: 22px 60px 26px 40px; background: linear-gradient(90deg, rgba(10,8,6,0.62), rgba(10,8,6,0.35) 70%, rgba(10,8,6,0)); border-radius: 6px; }
+    .chap-k { font-family: "Inter", sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); text-shadow: 0 2px 12px rgba(0,0,0,0.6); }
+    .chap-t { font-family: "Cinzel", serif; font-weight: 800; font-size: 68px; line-height: 1.05; color: #fff8e8; text-shadow: 0 4px 24px rgba(0,0,0,0.75), 0 1px 2px rgba(0,0,0,0.9); }
+    .chap-rule { height: 3px; width: 380px; background: linear-gradient(90deg, var(--gold), rgba(224,180,90,0)); transform-origin: left center; }
+    .badge { position: absolute; left: 110px; top: 96px; display: flex; align-items: stretch; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.45); }
+    .badge-k { font-family: "Inter", sans-serif; font-weight: 900; font-size: 28px; letter-spacing: 0.14em; color: #fff; padding: 14px 20px; display: flex; align-items: center; }
+    .badge-t { font-family: "Inter", sans-serif; font-weight: 700; font-size: 30px; color: #fff8e8; background: rgba(18,14,10,0.86); padding: 13px 24px 14px; display: flex; align-items: center; }
+    .badge.prob .badge-k { background: var(--red); }
+    .badge.sol .badge-k { background: #3f8f34; }
+
+    .diag { position: absolute; right: 110px; top: 110px; width: 560px; padding: 26px 30px 24px; background: rgba(20,16,12,0.84); border: 1px solid rgba(224,180,90,0.55); border-radius: 14px; box-shadow: 0 16px 40px rgba(0,0,0,0.45); }
+    .diag-h { font-family: "Inter", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 14px; }
+    .diag-row { display: flex; gap: 26px; }
+    .diag-c { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .diag-l { font-family: "Inter", sans-serif; font-weight: 700; font-size: 28px; color: #fff4dc; text-align: center; line-height: 1.2; }
+    .diag-n { font-family: "Inter", sans-serif; font-weight: 700; font-size: 28px; color: #d8c8a8; text-align: center; line-height: 1.3; }
+
+  </style>
+  <div id="root" data-composition-id="s5" data-width="1920" data-height="1080">
+    <div id="s5-chap" class="clip chap" data-start="0.45" data-duration="4.55" data-track-index="1">
+      <div id="s5-chap-k" class="chap-k">Étape 4</div>
+      <div id="s5-chap-t" class="chap-t">Les murs et les tours</div>
+      <div id="s5-chap-r" class="chap-rule"></div>
+    </div>
+    <div id="s5-prob" class="clip badge prob" data-start="62.96" data-duration="13.44" data-track-index="2">
+      <div id="s5-prob-k" class="badge-k">PROBLÈME 4</div>
+      <div id="s5-prob-t" class="badge-t">Les murs peuvent s’effondrer</div>
+    </div>
+    <div id="s5-sol" class="clip badge sol" data-start="76.80" data-duration="23.54" data-track-index="2">
+      <div id="s5-sol-k" class="badge-k">SOLUTION</div>
+      <div id="s5-sol-t" class="badge-t">Murs épais, joints décalés, contreforts</div>
+    </div>
+    <div id="s5-diag" class="clip diag" data-start="27.17" data-duration="14.89" data-track-index="3">
+      <div id="s5-diag-h" class="diag-h">VUE DE DESSUS</div>
+      <div class="diag-row">
+        <div id="s5-diag-a" class="diag-c">
+          <svg width="220" height="190" viewBox="0 0 220 190">
+            <rect x="60" y="50" width="100" height="100" fill="#8f8673" stroke="#e8dcc0" stroke-width="3"/>
+            <path id="s5-arr-a" d="M10 10 L56 46" stroke="#d2533f" stroke-width="6" stroke-linecap="round"/>
+            <path d="M56 46 L40 42 M56 46 L52 30" stroke="#d2533f" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="60" cy="50" r="13" fill="none" stroke="#d2533f" stroke-width="4"/>
+            <circle cx="160" cy="150" r="13" fill="none" stroke="#d2533f" stroke-width="4"/>
+          </svg>
+          <div class="diag-l">Tour carrée</div>
+          <div class="diag-n">Angles fragiles<br/>aux sapes et aux coups</div>
+        </div>
+        <div id="s5-diag-b" class="diag-c">
+          <svg width="220" height="190" viewBox="0 0 220 190">
+            <circle cx="110" cy="100" r="58" fill="#8f8673" stroke="#e8dcc0" stroke-width="3"/>
+            <path d="M18 18 L64 58 L30 96" fill="none" stroke="#6fbf5a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M30 96 L34 80 M30 96 L46 94" stroke="#6fbf5a" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+          <div class="diag-l">Tour ronde</div>
+          <div class="diag-n">Les projectiles ricochent,<br/>aucun angle mort</div>
+        </div>
+      </div>
+    </div>
+    <div id="s5-dip" class="clip" data-start="0" data-duration="0.7" data-track-index="0" style="position:absolute;inset:0;background:#0b0907" data-layout-ignore></div>
+    <div id="s5-exit" class="clip" data-start="100.69" data-duration="0.45" data-track-index="0" style="position:absolute;inset:0;background:#0b0907" data-layout-ignore></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s5-chap-k", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.50);
+      tl.fromTo("#s5-chap-t", { opacity: 0, y: 30, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.8, ease: "power3.out" }, 0.65);
+      tl.fromTo("#s5-chap-r", { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power2.inOut" }, 0.90);
+      tl.to("#s5-chap-k, #s5-chap-t, #s5-chap-r", { opacity: 0, y: -12, duration: 0.45, ease: "power2.in" }, 4.50);
+      tl.fromTo("#s5-prob-k", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 62.98);
+      tl.fromTo("#s5-prob-t", { opacity: 0, x: -24, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, x: 0, clipPath: "inset(0 0% 0 0)", duration: 0.6, ease: "power3.out" }, 63.14);
+      tl.to("#s5-prob-k, #s5-prob-t", { opacity: 0, duration: 0.35, ease: "power2.in" }, 76.00);
+      tl.fromTo("#s5-sol-k", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 76.82);
+      tl.fromTo("#s5-sol-t", { opacity: 0, x: -24, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, x: 0, clipPath: "inset(0 0% 0 0)", duration: 0.6, ease: "power3.out" }, 76.98);
+      tl.to("#s5-sol-k, #s5-sol-t", { opacity: 0, duration: 0.35, ease: "power2.in" }, 99.94);
+      tl.fromTo("#s5-diag", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 27.19);
+      tl.fromTo("#s5-diag-a", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 27.47);
+      tl.fromTo("#s5-diag-b", { opacity: 0, x: 20 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 34.91);
+      tl.to("#s5-diag", { opacity: 0, duration: 0.4, ease: "power2.in" }, 41.61);
+      tl.fromTo("#s5-dip", { opacity: 1 }, { opacity: 0, duration: 0.6, ease: "power2.out" }, 0.02);
+      tl.fromTo("#s5-exit", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.in" }, 100.69);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["s5"] = tl;
+    })();
+  </script>
+</template>

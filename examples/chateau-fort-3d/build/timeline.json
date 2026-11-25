@@ -1,0 +1,326 @@
+{
+ "total": 629.46,
+ "scenes": [
+  {
+   "id": "s1",
+   "start": 0,
+   "dur": 43.865
+  },
+  {
+   "id": "s2",
+   "start": 43.865,
+   "dur": 63.238
+  },
+  {
+   "id": "s3",
+   "start": 107.104,
+   "dur": 66.722
+  },
+  {
+   "id": "s4",
+   "start": 173.825,
+   "dur": 60.165
+  },
+  {
+   "id": "s5",
+   "start": 233.99,
+   "dur": 101.14
+  },
+  {
+   "id": "s6",
+   "start": 335.13,
+   "dur": 56.717
+  },
+  {
+   "id": "s7",
+   "start": 391.847,
+   "dur": 52.294
+  },
+  {
+   "id": "s8",
+   "start": 444.14,
+   "dur": 50.806
+  },
+  {
+   "id": "s9",
+   "start": 494.946,
+   "dur": 54.181
+  },
+  {
+   "id": "s10",
+   "start": 549.127,
+   "dur": 27.729
+  },
+  {
+   "id": "s11",
+   "start": 576.856,
+   "dur": 52.603
+  }
+ ],
+ "segs": {
+  "s1a": {
+   "start": 8.0,
+   "dur": 9.691,
+   "scene": "s1",
+   "text": "Imaginez que vous êtes au Moyen Âge. Vous devez construire une forteresse capable de résister aux attaques ennemies, de protéger des centaines de personnes et de survivre pendant des siècles."
+  },
+  "s1b": {
+   "start": 18.691,
+   "dur": 10.266,
+   "scene": "s1",
+   "text": "Mais comment construire un tel monument sans machines modernes, sans grues électriques et sans béton industriel ? Et surtout, quels problèmes allez-vous rencontrer pendant sa construction ?"
+  },
+  "s1c": {
+   "start": 29.958,
+   "dur": 8.908,
+   "scene": "s1",
+   "text": "Aujourd’hui, nous allons bâtir un véritable château fort, étape par étape, et découvrir comment les bâtisseurs médiévaux résolvaient les problèmes les plus difficiles."
+  },
+  "s2a": {
+   "start": 45.865,
+   "dur": 4.78,
+   "scene": "s2",
+   "text": "Le premier défi n’est même pas de construire les murs. C’est de trouver le bon endroit."
+  },
+  "s2b": {
+   "start": 51.646,
+   "dur": 10.632,
+   "scene": "s2",
+   "text": "Le maître d’œuvre, l’architecte du chantier, parcourt la région avec le seigneur. Quatre sites s’offrent à eux : une plaine, une colline, une montagne, et les rives d’une rivière."
+  },
+  "s2c": {
+   "start": 64.678,
+   "dur": 17.998,
+   "scene": "s2",
+   "text": "Premier problème : un terrain mal choisi. Une plaine trop plate laisse l’ennemi approcher à découvert. Un sol marécageux fragilise les fondations. Un site éloigné de l’eau complique l’approvisionnement. Et une montagne trop escarpée rend le transport des matériaux épuisant."
+  },
+  "s2d": {
+   "start": 85.076,
+   "dur": 20.428,
+   "scene": "s2",
+   "text": "Un château mal placé peut devenir extrêmement difficile à défendre. Les bâtisseurs privilégient donc souvent les hauteurs naturelles, qui permettent de surveiller les environs et de compliquer l’approche des assaillants. Ce sera donc cette colline : une vue dégagée, une rivière à ses pieds, et des pentes qui ralentiront l’ennemi."
+  },
+  "s3a": {
+   "start": 108.704,
+   "dur": 13.558,
+   "scene": "s3",
+   "text": "Notre forteresse s’inspire des châteaux du treizième siècle : une enceinte carrée, des tours rondes aux angles, un donjon et une porte fortifiée. Avec des cordes et des piquets, le maître d’œuvre trace son plan directement sur le sol."
+  },
+  "s3b": {
+   "start": 123.261,
+   "dur": 7.889,
+   "scene": "s3",
+   "text": "Puis les terrassiers creusent les tranchées de fondation, à la pioche et à la pelle. La terre est évacuée dans des paniers et des brouettes."
+  },
+  "s3c": {
+   "start": 133.55,
+   "dur": 10.449,
+   "scene": "s3",
+   "text": "Deuxième problème : le sol est instable. Si la tranchée s’arrête sur une terre trop meuble, le mur s’enfonce sous son propre poids. Il se fissure… et peut finir par s’effondrer."
+  },
+  "s3d": {
+   "start": 146.599,
+   "dur": 25.626,
+   "scene": "s3",
+   "text": "Construire des murs gigantesques ne sert à rien si le sol ne peut pas les supporter. Les fondations doivent répartir le poids de toute la forteresse. Sur un terrain difficile, les bâtisseurs doivent adapter la profondeur et la largeur des fondations. On creuse jusqu’à une couche compacte, ou jusqu’au rocher, puis on élargit la base avec de gros blocs liés au mortier. Une erreur à cette étape pourrait compromettre tout le château."
+  },
+  "s4a": {
+   "start": 175.425,
+   "dur": 7.471,
+   "scene": "s4",
+   "text": "Un château fort nécessite des quantités impressionnantes de matériaux. Chaque pierre doit être extraite, taillée puis transportée."
+  },
+  "s4b": {
+   "start": 183.896,
+   "dur": 11.886,
+   "scene": "s4",
+   "text": "Dans la carrière, les carriers détachent les blocs avec des coins, des leviers et des pics. Les tailleurs de pierre les dressent ensuite au ciseau, tandis que les charpentiers équarrissent les poutres de chêne."
+  },
+  "s4c": {
+   "start": 198.182,
+   "dur": 12.774,
+   "scene": "s4",
+   "text": "Troisième problème : le transport est lent et difficile. Une charrette chargée de pierres pèse plusieurs tonnes. Sous la pluie, les chemins deviennent des bourbiers. Les roues se brisent, et les bêtes s’épuisent."
+  },
+  "s4d": {
+   "start": 213.556,
+   "dur": 18.834,
+   "scene": "s4",
+   "text": "Sans une bonne organisation, le chantier peut prendre énormément de retard. Les bâtisseurs doivent donc organiser les livraisons et répartir les tâches entre les différents artisans. On empierre les chemins, on ouvre si possible une carrière tout près du chantier, et l’on stocke les matériaux au pied des futurs murs."
+  },
+  "s5a": {
+   "start": 235.59,
+   "dur": 8.908,
+   "scene": "s5",
+   "text": "Vient enfin le moment de monter les murs. Assise après assise, les maçons posent les pierres, liées par un mortier de chaux et de sable."
+  },
+  "s5b": {
+   "start": 245.498,
+   "dur": 12.434,
+   "scene": "s5",
+   "text": "Pour hisser les blocs, on dresse des échafaudages de bois, ancrés dans le mur par des trous de boulin. Des poulies et de grandes roues de levage, actionnées par des hommes qui marchent à l’intérieur, soulèvent les charges les plus lourdes."
+  },
+  "s5c": {
+   "start": 258.932,
+   "dur": 16.718,
+   "scene": "s5",
+   "text": "Les tours s’élèvent en même temps. Une tour carrée est plus simple à bâtir, mais ses angles sont vulnérables aux sapes et aux projectiles. La tour ronde, qui se généralise à la fin du douzième siècle, dévie mieux les coups et ne laisse aucun angle mort."
+  },
+  "s5d": {
+   "start": 276.651,
+   "dur": 18.051,
+   "scene": "s5",
+   "text": "Les murs d’un château ne sont pas de simples empilements de pierres. Ils doivent supporter leur propre poids, résister aux intempéries et rendre les attaques beaucoup plus difficiles. En coupe, on découvre deux parements de pierres taillées, et entre eux, un blocage de moellons noyés dans le mortier."
+  },
+  "s5e": {
+   "start": 297.101,
+   "dur": 10.893,
+   "scene": "s5",
+   "text": "Quatrième problème : les murs peuvent s’effondrer. Des pierres mal croisées, un poids mal réparti, des fondations insuffisantes… et les fissures apparaissent. Le mur commence à pencher."
+  },
+  "s5f": {
+   "start": 310.594,
+   "dur": 22.936,
+   "scene": "s5",
+   "text": "La solution : des murs épais, parfois de plus de trois mètres, des joints décalés d’une assise à l’autre, un mortier adapté, et une construction progressive qui laisse à la maçonnerie le temps de durcir. Là où c’est nécessaire, des contreforts viennent épauler le mur. Leur épaisseur, leur structure intérieure et la qualité de leur assemblage sont donc essentielles."
+  },
+  "s6a": {
+   "start": 336.73,
+   "dur": 6.452,
+   "scene": "s6",
+   "text": "Les murs sont debout. Les terrassiers s’attaquent maintenant au fossé, qui encercle peu à peu la forteresse."
+  },
+  "s6b": {
+   "start": 344.182,
+   "dur": 13.035,
+   "scene": "s6",
+   "text": "Ici, une dérivation de la rivière, prise en amont, permet de le remplir d’eau. Mais attention : beaucoup de châteaux se contentaient d’un fossé sec, profond et hérissé de pieux. La douve en eau n’a rien de systématique."
+  },
+  "s6c": {
+   "start": 359.617,
+   "dur": 6.348,
+   "scene": "s6",
+   "text": "Cinquième problème : protéger le château contre les attaques. Une troupe ennemie approche, et cherche à atteindre la porte."
+  },
+  "s6d": {
+   "start": 368.565,
+   "dur": 21.682,
+   "scene": "s6",
+   "text": "Même les murs les plus solides ne suffisent pas toujours. Il faut empêcher les ennemis de s’approcher facilement. Les douves, les tours et les remparts permettent de ralentir les assaillants et d’améliorer la défense du château. Depuis le chemin de ronde, les défenseurs combattent à l’abri des créneaux, et les archères, ces fameuses meurtrières, leur permettent de tirer sans s’exposer."
+  },
+  "s7a": {
+   "start": 393.447,
+   "dur": 5.616,
+   "scene": "s7",
+   "text": "Reste la porte principale. On l’encadre de deux tours puissantes, reliées par un passage voûté."
+  },
+  "s7b": {
+   "start": 401.063,
+   "dur": 6.034,
+   "scene": "s7",
+   "text": "Sixième problème : la porte est le point faible de la forteresse. C’est là que l’ennemi frappera, avec un bélier."
+  },
+  "s7c": {
+   "start": 409.697,
+   "dur": 13.976,
+   "scene": "s7",
+   "text": "La porte est souvent l’un des endroits les plus vulnérables du château. Elle doit permettre aux habitants de circuler tout en empêchant les ennemis de pénétrer facilement. C’est pourquoi les bâtisseurs accordent une attention particulière à cette partie de la forteresse."
+  },
+  "s7d": {
+   "start": 424.673,
+   "dur": 17.868,
+   "scene": "s7",
+   "text": "D’abord, un pont-levis, qui se relève au-dessus du fossé. Derrière lui, une herse de chêne bardée de fer, qui tombe d’un seul coup. Puis de lourds vantaux, bloqués par une poutre. Et au-dessus du passage, des assommoirs permettent de frapper ceux qui parviendraient jusque-là."
+  },
+  "s8a": {
+   "start": 445.74,
+   "dur": 9.691,
+   "scene": "s8",
+   "text": "Un château n’est pas seulement une forteresse militaire. C’est aussi un lieu de vie. Dans la cour, on trouve le puits, les cuisines, les écuries, les greniers et les logis."
+  },
+  "s8b": {
+   "start": 457.832,
+   "dur": 9.326,
+   "scene": "s8",
+   "text": "Septième problème : comment survivre pendant un siège ? L’ennemi encercle la place et coupe tous les approvisionnements. Jour après jour, les réserves diminuent."
+  },
+  "s8c": {
+   "start": 469.758,
+   "dur": 23.589,
+   "scene": "s8",
+   "text": "En cas de siège, les habitants peuvent rester enfermés pendant longtemps. Il faut donc prévoir de l’eau, de la nourriture et des espaces de stockage. Quand la géologie le permet, on creuse un puits jusqu’à la nappe d’eau, parfois à plusieurs dizaines de mètres de profondeur. Sans eau potable, aucune garnison ne peut tenir. On stocke les céréales au sec, on sale la viande, on fume le poisson, et l’on tient le compte de chaque sac."
+  },
+  "s9a": {
+   "start": 496.546,
+   "dur": 4.911,
+   "scene": "s9",
+   "text": "Mais un château n’est jamais vraiment terminé. De nouveaux problèmes apparaissent sans cesse."
+  },
+  "s9b": {
+   "start": 502.657,
+   "dur": 4.78,
+   "scene": "s9",
+   "text": "Une forte pluie, et la toiture fuit : les couvreurs remplacent les ardoises brisées."
+  },
+  "s9c": {
+   "start": 508.638,
+   "dur": 4.362,
+   "scene": "s9",
+   "text": "L’humidité attaque la charpente : les charpentiers changent les pièces fragilisées."
+  },
+  "s9d": {
+   "start": 514.2,
+   "dur": 4.963,
+   "scene": "s9",
+   "text": "Des fissures zèbrent un mur : les maçons les rejointoient et ajoutent un contrefort."
+  },
+  "s9e": {
+   "start": 520.363,
+   "dur": 6.766,
+   "scene": "s9",
+   "text": "L’eau de pluie stagne dans la cour : on creuse des rigoles, et des gargouilles l’évacuent loin des murs."
+  },
+  "s9f": {
+   "start": 528.329,
+   "dur": 8.49,
+   "scene": "s9",
+   "text": "Les réserves sont trop justes : on agrandit les celliers. Et lorsqu’un accès paraît trop facile, on le mure, ou on le protège par une nouvelle tour."
+  },
+  "s9g": {
+   "start": 538.019,
+   "dur": 9.509,
+   "scene": "s9",
+   "text": "Entretenir et réparer sans relâche : c’est le secret de la longévité. Grâce à ce travail, certaines forteresses sont encore debout, huit siècles plus tard."
+  },
+  "s10a": {
+   "start": 550.327,
+   "dur": 12.983,
+   "scene": "s10",
+   "text": "Petite pause ! Si vous aimez découvrir les secrets de l’histoire grâce à ces constructions en 3D, pensez à mettre un petit pouce bleu, à vous abonner à la chaîne et à activer la cloche pour ne pas manquer les prochaines vidéos."
+  },
+  "s10b": {
+   "start": 564.11,
+   "dur": 11.546,
+   "scene": "s10",
+   "text": "Et surtout, dites-moi dans les commentaires quelle construction historique vous aimeriez voir ensuite : une pyramide, une cathédrale, un aqueduc romain ou une cité médiévale ? Je lirai vos idées !"
+  },
+  "s11a": {
+   "start": 581.856,
+   "dur": 13.636,
+   "scene": "s11",
+   "text": "Construire un château fort au Moyen Âge était un travail gigantesque. Il fallait choisir le bon terrain, préparer des fondations solides, transporter des milliers de matériaux, construire des murs imposants et anticiper les dangers d’un siège."
+  },
+  "s11b": {
+   "start": 596.692,
+   "dur": 11.729,
+   "scene": "s11",
+   "text": "Chaque problème nécessitait une solution, et chaque étape demandait le savoir-faire de nombreux artisans. Ces forteresses sont aujourd’hui les témoins impressionnants de l’ingéniosité des bâtisseurs médiévaux."
+  },
+  "s11c": {
+   "start": 612.421,
+   "dur": 9.038,
+   "scene": "s11",
+   "text": "Et vous, quel monument aimeriez-vous voir construire dans notre prochaine vidéo ? Merci d’avoir regardé, et à très bientôt pour une nouvelle aventure historique !"
+  }
+ }
+}

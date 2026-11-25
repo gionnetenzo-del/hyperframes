@@ -1,0 +1,63 @@
+<template>
+  <style>
+
+      @font-face { font-family: "Cinzel"; src: url("assets/fonts/cinzel.woff2") format("woff2"); font-weight: 400 900; }
+
+      :root { --parch: #f3e7cc; --ink: #17130e; --gold: #e0b45a; --red: #d2533f; --green: #6fbf5a; --night: rgba(16,13,10,0.78); }
+
+    #root { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    .chap { position: absolute; left: 80px; bottom: 200px; display: flex; flex-direction: column; gap: 10px; padding: 22px 60px 26px 40px; background: linear-gradient(90deg, rgba(10,8,6,0.62), rgba(10,8,6,0.35) 70%, rgba(10,8,6,0)); border-radius: 6px; }
+    .chap-k { font-family: "Inter", sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); text-shadow: 0 2px 12px rgba(0,0,0,0.6); }
+    .chap-t { font-family: "Cinzel", serif; font-weight: 800; font-size: 68px; line-height: 1.05; color: #fff8e8; text-shadow: 0 4px 24px rgba(0,0,0,0.75), 0 1px 2px rgba(0,0,0,0.9); }
+    .chap-rule { height: 3px; width: 380px; background: linear-gradient(90deg, var(--gold), rgba(224,180,90,0)); transform-origin: left center; }
+    .badge { position: absolute; left: 110px; top: 96px; display: flex; align-items: stretch; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.45); }
+    .badge-k { font-family: "Inter", sans-serif; font-weight: 900; font-size: 28px; letter-spacing: 0.14em; color: #fff; padding: 14px 20px; display: flex; align-items: center; }
+    .badge-t { font-family: "Inter", sans-serif; font-weight: 700; font-size: 30px; color: #fff8e8; background: rgba(18,14,10,0.86); padding: 13px 24px 14px; display: flex; align-items: center; }
+    .badge.prob .badge-k { background: var(--red); }
+    .badge.sol .badge-k { background: #3f8f34; }
+
+    .title { position: absolute; left: 0; right: 0; top: 300px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .title-k { font-family: "Inter", sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 0.42em; color: var(--gold); text-shadow: 0 2px 14px rgba(0,0,0,0.7); }
+    .title-t { font-family: "Cinzel", serif; font-weight: 800; font-size: 92px; line-height: 1.04; color: #fff9ea; text-shadow: 0 6px 34px rgba(0,0,0,0.8), 0 2px 3px rgba(0,0,0,0.9); max-width: 1500px; }
+    .title-s { font-family: "Inter", sans-serif; font-weight: 700; font-size: 34px; color: #f3e7cc; text-shadow: 0 2px 14px rgba(0,0,0,0.8); letter-spacing: 0.04em; }
+    .title-r { width: 520px; height: 3px; background: linear-gradient(90deg, rgba(224,180,90,0), var(--gold), rgba(224,180,90,0)); }
+    .rw { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,240,210,0.0), rgba(255,236,200,0.16), rgba(255,240,210,0.0)); mix-blend-mode: screen; }
+    .rw-lines { position: absolute; inset: 0; background: repeating-linear-gradient(180deg, rgba(255,255,255,0.07) 0 2px, rgba(0,0,0,0) 2px 9px); }
+    .rw-t { position: absolute; left: 0; right: 0; top: 470px; text-align: center; font-family: "Cinzel", serif; font-weight: 700; font-size: 56px; color: #fff8e8; text-shadow: 0 4px 26px rgba(0,0,0,0.8); letter-spacing: 0.04em; }
+    .rw-i { position: absolute; left: 0; right: 0; top: 380px; text-align: center; font-family: "Inter", sans-serif; font-weight: 900; font-size: 60px; color: var(--gold); letter-spacing: -0.12em; text-shadow: 0 2px 16px rgba(0,0,0,0.7); }
+
+  </style>
+  <div id="root" data-composition-id="s1" data-width="1920" data-height="1080">
+    <div id="s1-title" class="clip title" data-start="0.90" data-duration="6.50" data-track-index="1">
+      <div id="s1-title-k" class="title-k">DOCUMENTAIRE · MOYEN ÂGE</div>
+      <div id="s1-title-t" class="title-t">Comment construire un château fort ?</div>
+      <div id="s1-title-r" class="title-r"></div>
+      <div id="s1-title-s" class="title-s">Les défis, les dangers et les solutions</div>
+    </div>
+    <div id="s1-rw" class="clip" data-start="39.17" data-duration="4.70" data-track-index="2" style="position:absolute;inset:0">
+      <div id="s1-rw-glow" class="rw" style="opacity:0"></div>
+      <div id="s1-rw-lines" class="rw-lines" style="opacity:0"></div>
+      <div id="s1-rw-i" class="rw-i">◀◀</div>
+      <div id="s1-rw-t" class="rw-t">Avant le premier coup de pioche…</div>
+    </div>
+    <div id="s1-exit" class="clip" data-start="43.41" data-duration="0.45" data-track-index="0" style="position:absolute;inset:0;background:#0b0907" data-layout-ignore></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s1-title-k", { opacity: 0, y: -14 }, { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" }, 0.90);
+      tl.fromTo("#s1-title-t", { opacity: 0, scale: 1.08, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 1.6, ease: "power3.out" }, 1.20);
+      tl.fromTo("#s1-title-r", { scaleX: 0 }, { scaleX: 1, duration: 1.2, ease: "power2.inOut" }, 1.90);
+      tl.fromTo("#s1-title-s", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" }, 2.40);
+      tl.to("#s1-title-k, #s1-title-t, #s1-title-r, #s1-title-s", { opacity: 0, y: -18, filter: "blur(8px)", duration: 0.7, ease: "power2.in" }, 6.65);
+      tl.fromTo("#s1-rw-glow, #s1-rw-lines", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 39.17);
+      tl.fromTo("#s1-rw-lines", { y: 0 }, { y: 90, duration: 4.70, ease: "none" }, 39.17);
+      tl.fromTo("#s1-rw-i", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 39.37);
+      tl.fromTo("#s1-rw-t", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 40.57);
+      tl.to("#s1-rw-glow, #s1-rw-lines, #s1-rw-i, #s1-rw-t", { opacity: 0, duration: 0.5, ease: "power2.in" }, 43.32);
+      tl.fromTo("#s1-exit", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.in" }, 43.41);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["s1"] = tl;
+    })();
+  </script>
+</template>

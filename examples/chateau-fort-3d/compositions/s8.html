@@ -1,0 +1,78 @@
+<template>
+  <style>
+
+      @font-face { font-family: "Cinzel"; src: url("assets/fonts/cinzel.woff2") format("woff2"); font-weight: 400 900; }
+
+      :root { --parch: #f3e7cc; --ink: #17130e; --gold: #e0b45a; --red: #d2533f; --green: #6fbf5a; --night: rgba(16,13,10,0.78); }
+
+    #root { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    .chap { position: absolute; left: 80px; bottom: 200px; display: flex; flex-direction: column; gap: 10px; padding: 22px 60px 26px 40px; background: linear-gradient(90deg, rgba(10,8,6,0.62), rgba(10,8,6,0.35) 70%, rgba(10,8,6,0)); border-radius: 6px; }
+    .chap-k { font-family: "Inter", sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); text-shadow: 0 2px 12px rgba(0,0,0,0.6); }
+    .chap-t { font-family: "Cinzel", serif; font-weight: 800; font-size: 68px; line-height: 1.05; color: #fff8e8; text-shadow: 0 4px 24px rgba(0,0,0,0.75), 0 1px 2px rgba(0,0,0,0.9); }
+    .chap-rule { height: 3px; width: 380px; background: linear-gradient(90deg, var(--gold), rgba(224,180,90,0)); transform-origin: left center; }
+    .badge { position: absolute; left: 110px; top: 96px; display: flex; align-items: stretch; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.45); }
+    .badge-k { font-family: "Inter", sans-serif; font-weight: 900; font-size: 28px; letter-spacing: 0.14em; color: #fff; padding: 14px 20px; display: flex; align-items: center; }
+    .badge-t { font-family: "Inter", sans-serif; font-weight: 700; font-size: 30px; color: #fff8e8; background: rgba(18,14,10,0.86); padding: 13px 24px 14px; display: flex; align-items: center; }
+    .badge.prob .badge-k { background: var(--red); }
+    .badge.sol .badge-k { background: #3f8f34; }
+
+    .gauge { position: absolute; right: 110px; top: 110px; width: 520px; padding: 24px 30px 26px; background: rgba(20,16,12,0.86); border: 1px solid rgba(210,83,63,0.65); border-radius: 14px; box-shadow: 0 16px 40px rgba(0,0,0,0.45); }
+    .gauge-h { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 18px; }
+    .gauge-k { font-family: "Inter", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.18em; color: #f0a090; }
+    .gauge-d { font-family: "Cinzel", serif; font-weight: 800; font-size: 40px; color: #fff4dc; }
+    .gauge-row { display: flex; align-items: center; gap: 16px; margin-top: 14px; }
+    .gauge-l { width: 150px; font-family: "Inter", sans-serif; font-weight: 700; font-size: 28px; color: #efe2c6; }
+    .gauge-bar { flex: 1; height: 22px; border-radius: 11px; background: rgba(255,255,255,0.12); overflow: hidden; }
+    .gauge-fill { height: 100%; width: 100%; border-radius: 11px; transform-origin: left center; }
+
+  </style>
+  <div id="root" data-composition-id="s8" data-width="1920" data-height="1080">
+    <div id="s8-chap" class="clip chap" data-start="0.45" data-duration="4.55" data-track-index="1">
+      <div id="s8-chap-k" class="chap-k">Étape 7</div>
+      <div id="s8-chap-t" class="chap-t">L’eau, les réserves, la vie</div>
+      <div id="s8-chap-r" class="chap-rule"></div>
+    </div>
+    <div id="s8-prob" class="clip badge prob" data-start="13.54" data-duration="11.88" data-track-index="2">
+      <div id="s8-prob-k" class="badge-k">PROBLÈME 7</div>
+      <div id="s8-prob-t" class="badge-t">Survivre pendant un siège</div>
+    </div>
+    <div id="s8-sol" class="clip badge sol" data-start="25.82" data-duration="24.19" data-track-index="2">
+      <div id="s8-sol-k" class="badge-k">SOLUTION</div>
+      <div id="s8-sol-t" class="badge-t">Puits, greniers et provisions</div>
+    </div>
+    <div id="s8-gauge" class="clip gauge" data-start="19.66" data-duration="4.96" data-track-index="3">
+      <div class="gauge-h"><div class="gauge-k">RÉSERVES</div><div id="s8-day" class="gauge-d">Jour 1</div></div>
+      <div class="gauge-row"><div class="gauge-l">Eau</div><div class="gauge-bar"><div id="s8-g-water" class="gauge-fill" style="background:#4aa3c8"></div></div></div>
+      <div class="gauge-row"><div class="gauge-l">Céréales</div><div class="gauge-bar"><div id="s8-g-grain" class="gauge-fill" style="background:#e0b45a"></div></div></div>
+      <div class="gauge-row"><div class="gauge-l">Viande</div><div class="gauge-bar"><div id="s8-g-meat" class="gauge-fill" style="background:#d2533f"></div></div></div>
+    </div>
+    <div id="s8-dip" class="clip" data-start="0" data-duration="0.7" data-track-index="0" style="position:absolute;inset:0;background:#0b0907" data-layout-ignore></div>
+    <div id="s8-exit" class="clip" data-start="50.36" data-duration="0.45" data-track-index="0" style="position:absolute;inset:0;background:#0b0907" data-layout-ignore></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s8-chap-k", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.50);
+      tl.fromTo("#s8-chap-t", { opacity: 0, y: 30, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.8, ease: "power3.out" }, 0.65);
+      tl.fromTo("#s8-chap-r", { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power2.inOut" }, 0.90);
+      tl.to("#s8-chap-k, #s8-chap-t, #s8-chap-r", { opacity: 0, y: -12, duration: 0.45, ease: "power2.in" }, 4.50);
+      tl.fromTo("#s8-prob-k", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 13.56);
+      tl.fromTo("#s8-prob-t", { opacity: 0, x: -24, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, x: 0, clipPath: "inset(0 0% 0 0)", duration: 0.6, ease: "power3.out" }, 13.72);
+      tl.to("#s8-prob-k, #s8-prob-t", { opacity: 0, duration: 0.35, ease: "power2.in" }, 25.02);
+      tl.fromTo("#s8-sol-k", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 25.84);
+      tl.fromTo("#s8-sol-t", { opacity: 0, x: -24, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, x: 0, clipPath: "inset(0 0% 0 0)", duration: 0.6, ease: "power3.out" }, 26.00);
+      tl.to("#s8-sol-k, #s8-sol-t", { opacity: 0, duration: 0.35, ease: "power2.in" }, 49.61);
+      tl.fromTo("#s8-gauge", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 19.68);
+      tl.fromTo("#s8-g-water", { scaleX: 1 }, { scaleX: 0.22, duration: 3.26, ease: "power1.in" }, 20.16);
+      tl.fromTo("#s8-g-grain", { scaleX: 1 }, { scaleX: 0.35, duration: 3.26, ease: "power1.in" }, 20.16);
+      tl.fromTo("#s8-g-meat", { scaleX: 1 }, { scaleX: 0.12, duration: 3.26, ease: "power1.in" }, 20.16);
+      const day = { d: 1 };
+      tl.fromTo(day, { d: 1 }, { d: 60, duration: 3.26, ease: "power1.in", onUpdate: () => { document.getElementById("s8-day").textContent = "Jour " + Math.round(day.d); } }, 20.16);
+      tl.to("#s8-gauge", { opacity: 0, duration: 0.4, ease: "power2.in" }, 24.17);
+      tl.fromTo("#s8-dip", { opacity: 1 }, { opacity: 0, duration: 0.6, ease: "power2.out" }, 0.02);
+      tl.fromTo("#s8-exit", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.in" }, 50.36);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["s8"] = tl;
+    })();
+  </script>
+</template>

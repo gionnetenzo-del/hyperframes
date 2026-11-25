@@ -1,0 +1,56 @@
+<template>
+  <style>
+
+      @font-face { font-family: "Cinzel"; src: url("assets/fonts/cinzel.woff2") format("woff2"); font-weight: 400 900; }
+
+      :root { --parch: #f3e7cc; --ink: #17130e; --gold: #e0b45a; --red: #d2533f; --green: #6fbf5a; --night: rgba(16,13,10,0.78); }
+
+    #root { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    .chap { position: absolute; left: 80px; bottom: 200px; display: flex; flex-direction: column; gap: 10px; padding: 22px 60px 26px 40px; background: linear-gradient(90deg, rgba(10,8,6,0.62), rgba(10,8,6,0.35) 70%, rgba(10,8,6,0)); border-radius: 6px; }
+    .chap-k { font-family: "Inter", sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); text-shadow: 0 2px 12px rgba(0,0,0,0.6); }
+    .chap-t { font-family: "Cinzel", serif; font-weight: 800; font-size: 68px; line-height: 1.05; color: #fff8e8; text-shadow: 0 4px 24px rgba(0,0,0,0.75), 0 1px 2px rgba(0,0,0,0.9); }
+    .chap-rule { height: 3px; width: 380px; background: linear-gradient(90deg, var(--gold), rgba(224,180,90,0)); transform-origin: left center; }
+    .badge { position: absolute; left: 110px; top: 96px; display: flex; align-items: stretch; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.45); }
+    .badge-k { font-family: "Inter", sans-serif; font-weight: 900; font-size: 28px; letter-spacing: 0.14em; color: #fff; padding: 14px 20px; display: flex; align-items: center; }
+    .badge-t { font-family: "Inter", sans-serif; font-weight: 700; font-size: 30px; color: #fff8e8; background: rgba(18,14,10,0.86); padding: 13px 24px 14px; display: flex; align-items: center; }
+    .badge.prob .badge-k { background: var(--red); }
+    .badge.sol .badge-k { background: #3f8f34; }
+
+  </style>
+  <div id="root" data-composition-id="s7" data-width="1920" data-height="1080">
+    <div id="s7-chap" class="clip chap" data-start="0.45" data-duration="4.55" data-track-index="1">
+      <div id="s7-chap-k" class="chap-k">Étape 6</div>
+      <div id="s7-chap-t" class="chap-t">La porte et le pont-levis</div>
+      <div id="s7-chap-r" class="chap-rule"></div>
+    </div>
+    <div id="s7-prob" class="clip badge prob" data-start="9.07" data-duration="8.58" data-track-index="2">
+      <div id="s7-prob-k" class="badge-k">PROBLÈME 6</div>
+      <div id="s7-prob-t" class="badge-t">La porte, point faible</div>
+    </div>
+    <div id="s7-sol" class="clip badge sol" data-start="18.05" data-duration="14.58" data-track-index="2">
+      <div id="s7-sol-k" class="badge-k">SOLUTION</div>
+      <div id="s7-sol-t" class="badge-t">Pont-levis, herse, vantaux, assommoirs</div>
+    </div>
+    <div id="s7-dip" class="clip" data-start="0" data-duration="0.7" data-track-index="0" style="position:absolute;inset:0;background:#0b0907" data-layout-ignore></div>
+    <div id="s7-exit" class="clip" data-start="51.84" data-duration="0.45" data-track-index="0" style="position:absolute;inset:0;background:#0b0907" data-layout-ignore></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s7-chap-k", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.50);
+      tl.fromTo("#s7-chap-t", { opacity: 0, y: 30, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.8, ease: "power3.out" }, 0.65);
+      tl.fromTo("#s7-chap-r", { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power2.inOut" }, 0.90);
+      tl.to("#s7-chap-k, #s7-chap-t, #s7-chap-r", { opacity: 0, y: -12, duration: 0.45, ease: "power2.in" }, 4.50);
+      tl.fromTo("#s7-prob-k", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 9.09);
+      tl.fromTo("#s7-prob-t", { opacity: 0, x: -24, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, x: 0, clipPath: "inset(0 0% 0 0)", duration: 0.6, ease: "power3.out" }, 9.25);
+      tl.to("#s7-prob-k, #s7-prob-t", { opacity: 0, duration: 0.35, ease: "power2.in" }, 17.25);
+      tl.fromTo("#s7-sol-k", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 18.07);
+      tl.fromTo("#s7-sol-t", { opacity: 0, x: -24, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, x: 0, clipPath: "inset(0 0% 0 0)", duration: 0.6, ease: "power3.out" }, 18.23);
+      tl.to("#s7-sol-k, #s7-sol-t", { opacity: 0, duration: 0.35, ease: "power2.in" }, 32.23);
+      tl.fromTo("#s7-dip", { opacity: 1 }, { opacity: 0, duration: 0.6, ease: "power2.out" }, 0.02);
+      tl.fromTo("#s7-exit", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.in" }, 51.84);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["s7"] = tl;
+    })();
+  </script>
+</template>
